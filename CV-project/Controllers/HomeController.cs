@@ -28,6 +28,11 @@ namespace CV_project.Controllers
             return View();
         }
 
+        public IActionResult ViewCV()
+        {
+            return View();
+        }
+
         public IActionResult SignIn()
         {
             return View();
