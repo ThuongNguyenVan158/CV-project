@@ -32,7 +32,10 @@ namespace CV_project.Controllers
         {
             return View();
         }
-
+        public IActionResult ViewCompany()
+        {
+            return View();
+        }
         public IActionResult SignIn()
         {
             return View();
