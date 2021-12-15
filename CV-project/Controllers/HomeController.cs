@@ -55,6 +55,11 @@ namespace CV_project.Controllers
             return View();
         }
 
+        public IActionResult CreateJob()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
