@@ -25,7 +25,7 @@ namespace CV_project
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddRazorPages();
+            services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddTransient<IClientService, ClientService>();
         }
 
@@ -35,6 +35,7 @@ namespace CV_project
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
             }
             else
             {
@@ -54,7 +55,7 @@ namespace CV_project
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-                    //pattern: "{controller=Home}/{action=CreateCV}/{id?}");
+                    //pattern: "{controller=Home}/{action=CreateCompanyProfile}/{id?}");
             });
         }
     }
