@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewData["Title"] = "ViewJob";
+    Layout = null;
+}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"
+      id="bootstrap-css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"
+      id="bootstrap-css" />
+
+<!DOCTYPE html>
+<html>
+<body>
+    <style>
+        #matching {
+            margin-left: 1400px;
+            font-size: 30px;
+            color: #000000;
+            text-decoration: underline;
+        }
+        #headhunt {
+            margin-left: 20px;
+            font-size: 30px;
+            color: #000000;
+            text-decoration: underline;
+        }
+        #event {
+            margin-left: 20px;
+            font-size: 30px;
+            color: #000000;
+            text-decoration: underline;
+        }
+        button {
+            background-color: #325EEA;
+            color: #FFFFFF;
+            padding: 20px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border: #325EEA;
+        }
+
+        #bigbox {
+            width: 1300px;
+            height: 500px;
+            background: grey;
+            position: relative;
+            margin-top: 200px;
+            margin-left: 50px;
+            font-size: 30px;
+        }
+
+            #bigbox #smallbox {
+                width: 70%;
+                height: 20%;
+                position: absolute;
+                margin: auto;
+                background: white;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+    </style>
+    <div class="header">
+        <a id ="matching" href="#">Profile Matching</a>
+        <a id ="headhunt" href="#">Headhunt</a>
+        <a id ="event" href="#">Event</a>
+    </div>
+    <div id="bigbox"> Jobs: 
+        <div id="smallbox">
+            <p>Job Description</p>
+        </div>
+
+    </div>
+</body>
+</html>
