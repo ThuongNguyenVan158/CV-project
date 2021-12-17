@@ -22,7 +22,13 @@
             color: #000000;
             text-decoration: underline;
         }
-
+        #logo {
+            float: left;
+            font-size: 40px;
+            color: #000000;
+            font-weight: bold;
+            margin-top: -2%;
+        }
         #headhunt {
             margin-left: 0.5%;
             font-size: 30px;
@@ -48,7 +54,7 @@
         }
 
         #bigbox {
-            width: 80%;
+            width: 60%;
             height: 500px;
             background: grey;
             position: relative;
@@ -67,30 +73,20 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-            }
-
-        #2ndsmallbox {
-            width: 200px;
-            height: 100px;
-            position: relative;
-            margin-top: 700px;
-            background: white;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-        }
-        }
+            }        
     </style>
     <div class="header">
         <a id="matching" href="#">Profile Matching</a>
         <a id="headhunt" href="#">Headhunt</a>
         <a id="event" href="#">Event</a>
     </div>
+    <h1 id="logo"> WEEN </h1>
     <div id="bigbox">
         Jobs:
-        <div id="smallbox" data-toggle="modal" data-target="#cvDetail">
-            <p>Job Description</p>
+        <div id="smallbox" data-toggle="modal" data-target="#jobDesc">
+            <p>Job Name <br />
+            Job desc</p>
+
         </div>
 
     </div>
@@ -98,7 +94,7 @@
 </html>
 
 <!-- Modal -->
-<div id="cvDetail" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="exampleModalScrollableTitle"
+<div id="jobDesc" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="exampleModalScrollableTitle"
      aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document" style="overflow-y: initial">
 
