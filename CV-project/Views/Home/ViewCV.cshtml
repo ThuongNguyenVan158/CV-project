@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "ViewCV";
     Layout = null;
 }
@@ -16,14 +15,28 @@
 <html>
 <body>
     <style>
-        a {
-            margin: 10px;
-            background-color: #325EEA;
-            color: #FFFFFF;
-            padding: 15px 50px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
+        #matching {
+            margin-left: 70%;
+            font-size: 30px;
+            color: #000000;
+            text-decoration: underline;
+        }
+
+        #logo {
+            margin-right: 90%;
+            margin-top: -2.75%;
+        }
+
+        #headhunt {
+            margin-left: 0.5%;
+            font-size: 30px;
+            color: #000000;
+        }
+
+        #event {
+            margin-left: 0.5%;
+            font-size: 30px;
+            color: #000000;
         }
 
         button {
@@ -37,10 +50,11 @@
         }
     </style>
     <div class="header">
-        <a style="float:right" href="#">Profile Matching</a>
-        <a style="float:right" href="#">Head Hunt</a>
-        <a style="float:right" href="#">Event</a>
+        <a id="matching" href="#">Profile Matching</a>
+        <a id="headhunt" href="#">Headhunt</a>
+        <a id="event" href="#">Event</a>
     </div>
+    <h1 id="logo">WEEN</h1>
     <section class="">
         <div class="container-fluid m-0 ">
             <div class="row d-md-flex-row  overflow-hidden">
@@ -120,8 +134,6 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body" style="height: 60vh; overflow-y: auto;">
-                John Doe<br>
-                nguyenvana@gmail.com|0909.xxx.xxx/www.linkedin.com/in/nguyenvana<br><br>
                 Personal Profile<br>
                 Highly adaptable, versatile and analytical Computer Science undergraduate student with solid Maths
                 background.<br>
