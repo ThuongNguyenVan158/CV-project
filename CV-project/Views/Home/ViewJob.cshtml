@@ -1,6 +1,7 @@
 ﻿
 @{
     ViewData["Title"] = "ViewJob";
+    Layout = null;
 }
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"
@@ -21,23 +22,27 @@
             color: #000000;
             text-decoration: underline;
         }
+
         #logo {
             float: left;
             font-size: 40px;
             color: #000000;
             font-weight: bold;
-            margin-top: -2%;
+            margin-top: -2.75%;
         }
+
         #headhunt {
             margin-left: 0.5%;
             font-size: 30px;
-            color: #000000;          
+            color: #000000;
         }
+
         #event {
             margin-left: 0.5%;
             font-size: 30px;
             color: #000000;
         }
+
         button {
             background-color: #325EEA;
             color: #FFFFFF;
@@ -47,6 +52,7 @@
             display: inline-block;
             border: #325EEA;
         }
+
         #bigbox {
             width: 60%;
             height: 500px;
@@ -56,6 +62,7 @@
             margin-left: 50px;
             font-size: 30px;
         }
+
             #bigbox #smallbox {
                 width: 70%;
                 height: 20%;
@@ -66,14 +73,21 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-            }        
+            }
     </style>
-    
+    <div class="header">
+        <a id="matching" href="#">Profile Matching</a>
+        <a id="headhunt" href="#">Headhunt</a>
+        <a id="event" href="#">Event</a>
+    </div>
+    <h1 id="logo">WEEN</h1>
     <div id="bigbox">
         Jobs:
         <div id="smallbox" data-toggle="modal" data-target="#jobDesc">
-            <p>Job Name <br />
-            Job desc</p>
+            <p>
+                IBM Full Stack Web Developer <br />
+                Well-paid
+            </p>
 
         </div>
 
@@ -93,34 +107,8 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body" style="height: 60vh; overflow-y: auto;">
-                John Doe<br>
-                nguyenvana@gmail.com|0909.xxx.xxx/www.linkedin.com/in/nguyenvana<br><br>
-                Personal Profile<br>
-                Highly adaptable, versatile and analytical Computer Science undergraduate student with solid Maths
-                background.<br>
-                Experienced in programming languages such as SQL, Python, C++, C#, PHP as evidenced by maintaining
-                near perfect mark in
-                programming assignments during studies at Edith
-                Cowan University (ECU), current role as a coding workshop tutor at Edith Cowan University as well as
-                multiple machine learning projects participated.<br>
-                Aiming to work hard with integrity and apply my knowledge, project execution skills to achieve
-                personal as well as organizational goals.<br><br>
-                Education<br>
-                Degree: Computer Science - Software Engineering<br>
-                02/2020 - 12/2022<br>
-                Edith Cowan University, Western Australia<br>
-                Major: Math<br>
-                NGUYEN THI MINH KHAI Highschool For the Gifted, Vietnam 08/2016 - 06/2019<br><br>
-                Awards<br>
-                2021, Top 100 Student, Edith Cowan University.<br>
-                2020, Top 100 Student, Edith Cowan University.<br>
-                2017, Third prize in science subject competition, Soc Trang city Education Department.<br>
-                2016, Third prize in science subject competition, Soc Trang city Education Department.<br>
-                2015, Third prize in Vietnam National English competition, Vietnam Education Department<br><br>
-                Skills Summary<br>
-                Technical Skills:<br>
-                Strong programming skills acquired through extensive exposure to programming languages such as SQL,
-                Python, C++, Java, C#, PHP.
+                Strong understanding of SQL,  Python, C++, Java, C#, PHP.
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
