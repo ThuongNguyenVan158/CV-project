@@ -1,0 +1,46 @@
+﻿#matching {
+    margin-left: 70%;
+    font-size: 30px;
+    color: #000000;
+    text-decoration: underline;
+}
+
+#logo {
+    margin-right: 90%;
+    margin-top: -2.75%;
+}
+
+#headhunt {
+    margin-left: 0.5%;
+    font-size: 30px;
+    color: #000000;
+}
+
+#event {
+    margin-left: 0.5%;
+    font-size: 30px;
+    color: #000000;
+}
+
+#companyinfo {
+    background-color: #325EEA;
+    color: #FFFFFF;
+    padding: 20px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: #325EEA;
+    border-radius: 5px;
+}
+
+#next {
+    background-color: #325EEA;
+    color: #FFFFFF;
+    padding: 20px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: #325EEA;
+    border-radius: 5px;
+    margin-left: 50%;
+}
