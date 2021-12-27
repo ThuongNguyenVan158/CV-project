@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "ViewCV";
+    ViewData["Title"] = "ViewCompany";
 }
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"
@@ -9,11 +9,11 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"
       id="bootstrap-css" />
-
+<link rel="stylesheet" href="/css/viewcompany_style.css">
+<link rel="stylesheet" href="/css/layout-style.css"> <!-- check -->
 <!DOCTYPE html>
 <html>
 <body>
-    <link rel="stylesheet" href="/css/viewcompany_style.css">
     <section class="">
         <div class="container-fluid m-0 ">
             <div class="row d-md-flex-row  overflow-hidden">
@@ -43,8 +43,8 @@
                     <div class="container-fluid pr-md-5 pl-md-5 d-flex align-items-center h-100">
                         <div class="row justify-content-md-center">
                             <div class="col-md-12">
-                                <h1 class="  mb-4">TIKI</h1>
-                                <p>
+                                <h1 id="companyName">TIKI</h1>
+                                <p id="companyDetail">
                                     Tiki là một hệ sinh thái thương mại tất cả trong một, gồm các công ty thành viên như: <br />
 
                                     - Công ty cổ phần Ti Ki ("TiKi") là đơn vị thiết lập, tổ chức sàn thương mại điện tử www.tiki.vn để các Nhà bán hàng thể tiến hành một phần hoặc toàn bộ quy trình mua bán hàng hóa, dịch vụ trên sàn thương mại điện tử.<br />
@@ -59,20 +59,22 @@
                                     Tiki lọt Top 1 nơi làm việc tốt nhất Việt Nam trong ngành Internet/E-commerce 2018 (Anphabe bình chọn), Top 50 nơi làm việc tốt nhất châu Á 2019 (HR Asia bình chọn).<br />
                                 <p class="mt-md-5 mt-5 mb-5">
                                     <button id="companyinfo" data-toggle="modal" data-target="#cvDetail">
-                                        See more details
+                                        See More
                                     </button>
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <button id="next">
-                        Next
-                    </button>
+
                 </div>
             </div>
         </div>
     </section>
-
+    <div id="arrow">
+        <button >
+            Arrow
+        </button>
+    </div>
 </body>
 </html>
 
@@ -84,11 +86,10 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">CV Details</h4>
+                <h4 class="modal-title">Company Profile</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <div class="modal-body" style="height: 60vh; overflow-y: auto;">
-                Company Profile<br>
+            <div class="modal-body" style="height: 60vh; overflow-y: auto;">               
                 Tiki là một hệ sinh thái thương mại tất cả trong một, gồm các công ty thành viên như:
 
                 - Công ty cổ phần Ti Ki ("TiKi") là đơn vị thiết lập, tổ chức sàn thương mại điện tử www.tiki.vn để các Nhà bán hàng thể tiến hành một phần hoặc toàn bộ quy trình mua bán hàng hóa, dịch vụ trên sàn thương mại điện tử.

@@ -23,16 +23,29 @@
 }
 
 #companyinfo {
-    background-color: #325EEA;
-    color: #FFFFFF;
-    padding: 20px 25px;
+    background-color: white;
+    color: #325EEA;
+    padding: 12px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    border: #325EEA;
-    border-radius: 5px;
+    border-color: #325EEA;
+    border-radius: 10px;
+    margin-left: 490px;
 }
 
+    #companyinfo:hover {
+        background-color: #325EEA;
+        color: white;
+        border-color: #325EEA;
+    }
+#companyName{
+    font-size: 5rem;
+    font-weight: bold;
+}
+#companyDetail{
+    text-align: justify;
+}
 #next {
     background-color: #325EEA;
     color: #FFFFFF;
@@ -43,4 +56,12 @@
     border: #325EEA;
     border-radius: 5px;
     margin-left: 50%;
+}
+
+.modal-body{
+    text-align: justify;
+}
+
+#arrow {
+    position: relative;
 }

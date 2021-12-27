@@ -13,7 +13,7 @@
         color: black;
         text-align: center;
         padding: 14px 16px;
-        text-decoration: none;
+        text-decoration: none;       
     }
 
 .mynav_dropdown {
@@ -45,7 +45,8 @@
 
 
     .mynav_navbar a:hover, .mynav_dropdown:hover .mynav_dropbtn {
-        text-decoration: underline;
+        background: #E0E0E0;
+        background-clip: padding-box;
     }
 
 .mynav_dropdown-content {
@@ -72,4 +73,10 @@
 
 .mynav_dropdown:hover .mynav_dropdown-content {
     display: block;
+}
+
+#avt {
+    height:60px;
+    width:60px;
+    border-radius: 50%;
 }
