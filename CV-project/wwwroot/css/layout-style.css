@@ -12,8 +12,9 @@
         font-size: 16px;
         color: black;
         text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;       
+        padding: 14px 10px;
+        text-decoration: none; 
+        margin-top: 20px;
     }
 
 .mynav_dropdown {
@@ -21,7 +22,7 @@
     overflow: hidden;
 }
 
-.mynav_dropbtn {
+/*.mynav_dropbtn {
     font-size: 16px;
     border: none;
     outline: none;
@@ -29,22 +30,26 @@
     background-color: inherit;
     font-family: inherit;
     margin: 0;
-
-}
+}*/
 
 .mynav_dropdown {
     font-size: 16px;
     border: none;
     outline: none;
     color: white;
-    padding: 14px 16px;
+    padding: 14px 14px;
     background-color: inherit;
     font-family: inherit;
     margin: 0;
 }
 
 
-    .mynav_navbar a:hover, .mynav_dropdown:hover .mynav_dropbtn {
+    /*.mynav_navbar a:hover, .mynav_dropdown:hover .mynav_dropbtn {
+        background: #E0E0E0;
+        background-clip: padding-box;
+    }*/
+
+    .mynav_navbar a:hover {
         background: #E0E0E0;
         background-clip: padding-box;
     }
