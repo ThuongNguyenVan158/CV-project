@@ -90,12 +90,13 @@
     padding-bottom: 390px;
     padding-right: 190px;
     padding-left: 190px;
-    background-color: white;
+    opacity: 0;
     border: 0;
 }
-#RButton:hover {
-    background-color: #EAEAEA;
-}
+    #RButton:hover {
+        background-color: #EAEAEA;
+        opacity: 1;
+    }
 
 #LButton {
     padding-top: 370px;
@@ -105,8 +106,8 @@
     /*padding-bottom: 31.8%;
     padding-top: 10%;
     padding-left: 10.5%;
-    padding-right: 7.5%;
-    background-color: white;*/
+    padding-right: 7.5%;*/
+    background-color: rgba(255, 255, 255, 0.5);
     border: 0;
 }
 #LButton:hover {
