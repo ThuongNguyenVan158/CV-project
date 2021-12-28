@@ -61,18 +61,54 @@
 .modal-body{
     text-align: justify;
 }
-
 #rightArrow {
     overflow: hidden;
     position: absolute;
-    left: 1600px;
-    right: 0px;
-    bottom: 400px;
+    top: 12%;
+    left: 76.5%;
+}
+
+#leftArrow {
+    overflow: hidden;
+    position: absolute;
+    top: 12%;
+    right: 79%;
+}
+/*#rightArrow {
+    overflow: hidden;
+    position: absolute;
+    left: 76.5%;
+
 }
 #leftArrow {
     overflow: hidden;
     position: absolute;
-   
-    left: 200px;
-    bottom: 400px;
+}*/
+
+#RButton {
+    padding-top: 370px;
+    padding-bottom: 390px;
+    padding-right: 190px;
+    padding-left: 190px;
+    background-color: white;
+    border: 0;
+}
+#RButton:hover {
+    background-color: #EAEAEA;
+}
+
+#LButton {
+    padding-top: 370px;
+    padding-bottom: 390px;
+    padding-right: 190px;
+    padding-left: 190px;
+    /*padding-bottom: 31.8%;
+    padding-top: 10%;
+    padding-left: 10.5%;
+    padding-right: 7.5%;
+    background-color: white;*/
+    border: 0;
+}
+#LButton:hover {
+    background-color: #EAEAEA;
 }
