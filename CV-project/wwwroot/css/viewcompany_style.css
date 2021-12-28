@@ -62,6 +62,17 @@
     text-align: justify;
 }
 
-#arrow {
-    position: relative;
+#rightArrow {
+    overflow: hidden;
+    position: absolute;
+    left: 1600px;
+    right: 0px;
+    bottom: 400px;
+}
+#leftArrow {
+    overflow: hidden;
+    position: absolute;
+   
+    left: 200px;
+    bottom: 400px;
 }
