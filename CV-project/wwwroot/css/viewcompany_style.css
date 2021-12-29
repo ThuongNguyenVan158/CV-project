@@ -65,14 +65,14 @@
     overflow: hidden;
     position: absolute;
     top: 12%;
-    left: 76.5%;
+    left: 77.2%;
 }
 
 #leftArrow {
     overflow: hidden;
     position: absolute;
     top: 12%;
-    right: 79%;
+    right: 80.5%;
 }
 /*#rightArrow {
     overflow: hidden;
@@ -90,12 +90,11 @@
     padding-bottom: 390px;
     padding-right: 190px;
     padding-left: 190px;
-    opacity: 0;
+    background-color: transparent;
     border: 0;
 }
     #RButton:hover {
         background-color: #EAEAEA;
-        opacity: 1;
     }
 
 #LButton {
@@ -107,9 +106,11 @@
     padding-top: 10%;
     padding-left: 10.5%;
     padding-right: 7.5%;*/
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: transparent;
     border: 0;
 }
-#LButton:hover {
-    background-color: #EAEAEA;
-}
+    #LButton:hover {
+        background-color: #EAEAEA;
+    }
+
+    
