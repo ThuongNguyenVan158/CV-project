@@ -31,7 +31,7 @@
     display: inline-block;
     border-color: #325EEA;
     border-radius: 10px;
-    margin-left: 490px;
+    margin-left: 550px;
 }
 
     #companyinfo:hover {
@@ -42,9 +42,12 @@
 #companyName{
     font-size: 40px;
     font-weight: bold;
+    padding-left: 12px;
 }
 #companyDetail{
     text-align: justify;
+    padding-left: 12px;
+    padding-right: 15px;
 }
 #next {
     background-color: #325EEA;
@@ -73,7 +76,7 @@
     position: absolute;
     top: 12%;
     right: 80.5%;
-}*/
+}
 /*#rightArrow {
     overflow: hidden;
     position: absolute;
@@ -85,7 +88,7 @@
     position: absolute;
 }*/
 
-#RButton {
+/*#RButton {
     padding-top: 370px;
     padding-bottom: 390px;
     padding-right: 190px;
@@ -105,12 +108,32 @@
     /*padding-bottom: 31.8%;
     padding-top: 10%;
     padding-left: 10.5%;
-    padding-right: 7.5%;*/
+    padding-right: 7.5%;
     background-color: transparent;
     border: 0;
 }
     #LButton:hover {
         background-color: #EAEAEA;
-    }
+    }*/
 
-    
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    /*box-shadow: inset 0 0 5px grey;*/
+    border-radius: 10px;
+    background-color: #EAEAEA;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #bfbfbf;
+    border-radius: 10px;
+}
+
+.container{
+    padding-top: 13px;
+}
