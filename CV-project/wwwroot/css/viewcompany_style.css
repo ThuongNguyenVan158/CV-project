@@ -40,7 +40,7 @@
         border-color: #325EEA;
     }
 #companyName{
-    font-size: 5rem;
+    font-size: 40px;
     font-weight: bold;
 }
 #companyDetail{
@@ -61,7 +61,7 @@
 .modal-body{
     text-align: justify;
 }
-#rightArrow {
+/*#rightArrow {
     overflow: hidden;
     position: absolute;
     top: 12%;
@@ -73,7 +73,7 @@
     position: absolute;
     top: 12%;
     right: 80.5%;
-}
+}*/
 /*#rightArrow {
     overflow: hidden;
     position: absolute;
