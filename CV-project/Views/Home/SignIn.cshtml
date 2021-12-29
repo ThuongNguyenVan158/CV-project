@@ -45,14 +45,15 @@
                                     </p>
                                 </div>
                             </div>
-                            <form action="#" class="signin-form">
+                            <form asp-controller="Home" asp-action="SignIn" method="post" class="signin-form">
                                 <div class="form-group mb-3">
-                                    <label class="label" for="name">Username or Email Address</label>
-                                    <input type="text" class="form-control" required>
+                                    <label class="label" for="name">Username</label>
+                                    <input type="text" class="form-control" placeholder="Username" name="loginViewModel.UserName"
+                                           value="@Model.UserName" required>
                                 </div>
                                 <div class="form-group mb-3">
                                     <label class="label" for="password">Password</label>
-                                    <input type="password" class="form-control" required>
+                                    <input type="password" class="form-control" placeholder="Password" name="loginViewModel.Password" required>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
@@ -70,7 +71,7 @@
                                     </div>
                                 </div>
                             </form>
-                            <p class="text-center">New to Ween? <a data-toggle="tab" href="#signup"> Sign Up</a></p>
+                            <p class="text-center">New to Ween? <a data-toggle="tab" href="@Url.Action("SignUp","Home")"> Sign Up</a></p>
                         </div>
                     </div>
                 </div>

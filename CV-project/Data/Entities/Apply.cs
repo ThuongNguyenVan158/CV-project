@@ -13,10 +13,10 @@ namespace CV_project.Data.Entities
     {
         [Key]
         [Column("ApplicantID")]
-        public int ApplicantId { get; set; }
+        public Guid ApplicantId { get; set; }
         [Key]
         [Column("CompanyID")]
-        public int CompanyId { get; set; }
+        public Guid CompanyId { get; set; }
 
         [ForeignKey(nameof(ApplicantId))]
         [InverseProperty("Applies")]

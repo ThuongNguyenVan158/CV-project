@@ -1,11 +1,16 @@
-﻿using System;
+﻿using CV_project.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace CV_project.Services
 {
-    interface IClientService
+    public interface IClientService
     {
+        Task<int> LoginAsync(LoginViewModel loginViewModel);
+        Task<bool> RegisterAsync(RegisterViewModel registerViewModel);
+        Task<InfoViewModel> GetInfoSession(LoginViewModel loginViewModel);
+        Task<bool> CreateProfile(Guid applicantId,ProfileViewModel profile);
     }
 }

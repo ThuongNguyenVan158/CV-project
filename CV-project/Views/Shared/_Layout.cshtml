@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Newtonsoft.Json;
+@using Microsoft.AspNetCore.Http;
+@using CV_project.Models;
+@using Microsoft.AspNetCore.Mvc;
+@inject IHttpContextAccessor Accessor
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -14,26 +19,34 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <!--<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WEEN</a>-->
-                <img id="weenlogo" src ="/media/WEEN LOGO.svg" width="100" height="60"/>
+                <img id="weenlogo" src="/media/WEEN LOGO.svg" width="100" height="60" />
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="mynav_navbar">
-                    <a href="#">PROFILE MATCHING</a>
-                    <a href="#">HEADHUNT</a>
-                    <a href="#">EVENT</a>                    
+                    <a href="@Url.Action("ViewCV", "Home")">PROFILE MATCHING</a>
+                    <a href="@Url.Action("SignIn", "Home")">HEADHUNT</a>
+                    <a href="@Url.Action("SignIn", "Home")">EVENT</a>
                     <div class="mynav_dropdown">
-                            <img id="avt" src="https://images.unsplash.com/photo-1561948955-570b270e7c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=601&q=80" />
+                        <img id="avt" src="https://images.unsplash.com/photo-1561948955-570b270e7c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=601&q=80" />                      
                         <div class="mynav_dropdown-content">
                             <a href="#">View Profile</a>
                             <a href="#">Edit Profile</a>
-                            <a href="#">Log out</a>
+                            <a href="@Url.Action("Logout", "Home")">Log out</a>
                         </div>
                     </div>
+                    <div>
+                        @if (Accessor.HttpContext.Session.GetString("Usersession") != null)
+                        {
+                            InfoViewModel infoSession = new InfoViewModel();
+                            infoSession = JsonConvert.DeserializeObject<InfoViewModel>(Accessor.HttpContext.Session.GetString("Usersession"));
+                            <p>@infoSession.FullName</p>
+                        }
+                    </div>
                 </div>
-                </div>
-</nav>
+            </div>
+        </nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
