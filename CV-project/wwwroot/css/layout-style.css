@@ -5,6 +5,7 @@
 .mynav_navbar {
     overflow: hidden;
     background-color: white;
+    height: 65px;
 }
 
     .mynav_navbar a {
@@ -12,7 +13,7 @@
         font-size: 16px;
         color: black;
         text-align: center;
-        padding: 14px 10px;
+        padding: 8px 10px;
         text-decoration: none; 
         margin-top: 20px;
     }
@@ -81,7 +82,7 @@
 }
 
 #avt {
-    height:60px;
-    width:60px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
 }

@@ -1,4 +1,7 @@
-﻿#matching {
+﻿body{
+    overflow: hidden;
+}
+#matching {
     margin-left: 70%;
     font-size: 20px;
     color: #000000;
@@ -143,29 +146,25 @@
     /*box-shadow: inset 0 0 5px grey;*/
     border-radius: 10px;
     background-color: #EAEAEA;
-    visibility: hidden;
+/*    visibility: hidden;
+*/    overflow: auto;
 }
 
-::-webkit-scrollbar-track:hover {
-    /*box-shadow: inset 0 0 5px grey;*/
-    border-radius: 10px;
-    background-color: #EAEAEA;
-    visibility: visible;
-}
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #bfbfbf;
     border-radius: 10px;
-    visibility: hidden;
+    /*visibility: hidden;*/
+    overflow: auto;
 }
 ::-webkit-scrollbar-thumb:hover {
     background: #bfbfbf;
     border-radius: 10px;
-    visibility: visible;
+    /*visibility: visible;*/
 }
 
 .vl {
-    border-left: 5px solid black;
+    border-left: 5px solid black;   
     height: 30vh;
     margin-right: 400px;
     display:block;
