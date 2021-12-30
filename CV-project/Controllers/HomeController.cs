@@ -16,11 +16,13 @@ namespace CV_project.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IClientService _clientService;
+        private readonly ICompanyService _companyService;
 
-        public HomeController(ILogger<HomeController> logger, IClientService clientService)
+        public HomeController(ILogger<HomeController> logger, IClientService clientService, ICompanyService companyService)
         {
             _logger = logger;
             _clientService = clientService;
+            _companyService = companyService;
         }
 
         public IActionResult Index()
@@ -29,11 +31,6 @@ namespace CV_project.Controllers
         }
 
         public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        public IActionResult ViewCV()
         {
             return View();
         }
@@ -69,7 +66,7 @@ namespace CV_project.Controllers
                 return View(loginViewModel);
             if (accountType == 1)
                 return RedirectToAction("ViewCompany");
-            return RedirectToAction("ViewCV");
+            return RedirectToAction("ViewCV", "Company");
         }
         [HttpGet("/CreateCV")]
         public IActionResult CreateCV()
@@ -116,16 +113,6 @@ namespace CV_project.Controllers
             HttpContext.Session.Remove("Usersession");
             return RedirectToAction("SignIn");
         }
-        public IActionResult CreateCompanyProfile()
-        {
-            return View();
-        }
-
-        public IActionResult CreateJob()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

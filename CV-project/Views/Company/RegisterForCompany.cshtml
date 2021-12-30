@@ -1,13 +1,13 @@
 ﻿
 @{
-    ViewData["Title"] = "SignIn";
+    ViewData["Title"] = "Register";
     Layout = null;
 }
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Sign In</title>
+    <title>Register</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -21,7 +21,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="/css/signin_style.css">
+    <link rel="stylesheet" href="/css/signup_style.css">
 
 </head>
 
@@ -36,7 +36,7 @@
                         <div class="login-wrap p-4 p-md-5">
                             <div class="d-flex">
                                 <div class="w-100">
-                                    <h3 class="mb-4">Sign In to Ween</h3>
+                                    <h3 class="mb-4">Sign Up to Ween</h3>
                                 </div>
                                 <div class="w-80">
                                     <p class="social-media d-flex justify-content-end">
@@ -45,34 +45,27 @@
                                     </p>
                                 </div>
                             </div>
-                            <form asp-controller="Home" asp-action="SignIn" method="post" class="signin-form">
+                            <form class="signin-form" asp-controller="Home" asp-action="RegisterForCompany" method="post">
+                                <div class="form-group mb-3">
+                                    <label class="label" for="name">Full Name</label>
+                                    <input type="text" class="form-control" placeholder="Full Name" required
+                                           name="registerViewModel.FullName">
+                                </div>
                                 <div class="form-group mb-3">
                                     <label class="label" for="name">Username</label>
-                                    <input type="text" class="form-control" placeholder="Username" name="loginViewModel.UserName"
-                                           value="@Model.UserName" required>
+                                    <input type="text" class="form-control" placeholder="Username" required
+                                           name="registerViewModel.UserName">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label class="label" for="password">Password</label>
-                                    <input type="password" class="form-control" placeholder="Password" name="loginViewModel.Password" required>
+                                    <input type="password" class="form-control" placeholder="Password" required
+                                           name="registerViewModel.Password" />
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
-                                </div>
-                                <div class="form-group d-md-flex">
-                                    <div class="w-50 text-left">
-                                        <label class="checkbox-wrap checkbox-primary mb-0">
-                                            Remember Me
-                                            <input type="checkbox" checked>
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                    <div class="w-50 text-md-right">
-                                        <a class="forgot-password" href="#">Forgot Password</a>
-                                    </div>
+                                    <button type="submit" class="form-control btn btn-primary rounded submit px-3">Create Account</button>
                                 </div>
                             </form>
-                            <p class="text-center">New to Ween? </p>
-                            <a href="@Url.Action("SignUp","Home")"> Sign Up</a>
+                            <p class="text-center">Have Account? <a data-toggle="tab" href="@Url.Action("SignIn","Home")"> Sign In</a>s
                         </div>
                     </div>
                 </div>
@@ -82,6 +75,4 @@
 </body>
 
 </html>
-
-
 
