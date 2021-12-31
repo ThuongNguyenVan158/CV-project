@@ -11,13 +11,31 @@
       id="bootstrap-css" />
 <link rel="stylesheet" href="/css/viewcompany_style.css">
 <link rel="stylesheet" href="/css/layout-style.css"> <!-- check -->
+<link rel="stylesheet" href="/css/site.css"> <!-- check -->
+<script>
+    function myFunction() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "See more ▼";
+            moreText.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "See less ▲";
+            moreText.style.display = "inline";
+        }
+    }
+</script>
 <!DOCTYPE html>
 <html>
 <body>
     <section class="view-company-content">
         <div class="container-fluid m-0 ">
             <div class="row d-md-flex-row  overflow-hidden">
-                <div class="col-md-4 p-0 col-12 bg-light d-flex overflow-hidden " style="height: 80vh;">
+                <div class="col-md-4 p-0 col-12 bg-light d-flex overflow-hidden " style="height: 91vh;">
                     <div class="card p-0   w-100 h-100 text-light   border-0 ">
                         <img class="card-img h-100 w-100"
                              src="https://images.unsplash.com/photo-1550757750-4ce187a65014?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
@@ -36,74 +54,67 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-8  pt-5 pt-md-1  bg-transparent">
-                    <h1 id="companyName">TIKI.vn</h1>
+                    <h1 id="companyName">TiKi.vn</h1>
                     <div class="container-fluid d-flex align-items-center h-50">
 
                         <div class="row justify-content-md-center">
                             <span class="vl"></span>
                             <div class="col-md-12">
                                 <p id="companyDetail" style="height: 30vh; overflow-y: scroll;">
-                                    Industry: E-Commerce <br /> <br />
-                                    Công ty cổ phần Ti Ki ("TiKi") là đơn vị thiết lập, tổ chức sàn thương mại điện tử www.tiki.vn để các Nhà bán hàng thể tiến hành một phần hoặc toàn bộ quy trình mua bán hàng hóa, dịch vụ trên sàn thương mại điện tử.<br /> <br />
-                                    Vị trí tuyển dụng: <br />
-                                    - Front-end <br />
-                                    - Back-end <br />
-                                    - Full stack <br /> <br />
-                                    Highlights: <br />
-                                    - Top 50 Companies
+                                    <span>Industry: E-Commerce <br /> <br /></span>
+                                    <span id="Description">
+                                        Công ty cổ phần Ti Ki ("TiKi") là đơn vị thiết lập, tổ chức sàn thương mại điện tử www.tiki.vn để các Nhà bán hàng thể tiến hành một phần<span id="dots"><br /></span>
+                                        <span id="more">
+                                            hoặc toàn bộ quy trình mua bán hàng hóa, dịch vụ trên sàn thương mại điện tử.
+                                            <span> Just some text after some text and in between some more text <br /></span>
+                                            <span> I'm next to the last line of text <br /></span>
+                                            <span> I'm the last line of text</span>
+                                            <span> Just some text after some text and in between some more text <br /></span>
+                                            <span> I'm next to the last line of text <br /></span>
+                                            <span> I'm the last line of text</span>
+                                        </span>
+                                        <button onclick="myFunction()" id="myBtn" style="border-color: white; border:0; color: #325EEA; background-color: white; padding:0px; outline: none;">See more ▼</button>
+                                        <span> <br /><br /></span>
+                                        <span>test text</span>
+                                    </span>
                             </div>
                         </div>
                     </div>
-                    <p class="mt-4" style="margin-left: 20px">
-                        <button id="companyinfo">
-                            See Jobs
-                        </button>
-                </div>
-                    <button style="margin-bottom: 10px; margin-left :46%; height:40px; width:40px; border-radius: 50%; background-color: white" >   
+                    <button id="seeJobs" data-toggle="modal" data-target="#JobPost">
+                        See Jobs
                     </button>
+                    <div style="margin-left: 23%;">
+                        <a style="border-radius: 50%; border: 0px; background-color: white;" href="#">
+                            <img src="~/media/up.svg" style="height: 50px; width: 50px; " />
+                        </a>
+                    </div>
+                    <div style="margin-left: 13%; margin-top: -7%;">
+                        <a style="border-radius: 50%; border: 0px; background-color: white; outline: none" href="#">
+                            <img src="~/media/down.svg" style="height: 50px; width: 50px;" />
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </div>
-       
     </section>
-    
-        @*<div id="leftArrow">
-            <button id="LButton">
-                <img src="~/media/arroww left.svg" height=60 width=60 />
-            </button>
-        </div>
-        <div id="rightArrow">
-            <button id="RButton">
-                <img src="~/media/arrowww.svg" height=60 width=60 />
-            </button>
-        </div>*@
 </body>
 </html>
 
 <!-- Modal -->
-<!--<div id="cvDetail" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="exampleModalScrollableTitle"
+<div id="JobPost" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="exampleModalScrollableTitle"
      aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document" style="overflow-y: initial">-->
-
-        <!-- Modal content-->
-        <!--<div class="modal-content">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document" style="overflow-y: initial">
+<!-- Modal content-->
+<div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Company Profile</h4>
+                <h1 class="modal-title">Available Jobs</h1>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body" style="height: 60vh; overflow-y: auto;">
-                Tiki là một hệ sinh thái thương mại tất cả trong một, gồm các công ty thành viên như:
-
-                - Công ty cổ phần Ti Ki ("TiKi") là đơn vị thiết lập, tổ chức sàn thương mại điện tử www.tiki.vn để các Nhà bán hàng thể tiến hành một phần hoặc toàn bộ quy trình mua bán hàng hóa, dịch vụ trên sàn thương mại điện tử.
-                - Công ty TNHH Tikinow Smart Logistics ("TNSL") là đơn vị cung cấp các dịch vụ logistics đầu-cuối, dịch vụ vận chuyển, dịch vụ bưu chính cho Sàn thương mại điện tử www.tiki.vn
-                - Công ty TNHH MTV Thương mại Ti Ki ("Tiki Trading") là đơn vị bán hàng hóa, dịch vụ trên sàn thương mại điện tử
-                - Đơn vị bán lẻ Tiki Trading và Sàn Giao dịch cung cấp 10 triệu sản phẩm từ 26 ngành hàng phục vụ hàng triệu khách hàng trên toàn quốc.
-
-                Với phương châm hoạt động “Tất cả vì Khách Hàng”, Tiki luôn không ngừng nỗ lực nâng cao chất lượng dịch vụ và sản phẩm, từ đó mang đến trải nghiệm mua sắm trọn vẹn cho Khách Hàng Việt Nam với dịch vụ giao hàng nhanh trong 2 tiếng và ngày hôm sau TikiNOW lần đầu tiên tại Đông Nam Á, cùng cam kết cung cấp hàng chính hãng với chính sách hoàn tiền 111% nếu phát hiện hàng giả, hàng nhái.
-
-                Thành lập từ tháng 3/2010, Tiki.vn hiện đang là trang thương mại điện tử lọt top 2 tại Việt Nam và top 6 tại khu vực Đông Nam Á.
-
-                Tiki lọt Top 1 nơi làm việc tốt nhất Việt Nam trong ngành Internet/E-commerce 2018 (Anphabe bình chọn), Top 50 nơi làm việc tốt nhất châu Á 2019 (HR Asia bình chọn).
+               Full Stack asp.net
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -111,4 +122,4 @@
         </div>
 
     </div>
-</div>-->
+</div>

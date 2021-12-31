@@ -25,7 +25,7 @@
     color: #000000;
 }
 
-#companyinfo {
+#seeJobs {
     background-color: white;
     color: #325EEA;
     padding: 12px 25px;
@@ -34,10 +34,11 @@
     display: inline-block;
     border-color: #325EEA;
     border-radius: 10px;
-    margin-left: 550px;
+    margin-left: 81%;
+    outline: none;
 }
 
-    #companyinfo:hover {
+    #seeJobs:hover {
         background-color: #325EEA;
         color: white;
         border-color: #325EEA;
@@ -139,34 +140,30 @@
 /* width */
 ::-webkit-scrollbar {
     width: 7px;
+    overflow: auto;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    /*box-shadow: inset 0 0 5px grey;*/
     border-radius: 10px;
-    background-color: #EAEAEA;
-/*    visibility: hidden;
-*/    overflow: auto;
+    background-color: #EAEAEA; 
+    visibility: hidden;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #bfbfbf;
     border-radius: 10px;
-    /*visibility: hidden;*/
-    overflow: auto;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #bfbfbf;
-    border-radius: 10px;
-    /*visibility: visible;*/
 }
 
 .vl {
-    border-left: 5px solid black;   
-    height: 30vh;
+    border-left: 2px solid black;   
+    height: 44vh;
     margin-right: 400px;
-    display:block;
-    margin-bottom: -30vh;
+    display: block;
+    margin-bottom: -42vh;
+}
+
+#more{
+    display: none;
 }
