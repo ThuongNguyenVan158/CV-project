@@ -14,62 +14,60 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <div class="row flex mb-3">
-        <button style="width:15vh; height: 80vh; border:none; background-color: transparent;">
-            <img src="~/media/arroww left.svg" />
-        </button>
-        <div class="col-md-3 p-0 col-12 bg-light d-flex overflow-hidden " style="height: 80vh;">
-            <div class="card p-0   w-100 h-100 text-light   border-0 ">
-                <img class="card-img h-100 w-100"
-                     src="https://images.unsplash.com/photo-1550757750-4ce187a65014?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                     alt="Card image">
-                <div class="card-img-overlay p-1 p-md-3">
-                    <div class="position-relative  w-100  h-100 d-flex">
-                        <div class="container-fluid align-self-end  mt-5 mb-2">
-                            <div class="row">
-                                <div class="col-md-6 col-7">
-                                    <div class=" pt-0 d-inline-block">
+    <section class="view-company-content">
+        <div class="container-fluid m-0 ">
+            <div class="row d-md-flex-row  overflow-hidden">
+                <div class="col-md-4 p-0 col-12 bg-light d-flex overflow-hidden " style="height: 80vh;">
+                    <div class="card p-0   w-100 h-100 text-light   border-0 ">
+                        <img class="card-img h-100 w-100"
+                             src="https://images.unsplash.com/photo-1550757750-4ce187a65014?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                             alt="Card image">
+                        <div class="card-img-overlay p-1 p-md-3">
+                            <div class="position-relative  w-100  h-100 d-flex">
+                                <div class="container-fluid align-self-end  mt-5 mb-2">
+                                    <div class="row">
+                                        <div class="col-md-6 col-7">
+                                            <div class=" pt-0 d-inline-block">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-7  pt-5 pt-md-1  bg-transparent">
-            <h1 id="companyName">TIKI.vn</h1>
-            <div class="container-fluid d-flex align-items-center" style="height:35vh">
+                <div class="col-md-8  pt-5 pt-md-1  bg-transparent">
+                    <h1 id="companyName">TIKI.vn</h1>
+                    <div class="container-fluid d-flex align-items-center h-50">
 
-                <div class="row justify-content-md-center">
-                    <span class="vl"></span>
-                    <div class="col-md-12">
-                        <p id="companyDetail" style="height: 30vh; overflow-y: scroll;">
-                            Industry: E-Commerce <br /> <br />
-                            Công ty cổ phần Ti Ki ("TiKi") là đơn vị thiết lập, tổ chức sàn thương mại điện tử www.tiki.vn để các Nhà bán hàng thể tiến hành một phần hoặc toàn bộ quy trình mua bán hàng hóa, dịch vụ trên sàn thương mại điện tử.<br /> <br />
-                            Vị trí tuyển dụng: <br />
-                            - Front-end <br />
-                            - Back-end <br />
-                            - Full stack <br /> <br />
-                            Highlights: <br />
-                            - Top 50 Companies
+                        <div class="row justify-content-md-center">
+                            <span class="vl"></span>
+                            <div class="col-md-12">
+                                <p id="companyDetail" style="height: 30vh; overflow-y: scroll;">
+                                    Industry: E-Commerce <br /> <br />
+                                    Công ty cổ phần Ti Ki ("TiKi") là đơn vị thiết lập, tổ chức sàn thương mại điện tử www.tiki.vn để các Nhà bán hàng thể tiến hành một phần hoặc toàn bộ quy trình mua bán hàng hóa, dịch vụ trên sàn thương mại điện tử.<br /> <br />
+                                    Vị trí tuyển dụng: <br />
+                                    - Front-end <br />
+                                    - Back-end <br />
+                                    - Full stack <br /> <br />
+                                    Highlights: <br />
+                                    - Top 50 Companies
+                            </div>
+                        </div>
                     </div>
+                    <p class="mt-4" style="margin-left: 20px">
+                        <button id="companyinfo">
+                            See Jobs
+                        </button>
                 </div>
+                    <button style="margin-bottom: 10px; margin-left :46%; height:40px; width:40px; border-radius: 50%; background-color: white" >   
+                    </button>
             </div>
-            @*<p class="mt-4" style="margin-left: 10px"></p>  cái này để làm gì á*@
-            <button id="companyinfo">
-                See Jobs
-            </button>
         </div>
-        @*<button style="margin-bottom: 10px; margin-left :46%; height:40px; width:40px; border-radius: 50%; background-color: white">
-            </button>*@
-        <button style="width:15vh; height: 80vh; border:none ; background-color: transparent;">
-            <img src="~/media/arrowww.svg" />
-        </button>
-    </div>
-
-
-    @*<div id="leftArrow">
+       
+    </section>
+    
+        @*<div id="leftArrow">
             <button id="LButton">
                 <img src="~/media/arroww left.svg" height=60 width=60 />
             </button>
@@ -86,8 +84,9 @@
 <!--<div id="cvDetail" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="exampleModalScrollableTitle"
      aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document" style="overflow-y: initial">-->
-<!-- Modal content-->
-<!--<div class="modal-content">
+
+        <!-- Modal content-->
+        <!--<div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Company Profile</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
