@@ -2,7 +2,7 @@
     overflow: hidden;
 }
 
-#matching {
+/*#matching {
     margin-left: 70%;
     font-size: 20px;
     color: #000000;
@@ -24,7 +24,7 @@
     margin-left: 0.5%;
     font-size: 20px;
     color: #000000;
-}
+}*/
 
 #seeJobs {
     background-color: white;
@@ -46,10 +46,10 @@
     }
 
 #companyName {
-    font-size: 120px;
+    font-size: 80px;
     font-weight: bold;
-    padding-left: 12px;
-    padding-top: 40px;
+    padding-left: 9%;
+    padding-top: 6%;
 }
 
 #companyDetail {
@@ -203,4 +203,8 @@
     border-width: 1px;
     border-radius: 15px;
     border-color: #CACACA
+}
+
+#Header {
+    font-weight: bold;
 }
