@@ -1,6 +1,7 @@
-﻿body{
+﻿body {
     overflow: hidden;
 }
+
 #matching {
     margin-left: 70%;
     font-size: 20px;
@@ -43,18 +44,21 @@
         color: white;
         border-color: #325EEA;
     }
-#companyName{
+
+#companyName {
     font-size: 120px;
     font-weight: bold;
     padding-left: 12px;
     padding-top: 40px;
 }
-#companyDetail{
+
+#companyDetail {
     text-align: justify;
     padding-left: 180px;
     padding-right: 15px;
     padding-bottom: 10px;
 }
+
 #next {
     background-color: #325EEA;
     color: #FFFFFF;
@@ -67,7 +71,7 @@
     margin-left: 50%;
 }
 
-.modal-body{
+.modal-body {
     text-align: justify;
 }
 /*#rightArrow {
@@ -116,9 +120,10 @@
     background-color: transparent;
     border: 0;
 }
-    #RButton:hover {
-        background-color: #EAEAEA;
-    }
+
+#RButton:hover {
+    background-color: #EAEAEA;
+}
 
 #RButton {
     overflow: hidden;
@@ -132,9 +137,10 @@
     background-color: transparent;
     border: 0;
 }
-    #LButton:hover {
-        background-color: #EAEAEA;
-    }
+
+#LButton:hover {
+    background-color: #EAEAEA;
+}
 
 
 /* width */
@@ -146,8 +152,8 @@
 /* Track */
 ::-webkit-scrollbar-track {
     border-radius: 10px;
-    background-color: #EAEAEA; 
-    visibility: hidden;
+    background-color: #EAEAEA;
+    /*visibility: hidden;*/
 }
 
 /* Handle */
@@ -157,13 +163,20 @@
 }
 
 .vl {
-    border-left: 2px solid black;   
+    border-left: 2px solid black;
     height: 44vh;
     margin-right: 400px;
     display: block;
     margin-bottom: -42vh;
 }
 
-#more{
+#more {
     display: none;
+}
+
+.modal-lg {
+    width: 90%;
+    max-width: 1100px;
+    height: 90%;
+    max-height: 1100px;
 }
