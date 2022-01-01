@@ -147,7 +147,7 @@
 ::-webkit-scrollbar-track {
     border-radius: 10px;
     background-color: #EAEAEA; 
-    visibility: hidden;
+    /*visibility: hidden;*/
 }
 
 /* Handle */
