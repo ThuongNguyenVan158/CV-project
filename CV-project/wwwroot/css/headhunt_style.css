@@ -1,0 +1,50 @@
+﻿main {
+    display: grid;
+    width: 1200px;
+    height: 480px;
+    grid-template: repeat(12, 1fr) / repeat(12, 1fr);
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    /*justify-items: center;*/
+}
+
+.contact {
+    grid-area: 2 / 5 / span 1 / span 3;
+}
+
+    .contact h1 {
+        font-size: 45px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+.slogan {
+    grid-area: 4 / 3 / span 1 / span 10;
+}
+
+    .slogan h3 {
+        font-size: 22px;
+    }
+
+    .slogan h4 {
+        font-size: 22px;
+        padding-left: 90px;
+    }
+
+.contact-name {
+    grid-area: 6 / 3 / span 2 / span 2;
+}
+
+.contact-info {
+    grid-area: 9 / 3 / span 2 / span 2;
+}
+
+.message {
+    grid-area: 6 / 7 / span 4 / span 3;
+    padding-top: 37px;
+}
+
+.send-button {
+    grid-area: 12 / 9 / span 1 / span 1;
+}
