@@ -46,12 +46,16 @@ namespace CV_project.Controllers
         {
             return View();
         }
-
+        [HttpGet("/CreateJob")]
         public IActionResult CreateJob()
+        {
+            return View(new JobViewModel());
+        }
+        [HttpPost("/CreateJob")]
+        public IActionResult CreateJob(JobViewModel jobVM)  
         {
             return View();
         }
-
         public IActionResult Index()
         {
             return View();

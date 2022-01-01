@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "CreateJob";
 }
-
+@model JobViewModel
 <!DOCTYPE html>
 <!-- saved from url=(0042)http://thetheme.io/thejobs/resume-add.html -->
 <html lang="en">
@@ -36,23 +36,24 @@
                     </div>
 
                     <div class="col-xs-12 col-sm-12 mt-5 w-100">
-                        <h6>Name</h6>
-                        <div class="form-group w-100">
-                            <input type="text" class="form-control input-lg" placeholder="Name">
-                        </div>
+                        <form asp-controller="Company" asp-action="CreateJob" method="post">
+                            <h6>Name</h6>
+                            <div class="form-group w-100">
+                                <input type="text" class="form-control input-lg" placeholder="Name" name="jobVM.Name">
+                            </div>
 
-                        <h6>Position</h6>
-                        <div class="form-group w-100">
-                            <input type="text" class="form-control input-lg" placeholder="Position">
-                        </div>
+                            <h6>Position</h6>
+                            <div class="form-group w-100">
+                                <input type="text" class="form-control input-lg" placeholder="Position" name="jobVM.Position">
+                            </div>
 
-                        <h6>Information</h6>
-                        <div class="form-group w-100">
-                            <textarea class="form-control" rows="3" placeholder="Short description about the job"></textarea>
-                        </div>
+                            <h6>Information</h6>
+                            <div class="form-group w-100">
+                                <textarea class="form-control" rows="3" placeholder="Short description about the job" name="jobVM.Information"></textarea>
+                            </div>
 
-                        <button id="createCVBtnStyle" type="button" class="btn btn-primary mt-3 w-100 submit px-3">Create job</button>
-
+                            <button id="createCVBtnStyle" type="submit" class="btn btn-primary mt-3 w-100 submit px-3">Create job</button>
+                        </form>
                     </div>
                 </div>
 

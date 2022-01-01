@@ -1,6 +1,6 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "ViewCV";
-    //Layout = null;
 }
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"
@@ -8,23 +8,36 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet" id="bootstrap-css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"
+      id="bootstrap-css" />
 <link rel="stylesheet" href="/css/viewcv_style.css">
+<link rel="stylesheet" href="/css/layout-style.css"> <!-- check -->
+<link rel="stylesheet" href="/css/site.css"> <!-- check -->
+<script>
+    function myFunction() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
 
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "See more ▼";
+            moreText.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "See less ▲";
+            moreText.style.display = "inline";
+        }
+    }
+</script>
 <!DOCTYPE html>
 <html>
 <body>
-    <div class="header">
-        <a id="matching" href="#">Profile Matching</a>
-        <a id="headhunt" href="#">Headhunt</a>
-        <a id="event" href="#">Event</a>
-    </div>
-    <h1 id="logo">WEEN</h1>
-    <section class="">
+    <section class="view-company-content">
         <div class="container-fluid m-0 ">
             <div class="row d-md-flex-row  overflow-hidden">
-                <div class="col-md-4 p-0 col-12 bg-light d-flex overflow-hidden ">
-                    <div class="card pl-5 w-100 h-100 text-light   border-0 ">
+                <div class="col-md-4 p-0 col-12 bg-light d-flex overflow-hidden " style="height: 91vh;">
+                    <div class="card p-0   w-100 h-100 text-light   border-0 ">
                         <img class="card-img h-100 w-100"
                              src="https://images.unsplash.com/photo-1550757750-4ce187a65014?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
                              alt="Card image">
@@ -42,89 +55,75 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-8  pt-5 pt-md-1 pb-5 overflow-hidden bg-light">
-                    <div class="container-fluid p-md-5 d-flex align-items-center h-100">
+                <div class="col-md-8  pt-5 pt-md-1  bg-transparent">
+                    <h1 id="CVID">#123456789</h1>
+                    <div class="container-fluid d-flex align-items-center h-50">
                         <div class="row justify-content-md-center">
+                            <span class="vl"></span>
+                            <div class="col-md-12">
+                                <p id="CVDetail" style="height: 30vh; overflow-y: auto;">
+                                    <span id="Header">Major: </span>
+                                    <span id="Major"> Công Nghệ Thông Tin</span>
+                                    <span> <br /></span>
+                                    <span id="CareerObjectives">Web Developer</span>
+                                    <span id="Header">Trường: </span>
+                                    <span id="University"> BKHCM</span>
+                                    <span id="BriefIntroduction">
+                                        <span> Just some text after some text and in between some more text <br /></span>
+                                        <span> I'm next to the last line of text <br /></span>
+                                        <span> I'm the last line of text</span>
+                                        <span> Just some text after some text and in between some more text <br /></span>
+                                        69 stacks<span id="dots"><br /></span>
+                                    </span>
+                                    <span id="more">
+                                        <!--more là award theo như db -->
+                                        420 Languages <br />
+                                        <span> Just some text after some text and in between some more text <br /></span>
+                                        <span> I'm next to the last line of text <br /></span>
+                                        <span> I'm the last line of text</span>
+                                        <span> Just some text after some text and in between some more text <br /></span>
+                                        <span> I'm next to the last line of text <br /></span>
+                                        <span> I'm the last line of text <br /></span>
+                                    </span>
+                                    <button onclick="myFunction()" id="myBtn" style="border-color: white; border:0; color: #325EEA; background-color: white; padding:0px; outline: none;">See more ▼</button>
+                                    <span> <br /><br /></span>
+                                    <span>test text</span>
 
-                            <div class="col-md-8">
-
-                                <h3 class="small">JOHN DOE / CV</h3>
-
-                                <h1 class="  mb-5 pt-md-2 pt-sm-4">Web App &amp; UI Designer </h1>
-                                <p>
-                                    Highly adaptable, versatile and analytical Computer Science undergraduate student with solid Maths
-                                    background.<br>
-                                    Experienced in programming languages such as SQL, Python, C++, C#, PHP as evidenced by maintaining
-                                    near perfect mark in
-                                    programming assignments during studies at Edith
-                                    Cowan University (ECU), current role as a coding workshop tutor at Edith Cowan University as well as
-                                    multiple machine learning projects participated.<br>
-                                    Aiming to work hard with integrity and apply my knowledge, project execution skills to achieve
-                                    personal as well as organizational goals.<br><br>
-                                    Education<br>
-                                    Degree: Computer Science - Software Engineering<br>
-                                    02/2020 - 12/2022<br>
-                                    Edith Cowan University, Western Australia<br>
-                                </p>
-                                <p class="mt-md-5 mt-5 mb-5">
-                                    <button id="cv" data-toggle="modal" data-target="#cvDetail">
-                                        See My Portfolio
-                                    </button>
-                                </p>
-                                <p class="mt-md-5 mt-5 mb-5">
-                                    <button id="next" data-toggle="modal" data-target="#">
-                                        Next
-                                    </button>
-                                </p>
                             </div>
                         </div>
+                    </div>
+                    <button id="seeJobs" data-toggle="modal" data-target="#JobPost">
+                        See Jobs
+                    </button>
+                    <div style="margin-left: 23%; margin-top: 2.5%;">
+                        <a style="border-radius: 50%; border: 0px; background-color: white;" href="#">
+                            <img src="~/media/up.svg" style="height: 50px; width: 50px; " />
+                        </a>
+                    </div>
+                    <div style="margin-left: 13%; margin-top: -7%;">
+                        <a style="border-radius: 50%; border: 0px; background-color: white; outline: none" href="#">
+                            <img src="~/media/down.svg" style="height: 50px; width: 50px;" />
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 </body>
 </html>
 
 <!-- Modal -->
-<div id="cvDetail" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="exampleModalScrollableTitle"
+<div id="JobPost" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="exampleModalScrollableTitle"
      aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document" style="overflow-y: initial">
-
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">CV Details</h4>
+                <h1 class="modal-title">Available Jobs</h1>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body" style="height: 60vh; overflow-y: auto;">
-                Personal Profile<br>
-                Highly adaptable, versatile and analytical Computer Science undergraduate student with solid Maths
-                background.<br>
-                Experienced in programming languages such as SQL, Python, C++, C#, PHP as evidenced by maintaining
-                near perfect mark in
-                programming assignments during studies at Edith
-                Cowan University (ECU), current role as a coding workshop tutor at Edith Cowan University as well as
-                multiple machine learning projects participated.<br>
-                Aiming to work hard with integrity and apply my knowledge, project execution skills to achieve
-                personal as well as organizational goals.<br><br>
-                Education<br>
-                Degree: Computer Science - Software Engineering<br>
-                02/2020 - 12/2022<br>
-                Edith Cowan University, Western Australia<br>
-                Major: Math<br>
-                NGUYEN THI MINH KHAI Highschool For the Gifted, Vietnam 08/2016 - 06/2019<br><br>
-                Awards<br>
-                2021, Top 100 Student, Edith Cowan University.<br>
-                2020, Top 100 Student, Edith Cowan University.<br>
-                2017, Third prize in science subject competition, Soc Trang city Education Department.<br>
-                2016, Third prize in science subject competition, Soc Trang city Education Department.<br>
-                2015, Third prize in Vietnam National English competition, Vietnam Education Department<br><br>
-                Skills Summary<br>
-                Technical Skills:<br>
-                Strong programming skills acquired through extensive exposure to programming languages such as SQL,
-                Python, C++, Java, C#, PHP.
+                Full Stack asp.net
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -133,3 +132,5 @@
 
     </div>
 </div>
+
+

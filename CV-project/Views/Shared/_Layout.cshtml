@@ -31,7 +31,9 @@
                             infoSession = JsonConvert.DeserializeObject<InfoViewModel>(Accessor.HttpContext.Session.GetString("Usersession"));
 
                         if (infoSession.AccountType == 2)
-                        {<a href="@Url.Action("ViewCV", "Company")">PROFILE MATCHING</a>
+                        {   
+                            <a href="@Url.Action("CreateJob", "Company")">CREATE JOB</a>
+                            <a href="@Url.Action("ViewCV", "Company")">PROFILE MATCHING</a>
                         }
                         else
                         {<a href="@Url.Action("ViewCompany", "Home")">PROFILE MATCHING</a>
