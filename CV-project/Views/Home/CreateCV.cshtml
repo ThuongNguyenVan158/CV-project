@@ -25,11 +25,11 @@
 </head>
 
 <body>
-    <section >
+    <section>
         <div class="row d-md-flex-row overflow-hidden">
-            <div class="col-md-8 pt-1 pt-md-1 pb-0 bg-light" style="height: 75vh; overflow-y: scroll;">
+            <div class="col-md-8 pt-1 pt-md-1 pb-0 bg-light" style="height: 80vh; overflow-y: scroll;">
                 <div class="container page-name mt-1">
-                    <h1 class="text-center" style="font-size: 30px;">Welcome! Let's create your profile!</h1>
+                    <h1 class="text-center mt-4" style="font-size: 35px;"><b>Welcome! Let's create your profile!</b></h1>
                 </div>
 
                 @*<div class="container mt-7">
@@ -45,67 +45,82 @@
                         </div>
                     </div>*@
 
-            <div class="col-xs-12 col-sm-11 mt-5 w-100">
-                <form asp-controller="Home" asp-action="CreateCV" method="post">
-                    <h6>Name</h6>
-                    <div class="form-group">
-                        <input type="text" class="form-control input-lg" placeholder="Name" name="profile.Name">
-                    </div>
+                <div class="col-xs-12 col-sm-11 mt-5 w-100">
+                    <form asp-controller="Home" asp-action="CreateCV" method="post">
+                        <h6>Name</h6>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg" placeholder="Name" name="profile.Name">
+                        </div>
 
-                    <h6>Brief Introduction</h6>
-                    <div class="form-group">
-                        <textarea maxlength="1000" class="form-control" rows="3" placeholder="Short description about you" name="profile.BiefIntroduction"></textarea>
-                    </div>
+                        <h6>Date of birth</h6>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg" placeholder="Date of birth" name="profile.DOB">
+                        </div>
 
-                    <h6>Career objecives</h6>
-                    <div class="form-group">
-                        <textarea maxlength="1000" class="form-control" rows="3" placeholder="Career objectives" name="profile.Careerobjecives"></textarea>
-                    </div>
+                        <h6>Major</h6>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg" placeholder="Major" name="profile.Major">
+                        </div>
 
-                    <h6>Contact Information</h6>
-                    <div class="form-group">
-                        <input type="text" class="form-control input-lg" placeholder="Contact Information" name="profile.ContactInformation">
-                    </div>
+                        <h6>University</h6>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg" placeholder="University" name="profile.University">
+                        </div>
 
-                    <h6>Awards</h6>
-                    <div class="form-group">
-                        <textarea maxlength="1000" class="form-control" rows="3" placeholder="Awards" name="profile.Awards"></textarea>
-                    </div>
+                        <h6>Skills</h6>
+                        <div class="form-group">
+                            <textarea maxlength="1000" class="form-control" rows="3" placeholder="Skills" name="profile.Skills"></textarea>
+                        </div>
 
-                    <h6>Certificates</h6>
-                    <div class="form-group">
-                        <textarea maxlength="1000" class="form-control" rows="3" placeholder="Certificates" name="profile.Certificates"></textarea>
-                    </div>
+                        <h6>Brief Introduction</h6>
+                        <div class="form-group">
+                            <textarea maxlength="1000" class="form-control" rows="3" placeholder="Brief Introduction" name="profile.BriefIntroduction"></textarea>
+                        </div>
 
-                    <h6>Work Experiences</h6>
-                    <div class="form-group">
-                        <textarea class="form-control" rows="3" placeholder="Experiences" name="profile.WorkExperiences"></textarea>
-                    </div>
+                        <h6>Career Objectives</h6>
+                        <div class="form-group">
+                            <textarea maxlength="1000" class="form-control" rows="3" placeholder="Career Objectives" name="profile.CareerObjectives"></textarea>
+                        </div>
 
-                    <h6>Activities</h6>
-                    <div class="form-group">
-                        <textarea maxlength="1000" class="form-control" rows="3" placeholder="Activities" name="profile.Activities"></textarea>
-                    </div>
+                        <h6>Awards</h6>
+                        <div class="form-group">
+                            <textarea maxlength="1000" class="form-control" rows="3" placeholder="Awards" name="profile.Awards"></textarea>
+                        </div>
 
-                    <hr class="hr-lg">
+                        <h6>Certificates</h6>
+                        <div class="form-group">
+                            <textarea maxlength="1000" class="form-control" rows="3" placeholder="Certificates" name="profile.Certificates"></textarea>
+                        </div>
+
+                        <h6>Work Experiences</h6>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3" placeholder="Experiences" name="profile.WorkExperiences"></textarea>
+                        </div>
+
+                        <h6>Activities</h6>
+                        <div class="form-group">
+                            <textarea maxlength="1000" class="form-control" rows="3" placeholder="Activities" name="profile.Activities"></textarea>
+                        </div>
+
+                        <hr class="hr-lg">
 
 
-                    @*<div class="btn-group w-100" role="group" aria-label="Basic example">
-                <div id="createCVBtnStyle" class="upload-button mr-3 w-50 h-25">
-                    <button id="createCVBtnStyle" class="btn btn-block btn-primary submit px-3">Upload your CV</button>
-                    <input type="file" hidden>
+                        @*<div class="btn-group w-100" role="group" aria-label="Basic example">
+                                <div id="createCVBtnStyle" class="upload-button mr-3 w-50 h-25">
+                                    <button id="createCVBtnStyle" class="btn btn-block btn-primary submit px-3">Upload your CV</button>
+                                    <input type="file" hidden>
+                                </div>
+                                <div id="createCVBtnStyle" class="upload-button w-50 h-25">
+                                    <button id="createCVBtnStyle" class="btn btn-block btn-primary submit px-3">Upload your Contact information</button>
+                                    <input type="file" hidden>
+                                </div>
+                            </div>*@
+                        <button id="createCVBtnStyle" type="submit" class="btn btn-primary mt-3 w-100 submit">Create My Profile</button>
+                    </form>
                 </div>
-                <div id="createCVBtnStyle" class="upload-button w-50 h-25">
-                    <button id="createCVBtnStyle" class="btn btn-block btn-primary submit px-3">Upload your Contact information</button>
-                    <input type="file" hidden>
-                </div>
-            </div>*@
-                    <button id="createCVBtnStyle" type="submit" class="btn btn-primary mt-3 w-100 submit">Create My Profile</button>
-                </form>
-            </div>
             </div>
 
-            <div class="col-md-4 col-12 bg-light overflow-hidden" style="height: 75vh">
+            <div class="col-md-4 col-12 bg-light overflow-hidden" style="height: 80vh">
                 <div class="card p-0   w-100 h-100 text-light  ">
                     <img class="card-img h-100 w-100"
                          src="https://images.unsplash.com/photo-1550757750-4ce187a65014?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
