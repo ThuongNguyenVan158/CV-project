@@ -38,10 +38,14 @@ namespace CV_project.Controllers
         {
             return View();
         }
-        public IActionResult ViewJob()
+        public IActionResult ViewCV()
         {
             return View();
         }
+        //public IActionResult ViewJob()
+        //{
+        //    return View();
+        //}
 
         [HttpGet("/SignIn")]
         public IActionResult SignIn()
