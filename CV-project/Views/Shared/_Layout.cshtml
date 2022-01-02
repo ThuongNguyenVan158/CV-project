@@ -46,7 +46,7 @@
                         <div class="mynav_dropdown-content">
                             <a href="#">View Profile</a>
                             <a href="#">Edit Profile</a>
-                            <a href="@Url.Action("CreateJob", "Company")">Create Job</a>
+                            @*<a href="@Url.Action("CreateJob", "Company")">Create Job</a>*@
                             @{
                                 if (Accessor.HttpContext.Session.GetString("Usersession") != null)
                                 {<a href="@Url.Action("Logout", "Home")">Log out</a>
