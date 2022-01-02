@@ -209,3 +209,16 @@
 #Header {
     font-weight: bold;
 }
+
+#job-title {
+    margin-left: 5px;
+    margin-right: 17px;
+    text-align: left;
+}
+
+#job-paragraph{
+    margin-left: 5px;
+    margin-right: 17px;
+    font-size: 13px;
+    text-align: left;
+}

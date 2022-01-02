@@ -38,7 +38,7 @@
                 <div class="col-md-4 p-0 col-12 bg-light d-flex overflow-hidden " style="height: 90vh;">
                     <div class="card p-0   w-100 h-100 text-light   border-0 ">
                         <img class="card-img h-100 w-100"
-                             src="https://images.unsplash.com/photo-1550757750-4ce187a65014?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                             src="~/media/sea.jfif"
                              alt="Card image">
                         <div class="card-img-overlay p-1 p-md-3">
                             <div class="position-relative  w-100  h-100 d-flex">
@@ -83,9 +83,7 @@
                                             <span> I'm the last line of text <br /></span>
                                         </span>
                                         <button onclick="myFunction()" id="myBtn" style="border-color: white; border:0; color: #325EEA; background-color: white; padding:0px; outline: none;">See more ▼</button>
-                                        <span> <br /></span>
-                                        <span> Just some text after some text and in between some more text <br /></span>
-
+                                        <span> <br /><br /></span>
                                     </span>
                             </div>
                         </div>
@@ -137,7 +135,9 @@
 
                         <div class="col-xs-12 pr-4 pl-4">
                             <div class="row p-2 mt-2" id="job-item">
-                                <img class="col-md-2" src="https://laptrinhcanban.com/css/images/page/java-co-ban-cho-nguoi-moi-bat-dau.webp" width="90" height="70">
+                                <div class="col-md-2 mx-auto d-block mb-2">
+                                    <img src="~/media/java_icon.webp" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
                                 <div class="col-md-7" style="width:60vw">
                                     <div class="row">
                                         <h5 style="font-size: 20px"><b>JAVA Developer Specialist Generalist</b></h5>
@@ -145,7 +145,7 @@
                                         <div class="mr-1 ml-1">&bull;</div>
                                         <h6>District 4</h6>
                                         <div class="col-md-5 ml-3">
-                                            <img height="20" width="20" class="mr-1" src="https://www.freeiconspng.com/thumbs/eye-icon/eye-of-a-human-vector-icon--shapes-icons--icons-download-14.png">
+                                            <img height="20" width="20" class="mr-1" src="~/media/watch.png">
                                             420 views
                                         </div>
 
@@ -169,7 +169,7 @@
 
                                 <div class="col-md-3">
                                     <button type="button" class="col pr-0 mb-3 align-self-end" style="background-color: transparent; border: none">
-                                        <img height="30" width="30" class="rounded float-right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Bookmark_icon.svg/1024px-Bookmark_icon.svg.png" />
+                                        <img height="30" width="30" class="rounded float-right" src="~/media/bookmark.png" />
                                     </button>
                                     <h5 style="font-size: 15px; text-align: right">Game Studio</h5>
                                     <h5 style="font-size: 13px; text-align: right"><b>$69.000</b>/Year</h5>
@@ -177,7 +177,9 @@
                             </div>
 
                             <div class="row p-2 mt-2" id="job-item">
-                                <img class="col-md-2" src="https://laptrinhcanban.com/css/images/page/java-co-ban-cho-nguoi-moi-bat-dau.webp" width="90" height="70">
+                                <div class="col-md-2 mx-auto d-block mb-2">
+                                    <img src="~/media/java_icon.webp" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
                                 <div class="col-md-7" style="width:60vw">
                                     <div class="row">
                                         <h5 style="font-size: 20px"><b>JAVA Developer Specialist Generalist</b></h5>
@@ -185,7 +187,7 @@
                                         <div class="mr-1 ml-1">&bull;</div>
                                         <h6>District 4</h6>
                                         <div class="col-md-5 ml-3">
-                                            <img height="20" width="20" class="mr-1" src="https://www.freeiconspng.com/thumbs/eye-icon/eye-of-a-human-vector-icon--shapes-icons--icons-download-14.png">
+                                            <img height="20" width="20" class="mr-1" src="~/media/watch.png">
                                             420 views
                                         </div>
 
@@ -209,7 +211,7 @@
 
                                 <div class="col-md-3">
                                     <button type="button" class="col pr-0 mb-3 align-self-end" style="background-color: transparent; border: none">
-                                        <img height="30" width="30" class="rounded float-right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Bookmark_icon.svg/1024px-Bookmark_icon.svg.png" />
+                                        <img height="30" width="30" class="rounded float-right" src="~/media/bookmark.png" />
                                     </button>
                                     <h5 style="font-size: 15px; text-align: right">Game Studio</h5>
                                     <h5 style="font-size: 13px; text-align: right"><b>$69.000</b>/Year</h5>
@@ -218,37 +220,42 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4" style="overflow-y: scroll; height: 80vh">
-                        <img class="rounded mx-auto d-block" src="https://laptrinhcanban.com/css/images/page/java-co-ban-cho-nguoi-moi-bat-dau.webp" width="90" height="90">
-                        <h5 style="text-align: center"><b>JAVA Developer Specialist Generalist</b></h5>
-                        <div class="text-center">
-                            <p>
-                                <h6>Ho Chi Minh . District 4</h6>
+                    <div class="col-md-4" style="height: 80vh">
+                        <div style="overflow-y: scroll; height: 72vh">
+                            <div class="col-md-4 mx-auto d-block mb-2">
+                                <img src="~/media/java_icon.webp" style="width: 100%; height: 100%; object-fit: contain;">
+                            </div>
+                            <h5 style="text-align: center"><b>JAVA Developer Specialist Generalist</b></h5>
+                            <div class="text-center">
+                                <p>
+                                    <h6>Ho Chi Minh . District 4</h6>
+                                </p>
+                            </div>
+                            <hr />
+                            <h5 id="job-title"><b>Qualification:</b></h5>
+                            <p id="job-paragraph">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue eros a arcu gravida, eget egestas elit commodo. Nam non rhoncus velit, at efficitur sapien. Proin bibendum maximus ante pulvinar condimentum. In condimentum urna egestas felis sodales, iaculis laoreet nunc pharetra. Fusce venenatis, massa sit amet consectetur pellentesque, massa nunc semper lorem, ut posuere erat velit sed orci. Donec convallis accumsan velit quis ornare. Curabitur porta eros a odio luctus, at suscipit eros commodo. Fusce sed mauris erat. Sed imperdiet eros diam, et eleifend libero pretium sit amet. Phasellus vulputate placerat ante non fermentum. Duis quis elit ultricies, placerat tellus vitae, cursus tortor.
+                            </p>
+                            <hr />
+                            <h5 id="job-title"><b>Skills & Requirements:</b></h5>
+                            <p id="job-paragraph">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue eros a arcu gravida, eget egestas elit commodo. Nam non rhoncus velit, at efficitur sapien. Proin bibendum maximus ante pulvinar condimentum. In condimentum urna egestas felis sodales, iaculis laoreet nunc pharetra. Fusce venenatis, massa sit amet consectetur pellentesque, massa nunc semper lorem, ut posuere erat velit sed orci. Donec convallis accumsan velit quis ornare. Curabitur porta eros a odio luctus, at suscipit eros commodo. Fusce sed mauris erat. Sed imperdiet eros diam, et eleifend libero pretium sit amet. Phasellus vulputate placerat ante non fermentum. Duis quis elit ultricies, placerat tellus vitae, cursus tortor.
+                            </p>
+                            <hr />
+                            <h5 id="job-title"><b>About the job:</b></h5>
+                            <p id="job-paragraph">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue eros a arcu gravida, eget egestas elit commodo. Nam non rhoncus velit, at efficitur sapien. Proin bibendum maximus ante pulvinar condimentum. In condimentum urna egestas felis sodales, iaculis laoreet nunc pharetra. Fusce venenatis, massa sit amet consectetur pellentesque, massa nunc semper lorem, ut posuere erat velit sed orci. Donec convallis accumsan velit quis ornare. Curabitur porta eros a odio luctus, at suscipit eros commodo. Fusce sed mauris erat. Sed imperdiet eros diam, et eleifend libero pretium sit amet. Phasellus vulputate placerat ante non fermentum. Duis quis elit ultricies, placerat tellus vitae, cursus tortor.
                             </p>
                         </div>
-                        <hr />
-                        <h5><b>Qualification:</b></h5>
-                        <p class="text-break lh-sm">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue eros a arcu gravida, eget egestas elit commodo. Nam non rhoncus velit, at efficitur sapien. Proin bibendum maximus ante pulvinar condimentum. In condimentum urna egestas felis sodales, iaculis laoreet nunc pharetra. Fusce venenatis, massa sit amet consectetur pellentesque, massa nunc semper lorem, ut posuere erat velit sed orci. Donec convallis accumsan velit quis ornare. Curabitur porta eros a odio luctus, at suscipit eros commodo. Fusce sed mauris erat. Sed imperdiet eros diam, et eleifend libero pretium sit amet. Phasellus vulputate placerat ante non fermentum. Duis quis elit ultricies, placerat tellus vitae, cursus tortor.
-                        </p>
-                        <hr />
-                        <h5><b>Skills & Requirements:</b></h5>
-                        <p class="text-break">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue eros a arcu gravida, eget egestas elit commodo. Nam non rhoncus velit, at efficitur sapien. Proin bibendum maximus ante pulvinar condimentum. In condimentum urna egestas felis sodales, iaculis laoreet nunc pharetra. Fusce venenatis, massa sit amet consectetur pellentesque, massa nunc semper lorem, ut posuere erat velit sed orci. Donec convallis accumsan velit quis ornare. Curabitur porta eros a odio luctus, at suscipit eros commodo. Fusce sed mauris erat. Sed imperdiet eros diam, et eleifend libero pretium sit amet. Phasellus vulputate placerat ante non fermentum. Duis quis elit ultricies, placerat tellus vitae, cursus tortor.
-                        </p>
-                        <hr />
-                        <h5><b>About the job:</b></h5>
-                        <p class="text-break">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue eros a arcu gravida, eget egestas elit commodo. Nam non rhoncus velit, at efficitur sapien. Proin bibendum maximus ante pulvinar condimentum. In condimentum urna egestas felis sodales, iaculis laoreet nunc pharetra. Fusce venenatis, massa sit amet consectetur pellentesque, massa nunc semper lorem, ut posuere erat velit sed orci. Donec convallis accumsan velit quis ornare. Curabitur porta eros a odio luctus, at suscipit eros commodo. Fusce sed mauris erat. Sed imperdiet eros diam, et eleifend libero pretium sit amet. Phasellus vulputate placerat ante non fermentum. Duis quis elit ultricies, placerat tellus vitae, cursus tortor.
-                        </p>
 
-                        <div class="row mb-2">
-                            <button style="border-radius: 10px" class="col-8 btn mr-2 ml-3" id="apply-now">Apply now</button>
-                            <button style="border-radius: 10px" type="button" class="col-3 btn btn-primary">
-                                <img width="20" height="20" src="https://cdn.iconscout.com/icon/free/png-256/list-message-2367725-1976875.png" />
+                        <div class="row mt-2 mb-2">
+                            <button style="border-radius: 10px" class="col-7 btn mr-3 ml-3" id="apply-now">Apply now</button>
+                            <button style="border-radius: 10px" type="button" disabled class="col-3 btn btn-primary">
+                                <img width="20" height="20" src="~/media/message.webp" />
                             </button>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
