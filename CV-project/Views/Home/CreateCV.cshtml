@@ -35,59 +35,59 @@
 
                 <div class="col-xs-12 col-sm-11 mt-5 w-100">
                     <form asp-controller="Home" asp-action="CreateCV" method="post">
-                        <h6>Name</h6>
+                        <h6><strong>Name</strong></h6>
                         <div class="form-group">
-                            <input type="text" class="form-control input-lg" placeholder="Name" name="profile.Name">
+                            <input type="text" class="form-control input-lg" name="profile.Name" maxlength="50">
                         </div>
 
-                        <h6>Date of birth</h6>
+                        <h6><strong>Date of birth</strong></h6>
                         <div class="form-group">
-                            <input type="text" class="form-control input-lg" placeholder="Date of birth" name="profile.DOB">
+                            <input type="text" class="form-control input-lg" name="profile.DOB" maxlength="10">
                         </div>
 
-                        <h6>Major</h6>
+                        <h6><strong>Major</strong></h6>
                         <div class="form-group">
-                            <input type="text" class="form-control input-lg" placeholder="Major" name="profile.Major">
+                            <input type="text" class="form-control input-lg" name="profile.Major" maxlength="100">
                         </div>
 
-                        <h6>University</h6>
+                        <h6><strong>University</strong></h6>
                         <div class="form-group">
-                            <input type="text" class="form-control input-lg" placeholder="University" name="profile.University">
+                            <input type="text" class="form-control input-lg" name="profile.University" maxlength="200">
                         </div>
 
-                        <h6>Skills</h6>
+                        <h6><strong>Skills</strong></h6>
                         <div class="form-group">
-                            <textarea maxlength="1000" class="form-control" rows="3" placeholder="Skills" name="profile.Skills"></textarea>
+                            <textarea maxlength="1000" class="form-control" rows="3" name="profile.Skills"></textarea>
                         </div>
 
-                        <h6>Brief Introduction</h6>
+                        <h6><strong>Brief Introduction</strong></h6>
                         <div class="form-group">
-                            <textarea maxlength="1000" class="form-control" rows="3" placeholder="Brief Introduction" name="profile.BriefIntroduction"></textarea>
+                            <textarea maxlength="1000" class="form-control" rows="3" name="profile.BriefIntroduction"></textarea>
                         </div>
 
-                        <h6>Career Objectives</h6>
+                        <h6><strong>Career Objectives</strong></h6>
                         <div class="form-group">
-                            <textarea maxlength="1000" class="form-control" rows="3" placeholder="Career Objectives" name="profile.CareerObjectives"></textarea>
+                            <textarea maxlength="1000" class="form-control" rows="3" name="profile.CareerObjectives"></textarea>
                         </div>
 
-                        <h6>Awards</h6>
+                        <h6><strong>Awards</strong></h6>
                         <div class="form-group">
-                            <textarea maxlength="1000" class="form-control" rows="3" placeholder="Awards" name="profile.Awards"></textarea>
+                            <textarea maxlength="1000" class="form-control" rows="3" name="profile.Awards"></textarea>
                         </div>
 
-                        <h6>Certificates</h6>
+                        <h6><strong>Certificates</strong></h6>
                         <div class="form-group">
-                            <textarea maxlength="1000" class="form-control" rows="3" placeholder="Certificates" name="profile.Certificates"></textarea>
+                            <textarea maxlength="1000" class="form-control" rows="3" name="profile.Certificates"></textarea>
                         </div>
 
-                        <h6>Work Experiences</h6>
+                        <h6><strong>Work Experiences</strong></h6>
                         <div class="form-group">
-                            <textarea class="form-control" rows="3" placeholder="Experiences" name="profile.WorkExperiences"></textarea>
+                            <textarea maxlength="10" class="form-control" rows="3" name="profile.WorkExperiences"></textarea>
                         </div>
 
-                        <h6>Activities</h6>
+                        <h6><strong>Activities</strong></h6>
                         <div class="form-group">
-                            <textarea maxlength="1000" class="form-control" rows="3" placeholder="Activities" name="profile.Activities"></textarea>
+                            <textarea maxlength="1000" class="form-control" rows="3" name="profile.Activities"></textarea>
                         </div>
 
                         <hr class="hr-lg">

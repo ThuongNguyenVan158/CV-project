@@ -34,24 +34,24 @@
             <div class="row d-md-flex-row overflow-hidden">
                 <div class="col-md-8 pt-10 pt-md-1 pb-5 bg-light" style="height: 75vh; overflow-y: scroll;">
                     <div class="container page-name">
-                        <h1 class="text-center" style="font-size: 30px;">Create a job</h1>
+                        <h1 class="text-center" style="font-size: 30px;"><strong>Create a job</strong></h1>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 mt-5 w-100">
                         <form asp-controller="Company" asp-action="CreateJob" method="post">
-                            <h6>Name</h6>
+                            <h6><strong>Name</strong></h6>
                             <div class="form-group w-100">
-                                <input type="text" class="form-control input-lg" placeholder="Name" name="jobVM.Name">
+                                <input maxlength="50" type="text" class="form-control input-lg" name="jobVM.Name">
                             </div>
 
-                            <h6>Position</h6>
+                            <h6><strong>Position</strong></h6>
                             <div class="form-group w-100">
-                                <input type="text" class="form-control input-lg" placeholder="Position" name="jobVM.Position">
+                                <input maxlength="2000" type="text" class="form-control input-lg" name="jobVM.Position">
                             </div>
 
-                            <h6>Information</h6>
+                            <h6><strong>Information</strong></h6>
                             <div class="form-group w-100">
-                                <textarea class="form-control" rows="3" placeholder="Short description about the job" name="jobVM.Information"></textarea>
+                                <textarea maxlength="2000" class="form-control" rows="3" name="jobVM.Information"></textarea>
                             </div>
 
                             <button id="createCVBtnStyle" type="submit" class="btn btn-primary mt-3 w-100 submit px-3">Create job</button>
