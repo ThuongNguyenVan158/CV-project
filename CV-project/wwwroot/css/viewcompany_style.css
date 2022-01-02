@@ -29,7 +29,7 @@
 #seeJobs {
     background-color: white;
     color: #325EEA;
-    padding: 12px 25px;
+    padding: 6px 26px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -43,6 +43,7 @@
         background-color: #325EEA;
         color: white;
         border-color: #325EEA;
+        outline: none;
     }
 
 #companyName {
