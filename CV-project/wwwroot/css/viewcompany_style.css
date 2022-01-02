@@ -2,7 +2,7 @@
     overflow: hidden;
 }
 
-#matching {
+/*#matching {
     margin-left: 70%;
     font-size: 20px;
     color: #000000;
@@ -24,12 +24,12 @@
     margin-left: 0.5%;
     font-size: 20px;
     color: #000000;
-}
+}*/
 
 #seeJobs {
     background-color: white;
     color: #325EEA;
-    padding: 12px 25px;
+    padding: 6px 26px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -43,13 +43,14 @@
         background-color: #325EEA;
         color: white;
         border-color: #325EEA;
+        outline: none;
     }
 
 #companyName {
-    font-size: 120px;
+    font-size: 80px;
     font-weight: bold;
-    padding-left: 12px;
-    padding-top: 40px;
+    padding-left: 9%;
+    padding-top: 6%;
 }
 
 #companyDetail {
@@ -179,4 +180,45 @@
     max-width: 1100px;
     height: 90%;
     max-height: 1100px;
+}
+
+#apply-now {
+    background-color: white;
+    color: #325EEA;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-color: #325EEA;
+    border-radius: 10px;
+    outline: none;
+}
+
+    #apply-now:hover {
+        background-color: #325EEA;
+        color: white;
+        border-color: #325EEA;
+    }
+
+#job-item {
+    border: solid;
+    border-width: 1px;
+    border-radius: 15px;
+    border-color: #CACACA
+}
+
+#Header {
+    font-weight: bold;
+}
+
+#job-title {
+    margin-left: 5px;
+    margin-right: 17px;
+    text-align: left;
+}
+
+#job-paragraph{
+    margin-left: 5px;
+    margin-right: 17px;
+    font-size: 13px;
+    text-align: left;
 }

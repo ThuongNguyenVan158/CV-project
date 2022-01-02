@@ -45,6 +45,10 @@ namespace CV_project.Controllers
         {
             return View();
         }
+        public IActionResult ViewEvent()
+        {
+            return View();
+        }
 
         [HttpGet("/SignIn")]
         public IActionResult SignIn()

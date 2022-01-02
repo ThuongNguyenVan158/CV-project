@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5,
 }
 
 .ftco-section {
-    padding: 7em 0;
+    padding: 6em 0; 
 }
 
 .ftco-no-pt {
@@ -60,10 +60,12 @@ h1, h2, h3, h4, h5,
     width: 100%;
     overflow: hidden;
     background: #fff;
-    border-radius: 5px;
+    /*border-radius: 5px;
     -webkit-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
     -moz-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
-    box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
+    box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);*/
+/*    border-width: 5px;
+    border-color: black;*/
 }
 
 .img, .login-wrap {
