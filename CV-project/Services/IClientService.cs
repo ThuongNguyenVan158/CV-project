@@ -1,4 +1,5 @@
-﻿using CV_project.Models;
+﻿using CV_project.Data.Entities;
+using CV_project.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,6 @@ namespace CV_project.Services
         Task<bool> RegisterAsync(RegisterViewModel registerViewModel);
         Task<InfoViewModel> GetInfoSession(LoginViewModel loginViewModel);
         Task<bool> CreateProfile(Guid applicantId,ProfileViewModel profile);
+        Task<List<CompanyViewModel>> PagingCompany();
     }
 }

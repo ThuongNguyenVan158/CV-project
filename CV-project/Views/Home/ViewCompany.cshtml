@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<CompanyViewModel>
+@{
     ViewData["Title"] = "ViewCompany";
 }
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -62,7 +63,7 @@
                         <div class="row justify-content-md-center">
                             <span class="vl"></span>
                             <div class="col-md-12">
-                                <p id="companyDetail" style="height: 30vh; overflow-y: auto;">
+                                @*<p id="companyDetail" style="height: 30vh; overflow-y: auto;">
                                     <span>Industry: E-Commerce <br /> <br /></span>
                                     <span id="Description">
                                         Công ty cổ phần Ti Ki ("TiKi") là đơn vị thiết lập, tổ chức sàn thương mại điện tử www.tiki.vn để các Nhà bán hàng thể tiến hành một phần<span id="dots"><br /></span>
@@ -73,12 +74,23 @@
                                             <span> I'm the last line of text</span>
                                             <span> Just some text after some text and in between some more text <br /></span>
                                             <span> I'm next to the last line of text <br /></span>
-                                            <span> I'm the last line of text <br/></span>
+                                            <span> I'm the last line of text <br /></span>
                                         </span>
                                         <button onclick="myFunction()" id="myBtn" style="border-color: white; border:0; color: #325EEA; background-color: white; padding:0px; outline: none;">See more ▼</button>
                                         <span> <br /><br /></span>
                                         <span>test text</span>
-                                    </span>
+                                    </span>*@
+                                @foreach(var company in Model)
+                                    {
+                                    <p>@company.Name</p>
+                                    <p>@company.Description</p>
+                                    <p>@company.Address</p>
+                                    <p>@company.NoEmployee</p>
+                                    }
+                            </div>
+                            @*Pageging index*@
+                            <div>
+                                
                             </div>
                         </div>
                     </div>
@@ -215,7 +227,7 @@
                         <div>
                             <button type="button" class="col-md-9 btn btn-primary">Apply now</button>
                             <button type="button" class="col-md-2 btn btn-primary">
-                                <img width="20" height="20" src="https://cdn.iconscout.com/icon/free/png-256/list-message-2367725-1976875.png"/>
+                                <img width="20" height="20" src="https://cdn.iconscout.com/icon/free/png-256/list-message-2367725-1976875.png" />
                             </button>
                         </div>
                     </div>

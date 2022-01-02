@@ -40,7 +40,7 @@ namespace CV_project.Controllers
             {
                 return View(registerViewModel);
             }
-            return RedirectToAction("SignIn");
+            return RedirectToAction("SignIn","Home");
         }
         public IActionResult CreateCompanyProfile()
         {

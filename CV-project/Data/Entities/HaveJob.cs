@@ -21,6 +21,7 @@ namespace CV_project.Data.Entities
         public string Description { get; set; }
         [StringLength(50)]
         public string Status { get; set; }
+        public DateTime Deadline { get; set; }
 
         [ForeignKey(nameof(CompanyId))]
         [InverseProperty("HaveJobs")]

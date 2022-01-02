@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using PagedList;
+using PagedList.Mvc;
 
 namespace CV_project.Controllers
 {
@@ -34,9 +36,10 @@ namespace CV_project.Controllers
         {
             return View();
         }
-        public IActionResult ViewCompany()
+        public async Task<IActionResult> ViewCompany()
         {
-            return View();
+            var model = await _clientService.PagingCompany();
+            return View(model);
         }
         public IActionResult ViewJob()
         {

@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PagedList;
+using PagedList.Mvc;
 
 namespace CV_project.Services
 {
@@ -129,6 +131,20 @@ namespace CV_project.Services
             cvProfile.FullName = profile.Name;
             _context.SaveChanges();
             return true;
+        }
+        public async Task<List<CompanyViewModel>> PagingCompany()
+        {
+            var listCompany = await (from c in _context.Companies
+                                     orderby c.Name
+                                     select new CompanyViewModel
+                                     {
+                                         Name = c.Name,
+                                         Description = c.Description,
+                                         Address = c.Address,
+                                         NoEmployee = c.NoEmployee,
+                                         CompanyId = c.CompanyId
+                                     }).ToListAsync();
+            return listCompany;
         }
     }
 }

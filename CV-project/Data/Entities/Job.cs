@@ -22,6 +22,8 @@ namespace CV_project.Data.Entities
         [Required]
         [StringLength(50)]
         public string Name { get; set; }
+        [StringLength(100)]
+        public string Vacancy { get; set; }
 
         [InverseProperty(nameof(HaveJob.Job))]
         public virtual ICollection<HaveJob> HaveJobs { get; set; }
