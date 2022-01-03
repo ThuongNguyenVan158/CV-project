@@ -63,7 +63,7 @@
 #next {
     background-color: #325EEA;
     color: #FFFFFF;
-    padding: 20px 25px;
+    padding: 20px 25px; 
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -221,4 +221,8 @@
     margin-right: 17px;
     font-size: 13px;
     text-align: left;
+}
+
+.btn btn-default {
+    outline: none;
 }
