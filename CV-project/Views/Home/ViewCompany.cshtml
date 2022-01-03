@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="/css/viewcompany_style.css">
 <link rel="stylesheet" href="/css/layout-style.css"> <!-- check -->
 <link rel="stylesheet" href="/css/site.css"> <!-- check -->
-<script>
+<script type="text/javascript">
     function myFunction() {
         var dots = document.getElementById("dots");
         var moreText = document.getElementById("more");
@@ -30,18 +30,24 @@
             moreText.style.display = "inline";
         }
     }
+    imgs = new Array();
+    imgs[0] = "https://images.unsplash.com/photo-1550757750-4ce187a65014?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80";
+    imgs[1] = "https://images.unsplash.com/photo-1561948955-570b270e7c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=601&q=80";
+    function getRandomImage() {
+        var rnd = Math.floor(Math.random() * imgs.length);
+        document.getElementById('randImage').src = imgs[rnd];
+    }
 </script>
 <!DOCTYPE html>
 <html>
-<body>
+<body onload="getRandomImage()">
     <section class="view-company-content">
         <div class="container-fluid m-0 ">
             <div class="row d-md-flex-row  overflow-hidden">
-                <div class="col-md-4 p-0 col-12 bg-light d-flex overflow-hidden " style="height: 91vh; overflow-y: hidden;">
+                <div class="col-md-4 p-0 col-12 bg-light d-flex overflow-hidden " style="height: 89vh; overflow-y: hidden;">
                     <div class="card p-0   w-100 h-100 text-light   border-0 ">
-                        <img class="card-img h-100 w-100"
-                             src="https://images.unsplash.com/photo-1550757750-4ce187a65014?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                             alt="Card image">
+                        <img id="randImage" class="card-img h-100 w-100"
+                        alt="Card image">
                         <div class="card-img-overlay p-1 p-md-3">
                             <div class="position-relative  w-100  h-100 d-flex">
                                 <div class="container-fluid align-self-end  mt-5 mb-2">
@@ -79,7 +85,7 @@
                                         <span> i'm the last line of text</span>
                                         <span> just some text after some text and in between some more text <br /></span>
                                         <span> i'm next to the last line of text <br /></span>
-                                        <span> i'm the last line of text</span>
+                                        <span> i'm the last line of text <br/></span>
                                     </span>                                   
                                     <button onclick="myFunction()" id="myBtn" style="border-color: white; border:0; color: #325eea; background-color: white; padding:0px; outline: none;">See more ▼</button>
                                     <span> <br /><br /></span>
@@ -105,7 +111,7 @@
                             <img src="~/media/up.svg" style="height: 50px; width: 50px;" />
                         </a>
                     </div>
-                    <div style="margin-left: 12%; margin-top: -8.5%;">
+                    <div style="margin-left: 11%; margin-top: -8.7%;">
                         <a asp-action="ViewCompany" asp-controller="Home" asp-route-pageNumber="@(Model.company.PageIndex+1)" class="btn btn-default @nextDisable" style="border-radius: 50%; border: 0px; background-color: white; outline: none">
                             <img src="~/media/down.svg" style="height: 50px; width: 50px;" />
                         </a>
