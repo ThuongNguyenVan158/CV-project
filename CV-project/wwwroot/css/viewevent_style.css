@@ -20,9 +20,8 @@
     max-width: 1140px;
 }*/
 main {
-    max-width: 175%;
-    width: 95vw;
-    margin-left: -6vw;
+    margin-left: -2%;
+    margin-right: -2%;
 }
 
 #job-item {
