@@ -100,6 +100,13 @@ namespace CV_project.Controllers
             await _clientService.CreateProfile(infoSession.accountId, profile);
             return View();
         }
+
+        [HttpGet("/UpdateCV")]
+        public IActionResult UpdateCV()
+        {
+            return View(new ProfileViewModel());
+        }
+
         [HttpGet("/SignUp")]
         public IActionResult SignUp()
         {

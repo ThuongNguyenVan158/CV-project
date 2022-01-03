@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "CreateCV";
+    ViewData["Title"] = "UpdateCV";
 }
 
 <!DOCTYPE html>
@@ -30,11 +30,11 @@
         <div class="row d-md-flex-row overflow-hidden">
             <div class="col-md-8 pt-1 pt-md-1 pb-0 bg-light" style="height: 84vh; overflow-y: scroll;">
                 <div class="container page-name mt-1">
-                    <h1 class="text-center mt-4" style="font-size: 35px;"><b>Welcome! Let's create your profile!</b></h1>
+                    <h1 class="text-center mt-4" style="font-size: 35px;"><b>Update your CV</b></h1>
                 </div>
 
                 <div class="col-xs-12 col-sm-11 mt-5 w-100">
-                    <form asp-controller="Home" asp-action="CreateCV" method="post">
+                    <form asp-controller="Home" asp-action="UpdateCV" method="post">
                         <h6><strong>Name</strong></h6>
                         <div class="form-group">
                             <input type="text" class="form-control input-lg" name="profile.Name" maxlength="50">
@@ -99,7 +99,7 @@
                                 <input class="btn btn-secondary" type="submit">
                             </form>
                         </div>
-                        <button id="createCVBtnStyle" type="submit" class="btn btn-primary mt-3 w-100 submit">Create My Profile</button>
+                        <button id="createCVBtnStyle" type="submit" class="btn btn-primary mt-3 w-100 submit">Update CV</button>
                     </form>
                 </div>
             </div>
