@@ -48,6 +48,10 @@ namespace CV_project.Controllers
         {
             return View();
         }
+        public IActionResult UpdateCompanyProfile()
+        {
+            return View();
+        }
         [HttpGet("/CreateJob")]
         public IActionResult CreateJob()
         {
