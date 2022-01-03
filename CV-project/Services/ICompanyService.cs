@@ -9,5 +9,6 @@ namespace CV_project.Services
     public interface ICompanyService
     {
         Task<bool> RegisterAsync(RegisterCompanyViewModel registerViewModel);
+        Task<bool> CreateJobAsync(Guid idCompany,JobViewModel jobVM);
     }
 }

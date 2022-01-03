@@ -75,5 +75,31 @@ namespace CV_project.Services
         //    _context.SaveChanges();
         //    return true;
         //}
+        public async Task<bool> CreateJobAsync(Guid idCompany, JobViewModel jobVM)
+        {
+            Guid idJob = System.Guid.NewGuid();
+            var newJob = new Job()
+            {
+                JobId = idJob,
+                Name = jobVM.Name,
+                Vacancy = jobVM.Position,
+            };
+            _context.Jobs.Add(newJob);
+            var idCom = (from c in _context.Companies
+                      join d in _context.Accounts on c.AccountId equals d.AccountId
+                      where d.AccountId == idCompany
+                      select c.CompanyId
+                      ).FirstOrDefault();
+            var relationHasJob = new HaveJob()
+            {
+                CompanyId = idCom,
+                JobId = idJob,
+                Description = jobVM.Information,
+                Deadline = jobVM.Deadline
+            };
+            _context.HaveJobs.Add(relationHasJob);
+            await _context.SaveChangesAsync();
+            return true;
+        }
     }
 }

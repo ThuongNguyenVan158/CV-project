@@ -14,5 +14,6 @@ namespace CV_project.Services
         Task<InfoViewModel> GetInfoSession(LoginViewModel loginViewModel);
         Task<bool> CreateProfile(Guid applicantId,ProfileViewModel profile);
         Task<List<CompanyViewModel>> PagingCompany();
+        Task<List<JobPerCompany>> GetJobPerCompany(Guid idCompany);
     }
 }

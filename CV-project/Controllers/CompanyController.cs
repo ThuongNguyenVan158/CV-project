@@ -1,7 +1,9 @@
 ﻿using CV_project.Models;
 using CV_project.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,8 +54,14 @@ namespace CV_project.Controllers
             return View(new JobViewModel());
         }
         [HttpPost("/CreateJob")]
-        public IActionResult CreateJob(JobViewModel jobVM)  
+        public async Task<IActionResult> CreateJob(JobViewModel jobVM)  
         {
+            if (HttpContext.Session.GetString("Usersession") == null)
+                return RedirectToAction("SignIn");
+
+            InfoViewModel infoSession = new InfoViewModel();
+            infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
+            await _companyService.CreateJobAsync(infoSession.accountId, jobVM);
             return View();
         }
         public IActionResult Index()

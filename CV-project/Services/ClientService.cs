@@ -146,5 +146,22 @@ namespace CV_project.Services
                                      }).ToListAsync();
             return listCompany;
         }
+        public async Task<List<JobPerCompany>> GetJobPerCompany(Guid idCompany)
+        {
+            var listJob = new List<JobPerCompany>();
+            listJob = await (from c in _context.HaveJobs
+                             join d in _context.Jobs on c.JobId equals d.JobId
+                             where c.CompanyId == idCompany
+                             select new JobPerCompany
+                             {
+                                 Name = d.Name,
+                                 Vacancy = d.Vacancy,
+                                 Description = c.Description,
+                                 Deadline = c.Deadline,
+                                 Status = c.Status
+
+                             }).ToListAsync();
+            return listJob;
+        }
     }
 }

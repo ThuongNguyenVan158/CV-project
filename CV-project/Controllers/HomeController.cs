@@ -11,6 +11,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using PagedList;
 using PagedList.Mvc;
+using CV_project.Data;
+using CV_project.Data.Entities;
 
 namespace CV_project.Controllers
 {
@@ -18,13 +20,13 @@ namespace CV_project.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IClientService _clientService;
-        private readonly ICompanyService _companyService;
+        private readonly REOrganizationContext _context;
 
-        public HomeController(ILogger<HomeController> logger, IClientService clientService, ICompanyService companyService)
+        public HomeController(ILogger<HomeController> logger, IClientService clientService, REOrganizationContext context)
         {
             _logger = logger;
             _clientService = clientService;
-            _companyService = companyService;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -36,9 +38,12 @@ namespace CV_project.Controllers
         {
             return View();
         }
-        public async Task<IActionResult> ViewCompany()
+        public async Task<IActionResult> ViewCompany(int pageNumber=1)
         {
-            var model = await _clientService.PagingCompany();
+            var model = new PagingJobCompany();
+            model.listJobPerCompany = new List<JobPerCompany>();
+            model.company = await PagingList<Company>.CreareAsync(_context.Companies, pageNumber, 1);
+            model.listJobPerCompany = await _clientService.GetJobPerCompany(model.company.FirstOrDefault().CompanyId);
             return View(model);
         }
         public IActionResult ViewJob()
@@ -92,7 +97,7 @@ namespace CV_project.Controllers
 
             InfoViewModel infoSession = new InfoViewModel();
             infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
-            var isSusccess = await _clientService.CreateProfile(infoSession.accountId, profile);
+            await _clientService.CreateProfile(infoSession.accountId, profile);
             return View();
         }
         [HttpGet("/SignUp")]

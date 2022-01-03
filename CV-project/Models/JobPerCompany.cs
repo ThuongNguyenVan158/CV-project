@@ -5,11 +5,12 @@ using System.Threading.Tasks;
 
 namespace CV_project.Models
 {
-    public class JobViewModel
+    public class JobPerCompany
     {
         public string Name { get; set; }
-        public string Position { get; set; }
-        public string Information { get; set; }
+        public string Vacancy { get; set; }
+        public string Description { get; set; }
         public DateTime Deadline { get; set; }
+        public string Status { get; set; }
     }
 }

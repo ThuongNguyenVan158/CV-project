@@ -1,4 +1,5 @@
-﻿@model List<CompanyViewModel>
+﻿@using CV_project.Data.Entities
+@model PagingJobCompany
 @{
     ViewData["Title"] = "ViewCompany";
 }
@@ -57,55 +58,58 @@
                 </div>
 
                 <div class="col-md-8  pt-5 pt-md-1  bg-transparent">
-                    <h1 id="companyName">TiKi.vn</h1>
-                    <div class="container-fluid d-flex align-items-center h-50">
+                    @foreach (var company in Model.company)
+                    {
+                        <h1 id="companyName">@company.Name</h1>
+                         <div class="container-fluid d-flex align-items-center h-50">
 
-                        <div class="row justify-content-md-center">
-                            <span class="vl"></span>
-                            <div class="col-md-12">
-                                @*<p id="companyDetail" style="height: 30vh; overflow-y: auto;">
-                                    <span>Industry: E-Commerce <br /> <br /></span>
-                                    <span id="Description">
-                                        Công ty cổ phần Ti Ki ("TiKi") là đơn vị thiết lập, tổ chức sàn thương mại điện tử www.tiki.vn để các Nhà bán hàng thể tiến hành một phần<span id="dots"><br /></span>
-                                        <span id="more">
-                                            hoặc toàn bộ quy trình mua bán hàng hóa, dịch vụ trên sàn thương mại điện tử.
-                                            <span> Just some text after some text and in between some more text <br /></span>
-                                            <span> I'm next to the last line of text <br /></span>
-                                            <span> I'm the last line of text</span>
-                                            <span> Just some text after some text and in between some more text <br /></span>
-                                            <span> I'm next to the last line of text <br /></span>
-                                            <span> I'm the last line of text <br /></span>
-                                        </span>
-                                        <button onclick="myFunction()" id="myBtn" style="border-color: white; border:0; color: #325EEA; background-color: white; padding:0px; outline: none;">See more ▼</button>
-                                        <span> <br /><br /></span>
-                                        <span>test text</span>
-                                    </span>*@
-                                @foreach(var company in Model)
-                                    {
-                                    <p>@company.Name</p>
-                                    <p>@company.Description</p>
-                                    <p>@company.Address</p>
-                                    <p>@company.NoEmployee</p>
-                                    }
-                            </div>
-                            @*Pageging index*@
-                            <div>
-                                
+                            <div class="row justify-content-md-center">
+                                <span class="vl"></span>
+                                <div class="col-md-12">
+                                <p id="companydetail" style="height: 30vh; overflow-y: auto;">
+                                <span>industry: e-commerce <br /> <br /></span>
+                                <span id="description">
+                                    công ty cổ phần ti ki ("tiki") là đơn vị thiết lập, tổ chức sàn thương mại điện tử www.tiki.vn để các nhà bán hàng thể tiến hành một phần<span id="dots"><br /></span>
+                                    <span id="more">
+                                        hoặc toàn bộ quy trình mua bán hàng hóa, dịch vụ trên sàn thương mại điện tử.
+                                        <span> just some text after some text and in between some more text <br /></span>
+                                        <span> i'm next to the last line of text <br /></span>
+                                        <span> i'm the last line of text</span>
+                                        <span> just some text after some text and in between some more text <br /></span>
+                                        <span> i'm next to the last line of text <br /></span>
+                                        <span> i'm the last line of text <br /></span>
+                                    </span>
+                                    <button onclick="myfunction()" id="mybtn" style="border-color: white; border:0; color: #325eea; background-color: white; padding:0px; outline: none;">see more ▼</button>
+                                    <span> <br /><br /></span>
+                                    <span>test text</span>
+                                </span>
                             </div>
                         </div>
+                        </div>
+                    }
+                    @*Pageging button attribute disable*@
+                    <div>
+                        @{
+                            var previousDisable = !Model.company.PreviousPage ? "disabled" : "";
+                            var nextDisable = !Model.company.NextPage ? "disabled" : "";
+                        }
                     </div>
                     <button id="seeJobs" data-toggle="modal" data-target="#JobPost">
                         See Jobs
                     </button>
-                    <div style="margin-left: 23%;">
-                        <a style="border-radius: 50%; border: 0px; background-color: white;" href="#">
-                            <img src="~/media/up.svg" style="height: 50px; width: 50px; " />
-                        </a>
-                    </div>
-                    <div style="margin-left: 13%; margin-top: -7%;">
-                        <a style="border-radius: 50%; border: 0px; background-color: white; outline: none" href="#">
-                            <img src="~/media/down.svg" style="height: 50px; width: 50px;" />
-                        </a>
+                    @*<div style="margin-left: 23%;">
+            <a style="border-radius: 50%; border: 0px; background-color: white;" href="#">
+                <img src="~/media/up.svg" style="height: 50px; width: 50px; " />
+            </a>
+        </div>
+        <div style="margin-left: 13%; margin-top: -7%;">
+            <a style="border-radius: 50%; border: 0px; background-color: white; outline: none" href="#">
+                <img src="~/media/down.svg" style="height: 50px; width: 50px;" />
+            </a>
+        </div>*@
+                    <div>
+                        <a asp-action="ViewCompany" asp-controller="Home" asp-route-pageNumber="@(Model.company.PageIndex-1)" class="btn btn-default @previousDisable">Previous</a>
+                        <a asp-action="ViewCompany" asp-controller="Home" asp-route-pageNumber="@(Model.company.PageIndex+1)" class="btn btn-default @nextDisable">Next</a>
                     </div>
                 </div>
             </div>
