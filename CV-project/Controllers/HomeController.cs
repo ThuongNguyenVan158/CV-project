@@ -132,10 +132,16 @@ namespace CV_project.Controllers
             HttpContext.Session.Remove("Usersession");
             return RedirectToAction("SignIn");
         }
+
         public IActionResult Headhunt()
         {
             return View();
         }
+        public IActionResult AppliedCV()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
