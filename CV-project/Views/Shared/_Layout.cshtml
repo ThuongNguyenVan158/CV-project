@@ -31,7 +31,7 @@
                             infoSession = JsonConvert.DeserializeObject<InfoViewModel>(Accessor.HttpContext.Session.GetString("Usersession"));
 
                         if (infoSession.AccountType == 2)
-                        {   
+                        {
                             <a href="@Url.Action("CreateJob", "Company")">CREATE JOB</a>
                             <a href="@Url.Action("ViewCV", "Company")">PROFILE MATCHING</a>
                         }
@@ -46,6 +46,11 @@
                         <div class="mynav_dropdown-content">
                             <a href="#">View Profile</a>
                             <a href="#">Edit Profile</a>
+
+                            @*New Here*@
+                            <a href="#">Applied CV</a>
+                            @*New Here*@
+
                             @*<a href="@Url.Action("CreateJob", "Company")">Create Job</a>*@
                             @{
                                 if (Accessor.HttpContext.Session.GetString("Usersession") != null)
