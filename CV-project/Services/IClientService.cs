@@ -12,8 +12,11 @@ namespace CV_project.Services
         Task<int> LoginAsync(LoginViewModel loginViewModel);
         Task<bool> RegisterAsync(RegisterViewModel registerViewModel);
         Task<InfoViewModel> GetInfoSession(LoginViewModel loginViewModel);
-        Task<bool> CreateProfile(Guid applicantId,ProfileViewModel profile);
         Task<List<CompanyViewModel>> PagingCompany();
         Task<List<JobPerCompany>> GetJobPerCompany(Guid idCompany);
+        Task<bool> CreateCV(Guid applicantId, CVViewModel cvVM);
+        Task<CVViewModel> GetCV(Guid applicantId);
+        Task<bool> CreateProfile(Guid applicantId, ProfileViewModel cvVM);
+        Task<ProfileViewModel> GetProfile(Guid applicantId);
     }
 }
