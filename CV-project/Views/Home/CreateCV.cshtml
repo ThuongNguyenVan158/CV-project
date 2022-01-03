@@ -17,13 +17,16 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="~/js/image-picker.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="/css/createcv_style.css">
     <link rel="stylesheet" href="/css/layout-style.css"> <!-- check -->
     <link rel="stylesheet" href="/css/site.css"> <!-- check -->
+    <link rel="stylesheet" href="/css/image-picker.css"> <!-- check -->
 </head>
+
 
 <body>
     <section>
@@ -32,8 +35,16 @@
                 <div class="container page-name mt-1">
                     <h1 class="text-center mt-4" style="font-size: 35px;"><b>Welcome! Let's create your profile!</b></h1>
                 </div>
+                <div class="mt-4 col-xs-12 col-sm-11">
+                    <select class="image-picker show-html">
+                        <option data-img-src="http://rvera.github.io/image-picker/img/01.png" data-img-class="first" data-img-alt="Page 1" value="1">  Page 1  </option>
+                        <option data-img-src="http://rvera.github.io/image-picker/img/09.png" data-img-alt="Page 2" value="2">  Page 2  </option>
+                        <option data-img-src="http://rvera.github.io/image-picker/img/10.png" data-img-alt="Page 3" value="3" data-img-class="last">  Page 3  </option>
+                    </select>
+                    <script>$("select").imagepicker()</script>
+                </div>
 
-                <div class="col-xs-12 col-sm-11 mt-5 w-100">
+                <div class="col-xs-12 col-sm-11 mt-3 w-100">
                     <form asp-controller="Home" asp-action="CreateCV" method="post">
                         <h6><strong>Name</strong></h6>
                         <div class="form-group">
