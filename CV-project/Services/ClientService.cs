@@ -94,6 +94,14 @@ namespace CV_project.Services
                                          AccountType = c.AccountType,
                                          FullName = d.FullName
                                      }).FirstOrDefaultAsync();
+                var birthdate = await (from c in _context.Accounts
+                                       join d in _context.Applicants on c.AccountId equals d.AccountId
+                                       where c.Username == loginViewModel.UserName && c.Password == loginViewModel.Password
+                                       select d.DoB
+                                       ).FirstOrDefaultAsync();
+                if (birthdate == null)
+                    infoSession.IscreateProfile = 0; //0 mean have no cv, 1 mean have one
+                else infoSession.IscreateProfile = 1;
                 }
             else if (account.AccountType == 2)
                 {
@@ -106,10 +114,18 @@ namespace CV_project.Services
                                          AccountType = c.AccountType,
                                          FullName = d.Name
                                      }).FirstOrDefaultAsync();
+                var desc = await (from c in _context.Accounts
+                                  join d in _context.Companies on c.AccountId equals d.AccountId
+                                  where c.Username == loginViewModel.UserName && c.Password == loginViewModel.Password
+                                  select d.Description
+                                  ).FirstOrDefaultAsync();
+                if (desc == null)
+                    infoSession.IscreateProfile = 0;
+                else infoSession.IscreateProfile = 1;
                 }
             return infoSession;
         }
-        public async Task<bool> CreateProfile(Guid applicantId,ProfileViewModel profile)
+        public async Task<bool> CreateCV(Guid applicantId, CVViewModel cvVM)
         {
             var id = (from c in _context.Applicants
                       join d in _context.Accounts on c.AccountId equals d.AccountId
@@ -120,15 +136,17 @@ namespace CV_project.Services
                                    where c.Cvid == id
                                    select c
                                    ).FirstOrDefaultAsync();
-            cvProfile.FullName = profile.Name;
-            cvProfile.BriefIntroduction = profile.BiefIntroduction;
-            cvProfile.CareerObjectives = profile.Careerobjecives;
-            //cvProfile.C = profile.ContactInformation;
-            cvProfile.Awards = profile.Awards;
-            cvProfile.Certificates = profile.Certificates;
-            cvProfile.WorkExperience = (short?)profile.WorkExperiences;
-            cvProfile.Activities = profile.Activities;
-            cvProfile.FullName = profile.Name;
+            cvProfile.FullName = cvVM.Name;
+            cvProfile.DoB = cvVM.DoB;
+            cvProfile.Major = cvVM.Major;
+            cvProfile.University = cvVM.University;
+            cvProfile.Skills = cvVM.Skills;
+            cvProfile.BriefIntroduction = cvVM.BiefIntroduction;
+            cvProfile.CareerObjectives = cvVM.Careerobjecives;
+            cvProfile.Awards = cvVM.Awards;
+            cvProfile.Certificates = cvVM.Certificates;
+            cvProfile.WorkExperience = (short?)cvVM.WorkExperiences;
+            cvProfile.Activities = cvVM.Activities;
             _context.SaveChanges();
             return true;
         }
@@ -162,6 +180,73 @@ namespace CV_project.Services
 
                              }).ToListAsync();
             return listJob;
+        }
+        public async Task<CVViewModel> GetCV(Guid applicantId)
+        {
+            var objCV = await (from c in _context.Applicants
+                               join d in _context.WebCvs on c.Cvid equals d.Cvid
+                               where c.AccountId == applicantId
+                               select new CVViewModel()
+                               {
+                                   Name = d.FullName,
+                                   DoB= (DateTime)d.DoB,
+                                   BiefIntroduction=d.BriefIntroduction,
+                                   Careerobjecives = d.CareerObjectives,
+                                   Certificates =d.Certificates,
+                                   Activities=d.Activities,
+                                   Awards=d.Awards,
+                                   Skills=d.Skills,
+                                   Major=d.Major,
+                                   University=d.University,
+                                   WorkExperiences= (int)d.WorkExperience
+                               }).FirstOrDefaultAsync();
+            return objCV;
+        }
+        public async Task<bool> CreateProfile(Guid applicantId, ProfileViewModel cvVM)
+        {
+            var profile = await(from c in _context.Applicants
+                      join d in _context.Accounts on c.AccountId equals d.AccountId
+                      where d.AccountId == applicantId
+                      select c
+                      ).FirstOrDefaultAsync();
+            profile.FullName = cvVM.Name;
+            profile.DoB = cvVM.DoB;
+            //profile.Major = cvVM.Major;
+            profile.University = cvVM.University;
+            //profile.Skills = cvVM.Skills;
+            profile.BriefIntroduction = cvVM.BiefIntroduction;
+            //profile.CareerObjectives = cvVM.Careerobjecives;
+            //profile.Awards = cvVM.Awards;
+            //profile.Certificates = cvVM.Certificates;
+            //profile.WorkExperiences = (short?)cvVM.WorkExperiences;
+            //profile.Activities = cvVM.Activities;
+            profile.Contact = cvVM.ContactInformation;
+            profile.EmailAddress = cvVM.Email;
+            _context.SaveChanges();
+            return true;
+        }
+        public async Task<ProfileViewModel> GetProfile(Guid applicantId)
+        {
+            var objCV = await (from c in _context.Applicants
+                               join d in _context.Accounts on c.AccountId equals d.AccountId
+                               where c.AccountId == applicantId
+                               select new ProfileViewModel()
+                               {
+                                   Name = c.FullName,
+                                   DoB = (DateTime)c.DoB,
+                                   BiefIntroduction = c.BriefIntroduction,
+                                   //Careerobjecives = d.CareerObjectives,
+                                   //Certificates = d.Certificates,
+                                   //Activities = d.Activities,
+                                   //Awards = d.Awards,
+                                   //Skills = d.Skills,
+                                   //Major = d.Major,
+                                   ContactInformation = c.Contact,
+                                   University = c.University,
+                                   Email = c.EmailAddress
+                                   //WorkExperiences = (int)d.WorkExperience
+                               }).FirstOrDefaultAsync();
+            return objCV;
         }
     }
 }

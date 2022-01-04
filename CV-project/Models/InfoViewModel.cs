@@ -10,5 +10,6 @@ namespace CV_project.Models
         public Guid accountId { get; set; }
         public string FullName { get; set; }
         public int AccountType { get; set; }
+        public int IscreateProfile { get; set; }
     }
 }

@@ -1,12 +1,12 @@
 ﻿
 @{
-    ViewData["Title"] = "UpdateCV";
+    ViewData["Title"] = "CreateProfile";
 }
-@model CVViewModel
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Sign Up</title>
+    <title>CreateProfile</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=yes">
 
@@ -30,74 +30,84 @@
         <div class="row d-md-flex-row overflow-hidden">
             <div class="col-md-8 pt-1 pt-md-1 pb-0 bg-light" style="height: 84vh; overflow-y: scroll;">
                 <div class="container page-name mt-1">
-                    <h1 class="text-center mt-4" style="font-size: 35px;"><b>Update your CV</b></h1>
+                    <h1 class="text-center mt-4" style="font-size: 35px;"><b>Welcome! Let's create your Profile!</b></h1>
                 </div>
 
                 <div class="col-xs-12 col-sm-11 mt-5 w-100">
-                    <form asp-controller="Home" asp-action="UpdateCV" method="post">
+                    <form asp-controller="Home" asp-action="CreateProfile" method="post">
                         <h6><strong>Name</strong></h6>
                         <div class="form-group">
-                            <input type="text" class="form-control input-lg" name="cvdata.Name" value="@Model.Name" maxlength="50">
+                            <input type="text" class="form-control input-lg" name="cvdata.Name" maxlength="50">
                         </div>
 
                         <h6><strong>Date of birth</strong></h6>
                         <div class="form-group">
-                            <input type="datetime" class="form-control input-lg" name="cvdata.DoB" value="@Model.DoB.ToString("dd/MM/yyyy")">
+                            <input type="date" class="form-control input-lg" name="cvdata.DoB" maxlength="10">
                         </div>
 
-                        <h6><strong>Major</strong></h6>
+                        @*<h6><strong>Major</strong></h6>
                         <div class="form-group">
-                            <input type="text" class="form-control input-lg" name="cvdata.Major" value="@Model.Major" maxlength="100">
-                        </div>
+                            <input type="text" class="form-control input-lg" name="cvdata.Major" maxlength="100">
+                        </div>*@
 
                         <h6><strong>University</strong></h6>
                         <div class="form-group">
-                            <input type="text" class="form-control input-lg" name="cvdata.University" value="@Model.University" maxlength="200">
+                            <input type="text" class="form-control input-lg" name="cvdata.University" maxlength="200">
                         </div>
 
-                        <h6><strong>Skills</strong></h6>
+                        @*<h6><strong>Skills</strong></h6>
                         <div class="form-group">
-                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Skills">@Model.Skills</textarea>
-                        </div>
+                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Skills"></textarea>
+                        </div>*@
 
                         <h6><strong>Brief Introduction</strong></h6>
                         <div class="form-group">
-                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.BiefIntroduction">@Model.BiefIntroduction</textarea>
+                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.BiefIntroduction"></textarea>
                         </div>
 
-                        <h6><strong>Career Objectives</strong></h6>
+                        @*<h6><strong>Career Objectives</strong></h6>
                         <div class="form-group">
-                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Careerobjecives" >@Model.Careerobjecives</textarea>
+                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Careerobjecives"></textarea>
                         </div>
 
                         <h6><strong>Awards</strong></h6>
                         <div class="form-group">
-                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Awards">@Model.Awards</textarea>
+                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Awards"></textarea>
                         </div>
 
                         <h6><strong>Certificates</strong></h6>
                         <div class="form-group">
-                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Certificates" >@Model.Certificates</textarea>
+                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Certificates"></textarea>
                         </div>
 
                         <h6><strong>Work Experiences</strong></h6>
                         <div class="form-group">
-                            <textarea maxlength="10" class="form-control" rows="3" name="cvdata.WorkExperiences" >@Model.WorkExperiences</textarea>
+                            <textarea maxlength="10" class="form-control" rows="3" name="cvdata.WorkExperiences"></textarea>
                         </div>
 
                         <h6><strong>Activities</strong></h6>
                         <div class="form-group">
-                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Activities" >@Model.Activities</textarea>
+                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Activities"></textarea>
+                        </div>*@
+                        <h6><strong>ContactInformation</strong></h6>
+                        <div class="form-group">
+                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.ContactInformation"></textarea>
+                        </div>
+                        <h6><strong>Email</strong></h6>
+                        <div class="form-group">
+                            <input maxlength="100" class="form-control" rows="3" name="cvdata.Email" type="email">
                         </div>
 
                         <hr class="hr-lg">
+
+
                         @*<div class="btn-group w-100" role="group" aria-label="Basic example">
-                            <form action="/action_page.php">
-                                <input class="btn btn-light mr-2" type="file" id="myFile" name="filename">
-                                <input class="btn btn-secondary" type="submit">
-                            </form>
-                        </div>*@
-                        <button id="createCVBtnStyle" type="submit" class="btn btn-primary mt-3 w-100 submit">Update CV</button>
+            <form action="/action_page.php">
+                <input class="btn btn-light mr-2" type="file" id="myFile" name="filename">
+                <input class="btn btn-secondary" type="submit">
+            </form>
+        </div>*@
+                        <button id="createCVBtnStyle" type="submit" class="btn btn-primary mt-3 w-100 submit">Create My Profile</button>
                     </form>
                 </div>
             </div>

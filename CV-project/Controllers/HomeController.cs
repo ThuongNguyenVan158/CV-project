@@ -77,34 +77,53 @@ namespace CV_project.Controllers
             if (accountType == 0)
                 return View(loginViewModel);
             if (accountType == 1)
-                return RedirectToAction("ViewCompany");
+                return RedirectToAction("ViewEvent");
             return RedirectToAction("ViewCV", "Company");
         }
         [HttpGet("/CreateCV")]
         public IActionResult CreateCV()
         {
+            if (HttpContext.Session.GetString("Usersession") == null)
+                return RedirectToAction("SignIn");
             return View(new ProfileViewModel());
         }
         [HttpPost("/CreateCV")]
-        public async Task<IActionResult> CreateCV(ProfileViewModel profile)
+        public IActionResult CreateCV(CVViewModel cvdata)
         {
             if (!ModelState.IsValid)
             {
-                return View(profile);
+                return View(cvdata);
             }
             if (HttpContext.Session.GetString("Usersession") == null)
                 return RedirectToAction("SignIn");
 
             InfoViewModel infoSession = new InfoViewModel();
             infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
-            await _clientService.CreateProfile(infoSession.accountId, profile);
+            _clientService.CreateCV(infoSession.accountId, cvdata);
             return View();
         }
 
         [HttpGet("/UpdateCV")]
-        public IActionResult UpdateCV()
+        public async Task<IActionResult> UpdateCV()
         {
-            return View(new ProfileViewModel());
+            if (HttpContext.Session.GetString("Usersession") == null)
+                return RedirectToAction("SignIn");
+
+            InfoViewModel infoSession = new InfoViewModel();
+            infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
+            var modelCV =await _clientService.GetCV(infoSession.accountId);
+            return View(modelCV);
+        }
+        [HttpPost("/UpdateCV")]
+        public async Task<IActionResult> UpdateCV(CVViewModel cvdata)
+        {
+            if (HttpContext.Session.GetString("Usersession") == null)
+                return RedirectToAction("SignIn");
+
+            InfoViewModel infoSession = new InfoViewModel();
+            infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
+            await _clientService.CreateCV(infoSession.accountId,cvdata);
+            return RedirectToAction("ViewEvent");
         }
 
         [HttpGet("/SignUp")]
@@ -132,7 +151,68 @@ namespace CV_project.Controllers
             HttpContext.Session.Remove("Usersession");
             return RedirectToAction("SignIn");
         }
+
         public IActionResult Headhunt()
+        {
+            return View();
+        }
+        [HttpGet("/CreateProfile")]
+        public IActionResult CreateProfile()
+        {
+            if (HttpContext.Session.GetString("Usersession") == null)
+                return RedirectToAction("SignIn");
+            return View(new ProfileViewModel());
+        }
+        [HttpPost("/CreateProfile")]
+        public async Task<IActionResult> CreateProfile(ProfileViewModel cvdata)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(cvdata);
+            }
+            if (HttpContext.Session.GetString("Usersession") == null)
+                return RedirectToAction("SignIn");
+
+            InfoViewModel infoSession = new InfoViewModel();
+            infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
+            await _clientService.CreateProfile(infoSession.accountId, cvdata);
+            // reset session
+            infoSession.IscreateProfile = 1;
+            var newSession = new InfoViewModel()
+            {
+                accountId = infoSession.accountId,
+                AccountType = infoSession.AccountType,
+                FullName = infoSession.FullName,
+                IscreateProfile = 1
+            };
+            HttpContext.Session.Remove("Usersession");
+            HttpContext.Session.SetString("Usersession", JsonConvert.SerializeObject(newSession));
+            return View();
+        }
+
+        [HttpGet("/UpdateProfile")]
+        public async Task<IActionResult> UpdateProfile()
+        {
+            if (HttpContext.Session.GetString("Usersession") == null)
+                return RedirectToAction("SignIn");
+
+            InfoViewModel infoSession = new InfoViewModel();
+            infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
+            var modelProfile = await _clientService.GetProfile(infoSession.accountId);
+            return View(modelProfile);
+        }
+        [HttpPost("/UpdateProfile")]
+        public async Task<IActionResult> UpdateProfile(ProfileViewModel cvdata)
+        {
+            if (HttpContext.Session.GetString("Usersession") == null)
+                return RedirectToAction("SignIn");
+
+            InfoViewModel infoSession = new InfoViewModel();
+            infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
+            await _clientService.CreateProfile(infoSession.accountId, cvdata);
+            return RedirectToAction("ViewEvent");
+        }
+        public IActionResult AppliedCV()
         {
             return View();
         }

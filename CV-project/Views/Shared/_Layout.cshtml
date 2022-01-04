@@ -31,12 +31,13 @@
                             infoSession = JsonConvert.DeserializeObject<InfoViewModel>(Accessor.HttpContext.Session.GetString("Usersession"));
 
                         if (infoSession.AccountType == 2)
-                        {   
+                        {
                             <a href="@Url.Action("CreateJob", "Company")">CREATE JOB</a>
                             <a href="@Url.Action("ViewCV", "Company")">PROFILE MATCHING</a>
                         }
                         else
-                        {<a href="@Url.Action("ViewCompany", "Home")">PROFILE MATCHING</a>
+                        {   <a href="@Url.Action("CreateCV", "Home")">CREATE CV</a>
+                            <a href="@Url.Action("ViewCompany", "Home")">PROFILE MATCHING</a>
                         }
                     }
                     <a href="@Url.Action("Headhunt", "Home")">HEADHUNT</a>
@@ -44,15 +45,26 @@
                     <div class="mynav_dropdown">
                         <img id="avt" src="https://images.unsplash.com/photo-1561948955-570b270e7c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=601&q=80" />
                         <div class="mynav_dropdown-content">
-                            <a href="#">View Profile</a>
-                            <a href="#">Edit Profile</a>
-                            @*<a href="@Url.Action("CreateJob", "Company")">Create Job</a>*@
                             @{
                                 if (Accessor.HttpContext.Session.GetString("Usersession") != null)
-                                {<a href="@Url.Action("Logout", "Home")">Log out</a>
+                                {
+                                    InfoViewModel infoSS = new InfoViewModel();
+                                    infoSS = JsonConvert.DeserializeObject<InfoViewModel>(Accessor.HttpContext.Session.GetString("Usersession"));
+                                    @if (infoSS.IscreateProfile == 0)
+                                    {<a href="@Url.Action("CreateProfile", "Home")">Create Profile</a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@Url.Action("UpdateProfile", "Home")">View Profile</a>
+                                    }
+                                    <a href="@Url.Action("UpdateCV", "Home")">View CV</a>
+                                    <a href="@Url.Action("Logout", "Home")">Log out</a>
                                 }
                                 else
-                                {<a href="@Url.Action("SignIn", "Home")">SignIn</a>
+                                {
+                                    <a href="@Url.Action("CreateProfile", "Home")">Create Profile</a>
+                                    <a href="@Url.Action("UpdateCV", "Home")">View CV</a>
+                                    <a href="@Url.Action("SignIn", "Home")">SignIn</a>
                                 }
                             }
                         </div>
