@@ -31,8 +31,14 @@
         }
     }
     imgs = new Array();
-    /*imgs[0] = "/media/arrowww.svg";*/
-    imgs[0] = "https://images.unsplash.com/photo-1561948955-570b270e7c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=601&q=80";
+    imgs[0] = "/media/company_image_1.jpg";
+    imgs[1] = "/media/company_image_2.jpg";
+    imgs[2] = "/media/company_image_3.jpg";
+    imgs[3] = "/media/company_image_4.jpg";
+    imgs[4] = "/media/company_image_5.jpg";
+    imgs[5] = "/media/company_image_6.jpg";
+    imgs[6] = "/media/company_image_7.jpg";
+    imgs[7] = "/media/company_image_8.jpg";
     function getRandomImage() {
         var rnd = Math.floor(Math.random() * imgs.length);
         document.getElementById('randImage').src = imgs[rnd];
@@ -44,7 +50,7 @@
     <section class="view-company-content">
         <div class="container-fluid m-0 ">
             <div class="row d-md-flex-row  overflow-hidden">
-                <div class="col-md-4 p-0 col-12 bg-light d-flex overflow-hidden " style="height: 89vh; overflow-y: hidden;">
+                <div class="col-md-4 p-0 col-12 bg-light d-flex overflow-hidden " style="height: 88.5vh; overflow-y: hidden;">
                     <div class="card p-0   w-100 h-100 text-light   border-0 ">
                         <img id="randImage" class="card-img h-100 w-100"
                              alt="Card image">
