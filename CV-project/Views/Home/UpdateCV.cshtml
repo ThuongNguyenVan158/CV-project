@@ -17,12 +17,14 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="~/js/image-picker.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="/css/createcv_style.css">
     <link rel="stylesheet" href="/css/layout-style.css"> <!-- check -->
     <link rel="stylesheet" href="/css/site.css"> <!-- check -->
+    <link rel="stylesheet" href="/css/image-picker.css"> <!-- check -->
 </head>
 
 <body>
@@ -32,8 +34,20 @@
                 <div class="container page-name mt-1">
                     <h1 class="text-center mt-4" style="font-size: 35px;"><b>Update your CV</b></h1>
                 </div>
+                <h4 class="mt-3 col-xs-12 col-sm-11"><b>Pick your avatar:</b></h4>
+                <div class="mt-2 col-xs-12 col-sm-12 w-100">
+                    <select class="image-picker show-html">
+                        <option data-img-src="media/ava1.png" data-img-alt="Page 1" value="1" data-img-class="first">  Page 1  </option>
+                        <option data-img-src="media/ava2.png" data-img-alt="Page 2" value="2">  Page 2  </option>
+                        <option data-img-src="media/ava3.png" data-img-alt="Page 3" value="3">  Page 3  </option>
+                        <option data-img-src="media/ava4.png" data-img-alt="Page 4" value="4">  Page 4  </option>
+                        <option data-img-src="media/ava5.png" data-img-alt="Page 5" value="5">  Page 5  </option>
+                        <option data-img-src="media/ava6.png" data-img-alt="Page 6" value="6" data-img-class="last">  Page 6  </option>
+                    </select>
+                    <script>$("select").imagepicker()</script>
+                </div>
 
-                <div class="col-xs-12 col-sm-11 mt-5 w-100">
+                <div class="col-xs-12 col-sm-11 mt-3 w-100">
                     <form asp-controller="Home" asp-action="UpdateCV" method="post">
                         <h6><strong>Name</strong></h6>
                         <div class="form-group">
@@ -67,7 +81,7 @@
 
                         <h6><strong>Career Objectives</strong></h6>
                         <div class="form-group">
-                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Careerobjecives" >@Model.Careerobjecives</textarea>
+                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Careerobjecives">@Model.Careerobjecives</textarea>
                         </div>
 
                         <h6><strong>Awards</strong></h6>
@@ -77,26 +91,26 @@
 
                         <h6><strong>Certificates</strong></h6>
                         <div class="form-group">
-                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Certificates" >@Model.Certificates</textarea>
+                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Certificates">@Model.Certificates</textarea>
                         </div>
 
                         <h6><strong>Work Experiences</strong></h6>
                         <div class="form-group">
-                            <textarea maxlength="10" class="form-control" rows="3" name="cvdata.WorkExperiences" >@Model.WorkExperiences</textarea>
+                            <textarea maxlength="10" class="form-control" rows="3" name="cvdata.WorkExperiences">@Model.WorkExperiences</textarea>
                         </div>
 
                         <h6><strong>Activities</strong></h6>
                         <div class="form-group">
-                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Activities" >@Model.Activities</textarea>
+                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Activities">@Model.Activities</textarea>
                         </div>
 
                         <hr class="hr-lg">
                         @*<div class="btn-group w-100" role="group" aria-label="Basic example">
-                            <form action="/action_page.php">
-                                <input class="btn btn-light mr-2" type="file" id="myFile" name="filename">
-                                <input class="btn btn-secondary" type="submit">
-                            </form>
-                        </div>*@
+                    <form action="/action_page.php">
+                        <input class="btn btn-light mr-2" type="file" id="myFile" name="filename">
+                        <input class="btn btn-secondary" type="submit">
+                    </form>
+                </div>*@
                         <button id="createCVBtnStyle" type="submit" class="btn btn-primary mt-3 w-100 submit">Update CV</button>
                     </form>
                 </div>
