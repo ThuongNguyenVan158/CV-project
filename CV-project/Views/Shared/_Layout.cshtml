@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="/css/layout-style.css" />
 
+
 </head>
 <body>
     <header>
@@ -83,7 +84,7 @@
                                     }
                                     @if (infoSS.AccountType == 2)
                                     {
-                                        <a href="@Url.Action("UpdateCV", "Home")">View Job</a>
+                                        <a href="@Url.Action("GetListJob", "Company")">View Job</a>
                                     }
                                     else if (infoSS.AccountType == 1)
                                     {

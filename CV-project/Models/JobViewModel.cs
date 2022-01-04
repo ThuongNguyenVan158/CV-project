@@ -7,6 +7,7 @@ namespace CV_project.Models
 {
     public class JobViewModel
     {
+        public Guid JobId { get; set; }
         public string Name { get; set; }
         public string Position { get; set; }
         public string Information { get; set; }

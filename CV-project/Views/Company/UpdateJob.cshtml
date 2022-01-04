@@ -39,24 +39,25 @@
                     </div>
 
                     <div class="col-xs-12 col-sm-12 mt-5 w-100">
-                        <form asp-controller="Company" asp-action="CreateJob" method="post">
+                        <form asp-controller="Company" asp-action="UpdateJob" method="post">
+                            <input type="hidden" name="jobVM.JobId" value="@Model.JobId"/>
                             <h6><strong>Name</strong></h6>
                             <div class="form-group w-100">
-                                <input maxlength="50" type="text" class="form-control input-lg" name="jobVM.Name">
+                                <input maxlength="50" type="text" class="form-control input-lg" name="jobVM.Name" value="@Model.Name">
                             </div>
 
                             <h6><strong>Position</strong></h6>
                             <div class="form-group w-100">
-                                <input maxlength="2000" type="text" class="form-control input-lg" name="jobVM.Position">
+                                <input maxlength="2000" type="text" class="form-control input-lg" name="jobVM.Position" value="@Model.Position">
                             </div>
 
                             <h6><strong>Information</strong></h6>
                             <div class="form-group w-100">
-                                <textarea maxlength="2000" class="form-control" rows="3" name="jobVM.Information"></textarea>
+                                <textarea maxlength="2000" class="form-control" rows="3" name="jobVM.Information">@Model.Information</textarea>
                             </div>
                             <h6><strong>Deadline</strong></h6>
                             <div class="form-group w-100">
-                                <input class="form-control" rows="3" name="jobVM.Deadline" type="date">
+                                <input class="form-control" rows="3" name="jobVM.Deadline" type="datetime" value="@Model.Deadline.ToString("dd/MM/yyyy")">
                             </div>
 
                             <button id="createCVBtnStyle" type="submit" class="btn btn-primary mt-3 w-100 submit px-3">Update job</button>
