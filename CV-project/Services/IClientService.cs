@@ -18,5 +18,6 @@ namespace CV_project.Services
         Task<CVViewModel> GetCV(Guid applicantId);
         Task<bool> CreateProfile(Guid applicantId, ProfileViewModel cvVM);
         Task<ProfileViewModel> GetProfile(Guid applicantId);
+        bool SendCV(ApplyViewModel applyVM);
     }
 }

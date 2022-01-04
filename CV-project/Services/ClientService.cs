@@ -266,5 +266,21 @@ namespace CV_project.Services
                                }).FirstOrDefaultAsync();
             return objCV;
         }
+        public bool SendCV(ApplyViewModel applyVM)
+        {
+            var id = (from c in _context.Applicants
+                      join d in _context.Accounts on c.AccountId equals d.AccountId
+                      where d.AccountId == applyVM.AccountId
+                      select c.ApplicantId
+                     ).FirstOrDefault();
+            var newApply = new Apply()
+            {
+                ApplicantId = id,
+                CompanyId = applyVM.CompanyId
+            };
+            _context.Applies.Add(newApply);
+            _context.SaveChanges();
+            return true;
+        }    
     }
 }

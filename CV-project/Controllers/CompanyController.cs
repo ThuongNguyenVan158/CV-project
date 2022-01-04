@@ -1,7 +1,10 @@
-﻿using CV_project.Models;
+﻿using CV_project.Data;
+using CV_project.Data.Entities;
+using CV_project.Models;
 using CV_project.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
@@ -15,14 +18,33 @@ namespace CV_project.Controllers
     {
         private readonly ILogger<CompanyController> _logger;
         private readonly ICompanyService _companyService;
-        public CompanyController(ILogger<CompanyController> logger, ICompanyService companyService)
+        private readonly REOrganizationContext _context;
+        public CompanyController(ILogger<CompanyController> logger, ICompanyService companyService, REOrganizationContext context)
         {
             _logger = logger;
             _companyService = companyService;
+            _context = context;
         }
-        public IActionResult ViewCV()
+        public async Task<IActionResult> ViewCV(int pageNumber = 1)
         {
-            return View();
+            if (HttpContext.Session.GetString("Usersession") == null)
+                return RedirectToAction("SignIn");
+
+            InfoViewModel infoSession = new InfoViewModel();
+            infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
+            var idCompany = await (from c in _context.Accounts
+                                   join d in _context.Companies on c.AccountId equals d.AccountId
+                                   where c.AccountId == infoSession.accountId
+                                   select d.CompanyId
+                                    ).FirstOrDefaultAsync();
+            var listCV = new List<WebCv>();
+            listCV = await (from c in _context.WebCvs
+                                join d in _context.Applicants on c.Cvid equals d.Cvid
+                                join e in _context.Applies on d.ApplicantId equals e.ApplicantId
+                                where e.CompanyId == idCompany
+                                select c).ToListAsync();
+            var model = PagingList<WebCv>.CreateAsync(listCV, pageNumber, 1);
+            return View(model);
         }
         [HttpGet("/CreateCompanyProfile")]
         public IActionResult CreateCompanyProfile()

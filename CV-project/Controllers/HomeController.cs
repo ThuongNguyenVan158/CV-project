@@ -215,6 +215,18 @@ namespace CV_project.Controllers
             await _clientService.CreateProfile(infoSession.accountId, cvdata);
             return RedirectToAction("ViewEvent");
         }
+        [HttpPost()]
+        public IActionResult SendApply(ApplyViewModel applyVM)
+        {
+            if (HttpContext.Session.GetString("Usersession") == null)
+                return RedirectToAction("SignIn");
+
+            InfoViewModel infoSession = new InfoViewModel();
+            infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
+            applyVM.AccountId = infoSession.accountId;
+            _clientService.SendCV(applyVM);
+            return RedirectToAction("ViewCompany");
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
