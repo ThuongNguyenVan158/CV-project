@@ -12,5 +12,8 @@ namespace CV_project.Services
         Task<bool> CreateJobAsync(Guid idCompany,JobViewModel jobVM);
         Task<bool> CreaCompanyProfile(Guid accountId, CompanyProfile comProfile);
         Task<CompanyProfile> GetCompanyProfile(Guid accountId);
+        Task<List<JobViewModel>> GetAllJobPerCompany(Guid accountId);
+        Task<bool> UpdateJob(Guid accountId, JobViewModel jobVM);
+        Task<JobViewModel> GetJob(Guid accountId, Guid jobId);
     }
 }

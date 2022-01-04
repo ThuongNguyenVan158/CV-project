@@ -93,9 +93,36 @@ namespace CV_project.Controllers
             return View();
         }
         [HttpGet("/UpdateJob")]
-        public IActionResult UpdateJob()
+        public async Task<IActionResult> UpdateJob(Guid jobId)
         {
+            if (HttpContext.Session.GetString("Usersession") == null)
+                return RedirectToAction("SignIn");
+
+            InfoViewModel infoSession = new InfoViewModel();
+            infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
+            var jobModel = await _companyService.GetJob(infoSession.accountId, jobId);
+            return View(jobModel);
+        }
+        [HttpPost("/UpdateJob")]
+        public async Task<IActionResult> UpdateJob(JobViewModel jobVM)
+        {
+            if (HttpContext.Session.GetString("Usersession") == null)
+                return RedirectToAction("SignIn");
+
+            InfoViewModel infoSession = new InfoViewModel();
+            infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
+            await _companyService.UpdateJob(infoSession.accountId, jobVM);
             return View(new JobViewModel());
+        }
+        public async Task<IActionResult> GetListJob()
+        {
+            if (HttpContext.Session.GetString("Usersession") == null)
+                return RedirectToAction("SignIn");
+
+            InfoViewModel infoSession = new InfoViewModel();
+            infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
+            var listJob = await _companyService.GetAllJobPerCompany(infoSession.accountId);
+            return View(listJob);
         }
         public IActionResult Index()
         {

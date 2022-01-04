@@ -113,7 +113,8 @@ namespace CV_project.Controllers
 
             InfoViewModel infoSession = new InfoViewModel();
             infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
-            var modelCV =await _clientService.GetCV(infoSession.accountId);
+            var modelCV = new CVViewModel();
+            modelCV =await _clientService.GetCV(infoSession.accountId);
             return View(modelCV);
         }
         [HttpPost("/UpdateCV")]

@@ -72,5 +72,70 @@ namespace CV_project.Services
                                }).FirstOrDefaultAsync();
             return objCV;
         }
+        public async Task<List<JobViewModel>> GetAllJobPerCompany(Guid accountId)
+        {
+            var idCompany = await (from c in _context.Accounts
+                                   join d in _context.Companies on c.AccountId equals d.AccountId
+                                   where c.AccountId == accountId
+                                   select d.CompanyId
+                                    ).FirstOrDefaultAsync();
+            var listJob = new List<JobViewModel>();
+            listJob = await (from c in _context.HaveJobs
+                             join d in _context.Jobs on c.JobId equals d.JobId
+                             where c.CompanyId == idCompany
+                             select new JobViewModel
+                             {
+                                 JobId = c.JobId,
+                                 Name = d.Name,
+                                 Position = d.Vacancy,
+                                 Information = c.Description,
+                                 Deadline = c.Deadline,
+                             }).ToListAsync();
+            return listJob;
+        }
+        public async Task<JobViewModel> GetJob(Guid accountId, Guid jobId)
+        {
+            var idCompany = await (from c in _context.Accounts
+                                   join d in _context.Companies on c.AccountId equals d.AccountId
+                                   where c.AccountId == accountId
+                                   select d.CompanyId
+                                   ).FirstOrDefaultAsync();
+            var job = await (from c in _context.Jobs
+                             where c.JobId == jobId
+                             select c).FirstOrDefaultAsync();
+            var hasJob = await (from c in _context.HaveJobs
+                                where c.CompanyId == idCompany && c.JobId == jobId
+                                select c).FirstOrDefaultAsync();
+            var jobInfo = new JobViewModel()
+            {
+                JobId = job.JobId,
+                Name = job.Name,
+                Position = job.Vacancy,
+                Information = hasJob.Description,
+                Deadline = hasJob.Deadline
+            };
+            return jobInfo;
+        }    
+        public async Task<bool> UpdateJob(Guid accountId, JobViewModel jobVM)
+        {
+            var idCompany = await (from c in _context.Accounts
+                                   join d in _context.Companies on c.AccountId equals d.AccountId
+                                   where c.AccountId == accountId
+                                   select d.CompanyId
+                                   ).FirstOrDefaultAsync();
+            var job = await (from c in _context.Jobs
+                             where c.JobId == jobVM.JobId
+                             select c).FirstOrDefaultAsync();
+            job.Name = jobVM.Name;
+            job.Vacancy = jobVM.Position;
+            _context.SaveChanges();
+            var hasJob = await (from c in _context.HaveJobs
+                                where c.CompanyId == idCompany && c.JobId == jobVM.JobId
+                                select c).FirstOrDefaultAsync();
+            hasJob.Description = jobVM.Information;
+            hasJob.Deadline = jobVM.Deadline;
+            _context.SaveChanges();
+            return true;
+        }
     }
 }
