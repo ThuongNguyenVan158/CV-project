@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="/css/viewcv_style.css">
 <link rel="stylesheet" href="/css/layout-style.css"> <!-- check -->
 <link rel="stylesheet" href="/css/site.css"> <!-- check -->
-<script>
+<script type="text/javascript">
     function myFunction() {
         var dots = document.getElementById("dots");
         var moreText = document.getElementById("more");
@@ -29,17 +29,25 @@
             moreText.style.display = "inline";
         }
     }
+    imgs = new Array();
+    imgs[0] = "/media/model 1.png";
+    imgs[1] = "/media/model 2.png";
+    imgs[2] = "/media/model 3.png";
+    imgs[3] = "/media/model 4.png";
+    function getRandomImage() {
+        var rnd = Math.floor(Math.random() * imgs.length);
+        document.getElementById('randImage').src = imgs[rnd];
+    }
 </script>
 <!DOCTYPE html>
 <html>
-<body>
+<body onload="getRandomImage()">
     <section class="view-company-content">
         <div class="container-fluid m-0 ">
             <div class="row d-md-flex-row  overflow-hidden">
-                <div class="col-md-4 p-0 col-12 bg-light d-flex overflow-hidden " style="height: 91vh;">
+                <div class="col-md-4 p-0 col-12 bg-light d-flex overflow-hidden " style="height: 89vh; overflow-y: hidden;">
                     <div class="card p-0   w-100 h-100 text-light   border-0 ">
-                        <img class="card-img h-100 w-100"
-                             src="https://images.unsplash.com/photo-1550757750-4ce187a65014?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                        <img id="randImage" class="card-img h-100 w-100"
                              alt="Card image">
                         <div class="card-img-overlay p-1 p-md-3">
                             <div class="position-relative  w-100  h-100 d-flex">
@@ -65,9 +73,6 @@
                                     <span id="Header">Họ và tên: </span>
                                     <span id="Name"> Nguyen Van A</span>
                                     <span> <br /></span>
-                                    <span id="Header"> Ngày sinh: </span>
-                                    <span id="Dob"> 1/1/2001</span>
-                                    <span> <br /> <br /></span>
                                     <span id="Header">Major: </span>
                                     <span id="Major"> Công Nghệ Thông Tin</span>
                                     <span> <br /></span>
@@ -76,9 +81,6 @@
                                     <span> <br /></span>
                                     <span id="Header">Định Hướng Nghề Nghiệp: </span>
                                     <span id="CareerObjectives">Web Developer</span>
-                                    <span> <br /></span>
-                                    <span id="Header"> Kỹ Năng: </span>
-                                    <span id="Skills"> ASP.Net</span>
                                     <span> <br /> <br /></span>
                                     <span id="Header">Brief Introduction: </span>
                                     <span id="BriefIntroduction">
@@ -91,7 +93,7 @@
                                         420 Languages <br />
                                         <span> Just some text after some text and in between some more text <br /></span>
                                         <span> I'm next to the last line of text <br /></span>
-                                        <span> I'm the last line of text <br/></span>
+                                        <span> I'm the last line of text <br /></span>
                                     </span>
                                     <button onclick="myFunction()" id="myBtn" style="border-color: white; border:0; color: #325EEA; background-color: white; padding:0px; outline: none;">See more ▼</button>
                                     <span> <br /><br /></span>
@@ -152,7 +154,7 @@
                 <span id="Header">Brief Introduction: </span>
                 <span id="BriefIntroduction">
                     <span> 69 stacks 420 Languages Just some text after some text and in between some more text</span>
-                    <span> I'm next to the last line of text</span>                   
+                    <span> I'm next to the last line of text</span>
                     <span> Just some text after some text and in between some more text</span>
                     <span> I'm next to the last line of text</span>
                     <span> I'm the last line of text</span>
