@@ -41,7 +41,7 @@ namespace CV_project.Controllers
         public async Task<IActionResult> ViewCompany(int pageNumber=1)
         {
             var model = new PagingJobCompany();
-            model.listJobPerCompany = new List<JobPerCompany>();
+            model.listJobPerCompany = new List<JobViewModel>();
             model.company = await PagingList<Company>.CreareAsync(_context.Companies, pageNumber, 1);
             model.listJobPerCompany = await _clientService.GetJobPerCompany(model.company.FirstOrDefault().CompanyId);
             return View(model);
@@ -214,10 +214,6 @@ namespace CV_project.Controllers
             infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
             await _clientService.CreateProfile(infoSession.accountId, cvdata);
             return RedirectToAction("ViewEvent");
-        }
-        public IActionResult AppliedCV()
-        {
-            return View();
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

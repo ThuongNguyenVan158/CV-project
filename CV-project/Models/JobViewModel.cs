@@ -12,5 +12,12 @@ namespace CV_project.Models
         public string Position { get; set; }
         public string Information { get; set; }
         public DateTime Deadline { get; set; }
+        public string Address { get; set; }
+        public string Qualification { get; set; }
+        public string Requirement { get; set; }
+        public string Language { get; set; }
+        public string Worktime { get; set; }
+        public int NumEmployee { get; set; }
+        public string SalaryPerMonth { get; set; }
     }
 }

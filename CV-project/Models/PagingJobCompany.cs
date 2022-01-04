@@ -9,6 +9,6 @@ namespace CV_project.Models
     public class PagingJobCompany
     {
         public PagingList<Company> company { get; set;}
-        public List<JobPerCompany> listJobPerCompany { get; set; }
+        public List<JobViewModel> listJobPerCompany { get; set; }
     }
 }

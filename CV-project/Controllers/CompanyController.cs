@@ -124,6 +124,10 @@ namespace CV_project.Controllers
             var listJob = await _companyService.GetAllJobPerCompany(infoSession.accountId);
             return View(listJob);
         }
+        public IActionResult AppliedCV()
+        {
+            return View();
+        }
         public IActionResult Index()
         {
             return View();

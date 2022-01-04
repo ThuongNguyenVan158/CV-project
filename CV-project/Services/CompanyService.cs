@@ -38,7 +38,14 @@ namespace CV_project.Services
                 CompanyId = idCom,
                 JobId = idJob,
                 Description = jobVM.Information,
-                Deadline = jobVM.Deadline
+                Deadline = jobVM.Deadline,
+                Address=jobVM.Address,
+                SalaryPerMonth=jobVM.SalaryPerMonth,
+                Language=jobVM.Language,
+                NumEmployee=jobVM.NumEmployee,
+                Qualification=jobVM.Qualification,
+                Requirement=jobVM.Requirement,
+                Worktime=jobVM.Worktime
             };
             _context.HaveJobs.Add(relationHasJob);
             await _context.SaveChangesAsync();
@@ -90,6 +97,13 @@ namespace CV_project.Services
                                  Position = d.Vacancy,
                                  Information = c.Description,
                                  Deadline = c.Deadline,
+                                 Address = c.Address,
+                                 SalaryPerMonth = c.SalaryPerMonth,
+                                 Language = c.Language,
+                                 NumEmployee = c.NumEmployee,
+                                 Qualification = c.Qualification,
+                                 Requirement = c.Requirement,
+                                 Worktime = c.Worktime
                              }).ToListAsync();
             return listJob;
         }
@@ -112,7 +126,14 @@ namespace CV_project.Services
                 Name = job.Name,
                 Position = job.Vacancy,
                 Information = hasJob.Description,
-                Deadline = hasJob.Deadline
+                Deadline = hasJob.Deadline,
+                Address = hasJob.Address,
+                SalaryPerMonth = hasJob.SalaryPerMonth,
+                Language = hasJob.Language,
+                NumEmployee = hasJob.NumEmployee,
+                Qualification = hasJob.Qualification,
+                Requirement = hasJob.Requirement,
+                Worktime = hasJob.Worktime
             };
             return jobInfo;
         }    
@@ -134,6 +155,13 @@ namespace CV_project.Services
                                 select c).FirstOrDefaultAsync();
             hasJob.Description = jobVM.Information;
             hasJob.Deadline = jobVM.Deadline;
+            hasJob.Address = jobVM.Address;
+            hasJob.SalaryPerMonth = jobVM.SalaryPerMonth;
+            hasJob.Language = jobVM.Language;
+            hasJob.NumEmployee = jobVM.NumEmployee;
+            hasJob.Qualification = jobVM.Qualification;
+            hasJob.Requirement = jobVM.Requirement;
+            hasJob.Worktime = jobVM.Worktime;
             _context.SaveChanges();
             return true;
         }

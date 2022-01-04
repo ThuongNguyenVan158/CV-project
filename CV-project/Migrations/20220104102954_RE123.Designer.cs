@@ -4,14 +4,16 @@ using CV_project.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CV_project.Migrations
 {
     [DbContext(typeof(REOrganizationContext))]
-    partial class REOrganizationContextModelSnapshot : ModelSnapshot
+    [Migration("20220104102954_RE123")]
+    partial class RE123
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -270,8 +272,8 @@ namespace CV_project.Migrations
                     b.Property<string>("Requirement")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SalaryPerMonth")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("SalaryPerMonth")
+                        .HasColumnType("int");
 
                     b.Property<string>("Status")
                         .HasMaxLength(50)
