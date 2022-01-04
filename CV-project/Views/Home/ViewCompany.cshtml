@@ -43,6 +43,16 @@
         var rnd = Math.floor(Math.random() * imgs.length);
         document.getElementById('randImage').src = imgs[rnd];
     }
+
+
+    function update(jobIndex) {
+        document.getElementById("jobTitle").innerHTML = "<b>JAVA Developer Specialist Generalist " + jobIndex + "</b>";
+        document.getElementById("jobLocation").innerHTML = "Ho Chi Minh - District " + jobIndex;
+        document.getElementById("jobQualification").innerHTML = "Qualification of job " + jobIndex;
+        document.getElementById("jobSkills").innerHTML = "Skills and Requirements of job " + jobIndex;
+        document.getElementById("jobAbout").innerHTML = "About the job " + jobIndex;
+    }
+
 </script>
 <!DOCTYPE html>
 <html>
@@ -158,7 +168,7 @@
 
 
                         <div class="col-xs-12 pr-4 pl-4">
-                            <div onclick="location.href='#';" style="cursor: pointer;" class="row p-2 mt-2" id="job-item">
+                            <div onclick="update(1);" style="cursor: pointer;" class="row p-2 mt-2" id="job-item">
                                 <div class="col-md-2 mx-auto d-block mb-2">
                                     <img src="~/media/job look.svg" style="width: 100%; height: 100%; object-fit: contain;">
                                 </div>
@@ -192,7 +202,7 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <button type="button" class="col pr-0 mb-3 align-self-end" style="background-color: transparent; border: none">
+                                    <button type="button" disabled class="col pr-0 mb-3 align-self-end" style="background-color: transparent; border: none">
                                         <img height="30" width="30" class="rounded float-right" src="~/media/bookmark.png" />
                                     </button>
                                     <h5 style="font-size: 15px; text-align: right">Game Studio</h5>
@@ -200,8 +210,7 @@
                                 </div>
                             </div>
 
-
-                            <div onclick="location.href='#';" style="cursor: pointer;" class="row p-2 mt-2" id="job-item">
+                            <div onclick="update(2);" style="cursor: pointer;" class="row p-2 mt-2" id="job-item">
                                 <div class="col-md-2 mx-auto d-block mb-2">
                                     <img src="~/media/job look.svg" style="width: 100%; height: 100%; object-fit: contain;">
                                 </div>
@@ -235,7 +244,7 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <button type="button" class="col pr-0 mb-3 align-self-end" style="background-color: transparent; border: none">
+                                    <button type="button" disabled class="col pr-0 mb-3 align-self-end" style="background-color: transparent; border: none">
                                         <img height="30" width="30" class="rounded float-right" src="~/media/bookmark.png" />
                                     </button>
                                     <h5 style="font-size: 15px; text-align: right">Game Studio</h5>
@@ -246,29 +255,29 @@
                     </div>
 
                     <div class="col-md-4" style="height: 80vh">
-                        <div style="overflow-y: scroll; height: 72vh">
+                        <div id="jobDetail" style="overflow-y: scroll; height: 72vh">
                             <div class="col-md-4 mx-auto d-block mb-2">
                                 <img src="~/media/job look.svg" style="width: 100%; height: 100%; object-fit: contain;">
                             </div>
-                            <h5 style="text-align: center"><b>JAVA Developer Specialist Generalist</b></h5>
-                            <div class="text-center">
+                            <h5 id="jobTitle" style="text-align: center"><b>JAVA Developer Specialist Generalist</b></h5>
+                            <div id="jobLocation" class="text-center">
                                 <p>
                                     <h6>Ho Chi Minh . District 4</h6>
                                 </p>
                             </div>
                             <hr />
-                            <h5 id="job-title"><b>Qualification:</b></h5>
-                            <p id="job-paragraph">
+                            <h5 class="job-quality"><b>Qualification:</b></h5>
+                            <p id="jobQualification" class="job-paragraph">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue eros a arcu gravida, eget egestas elit commodo. Nam non rhoncus velit, at efficitur sapien. Proin bibendum maximus ante pulvinar condimentum. In condimentum urna egestas felis sodales, iaculis laoreet nunc pharetra. Fusce venenatis, massa sit amet consectetur pellentesque, massa nunc semper lorem, ut posuere erat velit sed orci. Donec convallis accumsan velit quis ornare. Curabitur porta eros a odio luctus, at suscipit eros commodo. Fusce sed mauris erat. Sed imperdiet eros diam, et eleifend libero pretium sit amet. Phasellus vulputate placerat ante non fermentum. Duis quis elit ultricies, placerat tellus vitae, cursus tortor.
                             </p>
                             <hr />
-                            <h5 id="job-title"><b>Skills & Requirements:</b></h5>
-                            <p id="job-paragraph">
+                            <h5 class="job-quality"><b>Skills & Requirements:</b></h5>
+                            <p id="jobSkills" class="job-paragraph">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue eros a arcu gravida, eget egestas elit commodo. Nam non rhoncus velit, at efficitur sapien. Proin bibendum maximus ante pulvinar condimentum. In condimentum urna egestas felis sodales, iaculis laoreet nunc pharetra. Fusce venenatis, massa sit amet consectetur pellentesque, massa nunc semper lorem, ut posuere erat velit sed orci. Donec convallis accumsan velit quis ornare. Curabitur porta eros a odio luctus, at suscipit eros commodo. Fusce sed mauris erat. Sed imperdiet eros diam, et eleifend libero pretium sit amet. Phasellus vulputate placerat ante non fermentum. Duis quis elit ultricies, placerat tellus vitae, cursus tortor.
                             </p>
                             <hr />
-                            <h5 id="job-title"><b>About the job:</b></h5>
-                            <p id="job-paragraph">
+                            <h5 class="job-quality"><b>About the job:</b></h5>
+                            <p id="jobAbout" class="job-paragraph">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue eros a arcu gravida, eget egestas elit commodo. Nam non rhoncus velit, at efficitur sapien. Proin bibendum maximus ante pulvinar condimentum. In condimentum urna egestas felis sodales, iaculis laoreet nunc pharetra. Fusce venenatis, massa sit amet consectetur pellentesque, massa nunc semper lorem, ut posuere erat velit sed orci. Donec convallis accumsan velit quis ornare. Curabitur porta eros a odio luctus, at suscipit eros commodo. Fusce sed mauris erat. Sed imperdiet eros diam, et eleifend libero pretium sit amet. Phasellus vulputate placerat ante non fermentum. Duis quis elit ultricies, placerat tellus vitae, cursus tortor.
                             </p>
                         </div>

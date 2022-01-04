@@ -210,13 +210,13 @@
     font-weight: bold;
 }
 
-#job-title {
+.job-quality {
     margin-left: 5px;
     margin-right: 17px;
     text-align: left;
 }
 
-#job-paragraph{
+.job-paragraph{
     margin-left: 5px;
     margin-right: 17px;
     font-size: 13px;
