@@ -48,3 +48,7 @@
 .send-button {
     grid-area: 12 / 9 / span 1 / span 1;
 }
+
+body{
+    background-image: url("/media/headhunt_background.png");
+}
