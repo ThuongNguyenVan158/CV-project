@@ -123,6 +123,18 @@ namespace CV_project.Services
                     infoSession.IscreateProfile = 0;
                 else infoSession.IscreateProfile = 1;
                 }
+            else
+            {
+                infoSession = await(from c in _context.Accounts
+                                    where c.Username == loginViewModel.UserName && c.Password == loginViewModel.Password
+                                    select new InfoViewModel()
+                                    {
+                                        accountId = c.AccountId,
+                                        AccountType = c.AccountType,
+                                        FullName = c.Username,
+                                        IscreateProfile= 0
+                                    }).FirstOrDefaultAsync();
+            }
             return infoSession;
         }
         public async Task<bool> CreateCV(Guid applicantId, CVViewModel cvVM)

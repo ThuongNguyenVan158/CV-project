@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "UpdateCompanyProfile";
 }
-
+@model CompanyProfile
 
 <!DOCTYPE html>
 <!-- saved from url=(0042)http://thetheme.io/thejobs/resume-add.html -->
@@ -52,28 +52,29 @@
                         <h5><strong>Company's Information</strong></h5>
                     </div>
 
-                    <h6><strong>Name</strong></h6>
-                    <div class="form-group">
-                        <input type="text" class="form-control input-lg w-100" maxlength="50">
-                    </div>
+                    <form asp-controller="Company" asp-action="UpdateCompanyProfile" method="post">
+                        <h6><strong>Name</strong></h6>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg w-100" maxlength="50" name="comProfile.Name" value="@Model.Name">
+                        </div>
 
-                    <h6><strong>Number of Employees</strong></h6>
-                    <div class="form-group">
-                        <input type="text" class="form-control input-lg w-100">
-                    </div>
+                        <h6><strong>Number of Employees</strong></h6>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg w-100" name="comProfile.NoEmployee" value="@Model.NoEmployee">
+                        </div>
 
-                    <h6><strong>Address</strong></h6>
-                    <div class="form-group">
-                        <input type="text" class="form-control input-lg w-100" maxlength="200">
-                    </div>
+                        <h6><strong>Address</strong></h6>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg w-100" maxlength="200" name="comProfile.Address" value="@Model.Address">
+                        </div>
 
-                    <h6><strong>Description</strong></h6>
-                    <div class="form-group">
-                        <input type="text" class="form-control input-lg w-100" maxlength="2000">
-                    </div>
+                        <h6><strong>Description</strong></h6>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg w-100" maxlength="2000" name="comProfile.Description" value="@Model.Description">
+                        </div>
 
-                    <button id="createCVBtnStyle" type="button" class="btn btn-primary mt-3 w-100 submit px-3">Finish</button>
-
+                        <button id="createCVBtnStyle" type="submit" class="btn btn-primary mt-3 w-100 submit px-3">Update Profile</button>
+                    </form>
                 </div>
             </div>
         </div>

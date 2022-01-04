@@ -78,6 +78,8 @@ namespace CV_project.Controllers
                 return View(loginViewModel);
             if (accountType == 1)
                 return RedirectToAction("ViewEvent");
+            if (accountType == 3)
+                return RedirectToAction("ListCompany", "Admin");
             return RedirectToAction("ViewCV", "Company");
         }
         [HttpGet("/CreateCV")]

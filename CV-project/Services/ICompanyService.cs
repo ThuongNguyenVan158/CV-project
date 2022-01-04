@@ -8,7 +8,9 @@ namespace CV_project.Services
 {
     public interface ICompanyService
     {
-        Task<bool> RegisterAsync(RegisterCompanyViewModel registerViewModel);
+        //Task<bool> RegisterAsync(RegisterCompanyViewModel registerViewModel);
         Task<bool> CreateJobAsync(Guid idCompany,JobViewModel jobVM);
+        Task<bool> CreaCompanyProfile(Guid accountId, CompanyProfile comProfile);
+        Task<CompanyProfile> GetCompanyProfile(Guid accountId);
     }
 }
