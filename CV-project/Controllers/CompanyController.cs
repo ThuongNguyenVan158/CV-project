@@ -41,7 +41,7 @@ namespace CV_project.Controllers
 
             InfoViewModel infoSession = new InfoViewModel();
             infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
-            await _companyService.CreaCompanyProfile(infoSession.accountId,comProfile);
+            await _companyService.CreaCompanyProfile(infoSession.accountId, comProfile);
             // reset session
             var newSession = new InfoViewModel()
             {
@@ -58,7 +58,7 @@ namespace CV_project.Controllers
         public async Task<IActionResult> UpdateCompanyProfile()
         {
             if (HttpContext.Session.GetString("Usersession") == null)
-                return RedirectToAction("SignIn","Home");
+                return RedirectToAction("SignIn", "Home");
 
             InfoViewModel infoSession = new InfoViewModel();
             infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
@@ -82,7 +82,7 @@ namespace CV_project.Controllers
             return View(new JobViewModel());
         }
         [HttpPost("/CreateJob")]
-        public async Task<IActionResult> CreateJob(JobViewModel jobVM)  
+        public async Task<IActionResult> CreateJob(JobViewModel jobVM)
         {
             if (HttpContext.Session.GetString("Usersession") == null)
                 return RedirectToAction("SignIn");
@@ -91,6 +91,11 @@ namespace CV_project.Controllers
             infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
             await _companyService.CreateJobAsync(infoSession.accountId, jobVM);
             return View();
+        }
+        [HttpGet("/UpdateJob")]
+        public IActionResult UpdateJob()
+        {
+            return View(new JobViewModel());
         }
         public IActionResult Index()
         {
