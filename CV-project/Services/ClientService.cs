@@ -273,6 +273,11 @@ namespace CV_project.Services
                       where d.AccountId == applyVM.AccountId
                       select c.ApplicantId
                      ).FirstOrDefault();
+            var isApply = (from c in _context.Applies
+                           where c.ApplicantId == id && c.CompanyId == applyVM.CompanyId
+                           select c).FirstOrDefault();
+            if (isApply != null)
+                return false;
             var newApply = new Apply()
             {
                 ApplicantId = id,
@@ -281,6 +286,17 @@ namespace CV_project.Services
             _context.Applies.Add(newApply);
             _context.SaveChanges();
             return true;
-        }    
+        }   
+        public bool SendMessage(HeadHuntViewModel headhuntVM)
+        {
+            var newHeadHunt = new HeadHunt();
+            newHeadHunt.AccountId = headhuntVM.AccountId;
+            newHeadHunt.Name = headhuntVM.Name;
+            newHeadHunt.ContactInfo = headhuntVM.Contact;
+            newHeadHunt.Message = headhuntVM.Message;
+            _context.HeadHunts.Add(newHeadHunt);
+            _context.SaveChanges();
+            return true;
+        }
     }
 }

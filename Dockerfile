@@ -17,5 +17,5 @@ RUN dotnet publish "CV-project.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-# ENTRYPOINT ["dotnet", "CV-project.dll"]
+#ENTRYPOINT ["dotnet", "CV-project.dll"]
 CMD ASPNETCORE_URLS=http://*:$PORT dotnet CV-project.dll

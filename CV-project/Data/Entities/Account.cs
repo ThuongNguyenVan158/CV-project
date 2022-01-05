@@ -15,6 +15,7 @@ namespace CV_project.Data.Entities
         {
             Applicants = new HashSet<Applicant>();
             Companies = new HashSet<Company>();
+            HeadHunts = new HashSet<HeadHunt>();
         }
 
         [Key]
@@ -32,5 +33,7 @@ namespace CV_project.Data.Entities
         public virtual ICollection<Applicant> Applicants { get; set; }
         [InverseProperty(nameof(Company.Account))]
         public virtual ICollection<Company> Companies { get; set; }
+        [InverseProperty(nameof(HeadHunt.Account))]
+        public virtual ICollection<HeadHunt> HeadHunts { get; set; }
     }
 }
