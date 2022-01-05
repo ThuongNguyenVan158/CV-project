@@ -3,6 +3,7 @@ using CV_project.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,10 @@ namespace CV_project.Controllers
         {
             if (HttpContext.Session.GetString("Usersession") == null)
                 return RedirectToAction("SignIn","Home");
+            InfoViewModel infoSession = new InfoViewModel();
+            infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
+            if(infoSession.AccountType!=3)
+                return RedirectToAction("SignIn", "Home");
             return View(new RegisterCompanyViewModel());
         }
         [HttpPost("/RegisterForCompany")]
