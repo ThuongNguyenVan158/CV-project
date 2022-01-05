@@ -1,4 +1,8 @@
-﻿main {
+﻿body {
+    background-image: url("/media/headhunt_background.png");
+}
+
+main {
     display: grid;
     width: 1200px;
     height: 480px;
@@ -32,23 +36,31 @@
         padding-left: 90px;
     }
 
+form {
+    grid-area: 5 / 1 / span 8 / span 12;
+    display: grid;
+    width: 1200px;
+    height: 320px;
+    grid-template: repeat(8, 1fr) / repeat(12, 1fr);
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
 .contact-name {
-    grid-area: 6 / 3 / span 2 / span 2;
+    grid-area: 2 / 3 / span 2 / span 2;
 }
 
 .contact-info {
-    grid-area: 9 / 3 / span 2 / span 2;
+    grid-area: 5 / 3 / span 2 / span 2;
 }
 
 .message {
-    grid-area: 6 / 7 / span 4 / span 3;
-    padding-top: 37px;
+    grid-area: 2 / 7 / span 4 / span 3;
+    padding-top: 40px;
 }
 
 .send-button {
-    grid-area: 12 / 9 / span 1 / span 1;
+    grid-area: 8 / 9 / span 1 / span 1;
 }
 
-body{
-    background-image: url("/media/headhunt_background.png");
-}
