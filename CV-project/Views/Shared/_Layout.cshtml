@@ -32,12 +32,13 @@
 
                         if (infoSession.AccountType == 2)
                         {
-                            <a href="@Url.Action("CreateJob", "Company")">CREATE JOB</a>
+                            //<a href="@Url.Action("CreateJob", "Company")">CREATE JOB</a>
                             <a href="@Url.Action("ViewCV", "Company")">PROFILE MATCHING</a>
-                            <a href="@Url.Action("AppliedCV", "Company")">CV APPLY</a>
+                            //<a href="@Url.Action("AppliedCV", "Company")">APPLIED CV</a>
                         }
                         else if (infoSession.AccountType == 1)
-                        { <a href="@Url.Action("CreateCV", "Home")">CREATE CV</a>
+                        {
+                            //<a href="@Url.Action("CreateCV", "Home")">CREATE CV</a>
                             <a href="@Url.Action("ViewCompany", "Home")">PROFILE MATCHING</a>
                         }
                         else if (infoSession.AccountType == 3)
@@ -86,9 +87,12 @@
                                     @if (infoSS.AccountType == 2)
                                     {
                                         <a href="@Url.Action("GetListJob", "Company")">View Job</a>
+                                        <a href="@Url.Action("CreateJob", "Company")">Create job</a>
+                                        <a href="@Url.Action("AppliedCV", "Company")">Applied CV</a>
                                     }
                                     else if (infoSS.AccountType == 1)
                                     {
+                                        <a href="@Url.Action("CreateCV", "Home")">Create CV</a>
                                         <a href="@Url.Action("UpdateCV", "Home")">View CV</a>
                                     }
                                     <a href="@Url.Action("Logout", "Home")">Log out</a>
