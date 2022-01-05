@@ -177,15 +177,15 @@
                                 <div class="col-md-7" style="width:60vw">
                                     <div class="row">
                                         <h5 style="font-size: 20px"><b>@job.Name</b></h5>
+                                    </div>
+                                    <div class="row">
                                         <h6>@job.Address</h6>
-                                        <div class="mr-1 ml-1">&bull;</div>
-                                        <h6>District 4</h6>
+                                        @*<div class="mr-1 ml-1">&bull;</div>
+                                        <h6>District 4</h6>*@
                                         <div class="col-md-5 ml-3">
                                             <img height="20" width="20" class="mr-1" src="~/media/watch.png">
                                             420 views
                                         </div>
-
-
                                     </div>
 
                                     <div class="row">
@@ -244,10 +244,12 @@
                         </div>
 
                         <div class="row mt-2 mb-2">
-                            <form asp-controller="Home" asp-action="SendApply" method="post">
-                                <input type="hidden" name="applyVM.CompanyId" value="@Model.company.FirstOrDefault().CompanyId" />
-                                <button style="border-radius: 10px" class="col-7 btn mr-3 ml-3" id="apply-now" type="submit">Apply now</button>
-                            </form>
+                            <div class="col-8">
+                                <form asp-controller="Home" asp-action="SendApply" method="post">
+                                    <input type="hidden" name="applyVM.CompanyId" value="@Model.company.FirstOrDefault().CompanyId" />
+                                    <button style="border-radius: 10px; object-fit: contain" class="btn col-12" id="apply-now" type="submit">Apply now</button>
+                                </form>
+                            </div>
                             <button style="border-radius: 10px" type="button" disabled class="col-3 btn btn-primary">
                                 <img width="20" height="20" src="~/media/message.webp" />
                             </button>
