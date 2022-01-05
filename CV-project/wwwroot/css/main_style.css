@@ -89,6 +89,30 @@ header p {
                 cursor: pointer;
                 transition: background .5s;
             }
+    .nav feature {
+        height: 80px;
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+        .nav .feature .navItem {
+            color: #fff;
+            display: inline-block;
+            height: 80px;
+            line-height: 80px;
+            list-style: none;
+            padding: 0 10px;
+            transition: background .5s;
+            font-weight: 500;
+            font-size: 17px;
+        }
+
+        .btn:hover, .nav .feature .navItem:hover {
+            background: #117bff;
+            cursor: pointer;
+            transition: background .5s;
+        }
 
 /*=========================================================
     MAIN
