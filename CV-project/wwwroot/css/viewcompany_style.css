@@ -1,0 +1,229 @@
+﻿body {
+    overflow: hidden;
+}
+
+/*#matching {
+    margin-left: 70%;
+    font-size: 20px;
+    color: #000000;
+    text-decoration: underline;
+}
+
+#logo {
+    margin-right: 90%;
+    font-size: 20px;
+}
+
+#headhunt {
+    margin-left: 0.5%;
+    font-size: 20px;
+    color: #000000;
+}
+
+#event {
+    margin-left: 0.5%;
+    font-size: 20px;
+    color: #000000;
+}*/
+
+#seeJobs {
+    background-color: white;
+    color: #325EEA;
+    padding: 6px 26px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-color: #325EEA;
+    border-radius: 10px;
+    margin-left: 81%;
+    outline: none;
+}
+
+    #seeJobs:hover {
+        background-color: #325EEA;
+        color: white;
+        border-color: #325EEA;
+        outline: none;
+    }
+
+#companyName {
+    font-size: 80px;
+    font-weight: bold;
+    padding-left: 9%;
+    padding-top: 6%;
+}
+
+#companyDetail {
+    text-align: justify;
+    padding-left: 180px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+}
+
+#next {
+    background-color: #325EEA;
+    color: #FFFFFF;
+    padding: 20px 25px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: #325EEA;
+    border-radius: 5px;
+    margin-left: 50%;
+}
+
+.modal-body {
+    text-align: justify;
+}
+/*#rightArrow {
+    overflow: hidden;
+    position: absolute;
+    top: 12%;
+    left: 77.2%;
+}
+
+#leftArrow {
+    overflow: hidden;
+    position: absolute;
+    top: 12%;
+    right: 80.5%;
+}
+/*#rightArrow {
+    overflow: hidden;
+    position: absolute;
+    left: 76.5%;
+
+}
+#leftArrow {
+    overflow: hidden;
+    position: absolute;
+}*/
+
+/*+#RButton {
+    overflow: hidden;
+    position: absolute;
+}*/
+
+#LButton {
+    overflow: hidden;
+    position: absolute;
+    top: 13%;
+    right: 80.5%;
+    padding-bottom: 16.5%;
+    padding-top: 17.5%;
+    padding-left: 10.5%;
+    padding-right: 7.5%;
+    /*padding-top: 370px;
+    padding-bottom: 372px;
+    padding-right: 190px;
+    padding-left: 190px;
+    padding-left: 160px;*/
+    background-color: transparent;
+    border: 0;
+}
+
+#RButton:hover {
+    background-color: #EAEAEA;
+}
+
+#RButton {
+    overflow: hidden;
+    position: absolute;
+    top: 13%;
+    left: 80.5%;
+    padding-bottom: 16.5%;
+    padding-top: 17.5%;
+    padding-left: 10.5%;
+    padding-right: 7.5%;
+    background-color: transparent;
+    border: 0;
+}
+
+#LButton:hover {
+    background-color: #EAEAEA;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+    overflow: auto;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #EAEAEA;
+    /*visibility: hidden;*/
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #bfbfbf;
+    border-radius: 10px;
+}
+
+.vl {
+    border-left: 2px solid black;
+    height: 44vh;
+    margin-right: 400px;
+    display: block;
+    margin-bottom: -42vh;
+}
+
+#more {
+    display: none;
+}
+
+.modal-lg {
+    width: 90%;
+    max-width: 1100px;
+    height: 90%;
+    max-height: 1100px;
+}
+
+#apply-now {
+    background-color: white;
+    color: #325EEA;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-color: #325EEA;
+    border-radius: 10px;
+    outline: none;
+}
+
+    #apply-now:hover {
+        background-color: #325EEA;
+        color: white;
+        border-color: #325EEA;
+    }
+
+#job-item {
+    border: solid;
+    border-width: 1px;
+    border-radius: 15px;
+    border-color: #CACACA
+}
+
+#Header {
+    font-weight: bold;
+}
+
+.job-quality {
+    margin-left: 5px;
+    margin-right: 17px;
+    text-align: left;
+}
+
+.job-paragraph{
+    margin-left: 5px;
+    margin-right: 17px;
+    font-size: 13px;
+    text-align: left;
+}
+
+.btn:focus, .btn:active {
+    outline: none !important;
+    box-shadow: none;
+}

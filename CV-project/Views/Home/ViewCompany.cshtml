@@ -1,0 +1,264 @@
+﻿@using CV_project.Data.Entities
+@model PagingJobCompany
+@{
+    ViewData["Title"] = "ViewCompany";
+}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"
+      id="bootstrap-css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"
+      id="bootstrap-css" />
+<link rel="stylesheet" href="/css/viewcompany_style.css">
+<link rel="stylesheet" href="/css/layout-style.css"> <!-- check -->
+<link rel="stylesheet" href="/css/site.css"> <!-- check -->
+<script type="text/javascript">
+    function myFunction() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "See more ▼";
+            moreText.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "See less ▲";
+            moreText.style.display = "inline";
+        }
+    }
+    imgs = new Array();
+    imgs[0] = "/media/company_image_1.jpg";
+    imgs[1] = "/media/company_image_2.jpg";
+    imgs[2] = "/media/company_image_3.jpg";
+    imgs[3] = "/media/company_image_4.jpg";
+    imgs[4] = "/media/company_image_5.jpg";
+    imgs[5] = "/media/company_image_6.jpg";
+    imgs[6] = "/media/company_image_7.jpg";
+    imgs[7] = "/media/company_image_8.jpg";
+    function getRandomImage() {
+        var rnd = Math.floor(Math.random() * imgs.length);
+        document.getElementById('randImage').src = imgs[rnd];
+    }
+
+
+    function update(name,address,qualifilcate,skills,desc) {
+        document.getElementById("jobTitle").innerHTML = "<b>"+ name +"</b>";
+        document.getElementById("jobLocation").innerHTML = address;
+        document.getElementById("jobQualification").innerHTML = qualifilcate;
+        document.getElementById("jobSkills").innerHTML = skills;
+        document.getElementById("jobAbout").innerHTML = desc;
+    }
+
+</script>
+<!DOCTYPE html>
+<html>
+<body onload="getRandomImage()">
+    <section class="view-company-content">
+        <div class="container-fluid m-0 ">
+            <div class="row d-md-flex-row  overflow-hidden">
+                <div class="col-md-4 p-0 col-12 bg-light d-flex overflow-hidden " style="height: 91.5vh; overflow-y: hidden;">
+                    <div class="card p-0   w-100 h-100 text-light   border-0 ">
+                        <img id="randImage" class="card-img h-100 w-100"
+                             alt="Card image">
+                        <div class="card-img-overlay p-1 p-md-3">
+                            <div class="position-relative  w-100  h-100 d-flex">
+                                <div class="container-fluid align-self-end  mt-5 mb-2">
+                                    <div class="row">
+                                        <div class="col-md-6 col-7">
+                                            <div class=" pt-0 d-inline-block">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8  pt-5 pt-md-1  bg-transparent">
+                    @foreach (var company in Model.company)
+                    {
+                        <h1 id="companyName">@company.Name</h1>
+                        <div class="container-fluid d-flex align-items-center h-50">
+                            <div class="row justify-content-md-center">
+                                <span class="vl"></span>
+                                <div class="col-md-12">
+                                    <p id="companyDetail" style="height: 32vh; overflow-y: auto;">
+                                        <span id="Header">Số Lượng nhân viên: </span>
+                                        <span id="NoEmp"> 1000</span>
+                                        <span> <br /><br /></span>
+                                        <span id="Header">Description: </span>
+                                        <span id="description">
+                                            công ty cổ phần ti ki ("tiki") là đơn vị thiết lập, tổ chức sàn thương mại điện tử www.tiki.vn để các nhà bán hàng thể tiến hành một phần<span id="dots"><br /></span>
+                                            <span id="more">
+                                                hoặc toàn bộ quy trình mua bán hàng hóa, dịch vụ trên sàn thương mại điện tử.
+                                                <span> just some text after some text and in between some more text <br /></span>
+                                                <span> i'm next to the last line of text <br /></span>
+                                                <span> i'm the last line of text</span>
+                                                <span> just some text after some text and in between some more text <br /></span>
+                                                <span> i'm next to the last line of text <br /></span>
+                                                <span> i'm the last line of text <br /></span>
+                                            </span>
+                                            <button onclick="myFunction()" id="myBtn" style="border-color: white; border:0; color: #325eea; background-color: white; padding:0px; outline: none;">See more ▼</button>
+                                            <span> <br /><br /></span>
+                                            <span id="Header">Địa chỉ: </span>
+                                            <span id="address">Quận 1, HCM</span>
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    @*Pageging button attribute disable*@
+                    <div>
+                        @{
+                            var previousDisable = !Model.company.PreviousPage ? "disabled" : "";
+                            var nextDisable = !Model.company.NextPage ? "disabled" : "";
+                        }
+                    </div>
+                    <button id="seeJobs" data-toggle="modal" data-target="#JobPost">
+                        See Jobs
+                    </button>
+                    <div style="margin-left: 22%; margin-top: 2.5%;">
+                        <a asp-action="ViewCompany" asp-controller="Home" asp-route-pageNumber="@(Model.company.PageIndex-1)" class="btn btn-default @previousDisable" style="border-radius: 50%; border: 0px; background-color: white; outline: none;">
+                            <img src="~/media/up.svg" style="height: 50px; width: 50px;" />
+                        </a>
+                    </div>
+                    <div style="margin-left: 11%; margin-top: -8.7%;">
+                        <a asp-action="ViewCompany" asp-controller="Home" asp-route-pageNumber="@(Model.company.PageIndex+1)" class="btn btn-default @nextDisable" style="border-radius: 50%; border: 0px; background-color: white; outline: none">
+                            <img src="~/media/down.svg" style="height: 50px; width: 50px;" />
+                        </a>
+                    </div>
+                    @*<div>
+                            <a asp-action="ViewCompany" asp-controller="Home" asp-route-pageNumber="@(Model.company.PageIndex-1)" class="btn btn-default @previousDisable">Previous</a>
+                            <a asp-action="ViewCompany" asp-controller="Home" asp-route-pageNumber="@(Model.company.PageIndex+1)" class="btn btn-default @nextDisable">Next</a>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+<!-- Modal -->
+<div id="JobPost" class="modal fade bd-example-modal-xl" role="dialog" tabindex="-1" aria-labelledby="exampleModalScrollableTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="height: 6vh;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body" style="height: 85vh;">
+                <div class="row">
+                    <div class="col-md-8" style="overflow-y: scroll; height: 80vh">
+                        <div class="input-group p-2 col-md-12 mt-1">
+                            <input style="border-start-start-radius: 15px;border-end-start-radius: 15px"
+                                   class="form-control py-2 border-right-0 border" type="search" id="example-search-input">
+                            <span class="input-group-append">
+                                <button style="border-start-end-radius: 15px;border-end-end-radius: 15px"
+                                        class="btn btn-outline-secondary border-left-0 border" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+
+
+                        <div class="col-xs-12 pr-4 pl-4">
+                            @{ 
+                                foreach (var job in Model.listJobPerCompany) {
+                            <div onclick="update('@(job.Name)','@(job.Address)','@(job.Qualification)','@(job.Requirement)','@(job.Information)');" style="cursor: pointer;" class="row p-2 mt-2" id="job-item">
+                                <div class="col-md-2 mx-auto d-block mb-2">
+                                    <img src="~/media/job look.svg" style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                                <div class="col-md-7" style="width:60vw">
+                                    <div class="row">
+                                        <h5 style="font-size: 20px"><b>@job.Name</b></h5>
+                                    </div>
+                                    <div class="row">
+                                        <h6>@job.Address</h6>
+                                        @*<div class="mr-1 ml-1">&bull;</div>
+                                        <h6>District 4</h6>*@
+                                        <div class="col-md-5 ml-3">
+                                            <img height="20" width="20" class="mr-1" src="~/media/watch.png">
+                                            420 views
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <h6>Today</h6>
+                                        <div class="mr-1 ml-1">&bull;</div>
+                                        <h6>@job.Worktime</h6>
+                                        <div class="mr-1 ml-1">&bull;</div>
+                                        <h6>@job.NumEmployee Applicants</h6>
+                                    </div>
+
+                                    <div class="row">
+                                        <button id="apply-now" type="button" class="btn col mr-3">@job.Language</button>
+                                        <button id="apply-now" type="button" class="btn col mr-3">@job.Position</button>
+                                        @*<button id="apply-now" type="button" class="btn col mr-3">@job.Address</button>*@
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <button type="button" disabled class="col pr-0 mb-3 align-self-end" style="background-color: transparent; border: none">
+                                        <img height="30" width="30" class="rounded float-right" src="~/media/bookmark.png" />
+                                    </button>
+                                    <h5 style="font-size: 15px; text-align: right">Salary Per Month</h5>
+                                    <h5 style="font-size: 13px; text-align: right"><b>@job.SalaryPerMonth</b></h5>
+                                </div>
+                            </div>
+                            }}
+                        </div>
+                    </div>
+
+                    <div class="col-md-4" style="height: 80vh">
+                        <div id="jobDetail" style="overflow-y: scroll; height: 72vh">
+                            <div class="col-md-4 mx-auto d-block mb-2">
+                                <img src="~/media/job look.svg" style="width: 100%; height: 100%; object-fit: contain;">
+                            </div>
+                            <h5 id="jobTitle" style="text-align: center"><b>JAVA Developer Specialist Generalist</b></h5>
+                            <div id="jobLocation" class="text-center">
+                                <p>
+                                    <h6>Ho Chi Minh . District 4</h6>
+                                </p>
+                            </div>
+                            <hr />
+                            <h5 class="job-quality"><b>Qualification:</b></h5>
+                            <p id="jobQualification" class="job-paragraph">
+                                .
+                            </p>
+                            <hr />
+                            <h5 class="job-quality"><b>Skills & Requirements:</b></h5>
+                            <p id="jobSkills" class="job-paragraph">
+                               .
+                            </p>
+                            <hr />
+                            <h5 class="job-quality"><b>About the job:</b></h5>
+                            <p id="jobAbout" class="job-paragraph">
+                               .
+                            </p>
+                        </div>
+
+                        <div class="row mt-2 mb-2">
+                            <div class="col-8">
+                                <form asp-controller="Home" asp-action="SendApply" method="post">
+                                    <input type="hidden" name="applyVM.CompanyId" value="@Model.company.FirstOrDefault().CompanyId" />
+                                    <button style="border-radius: 10px; object-fit: contain" class="btn col-12" id="apply-now" type="submit">Apply now</button>
+                                </form>
+                            </div>
+                            <button style="border-radius: 10px" type="button" disabled class="col-3 btn btn-primary">
+                                <img width="20" height="20" src="~/media/message.webp" />
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

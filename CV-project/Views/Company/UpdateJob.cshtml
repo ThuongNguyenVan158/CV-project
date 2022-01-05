@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewData["Title"] = "UpdateJob";
+}
+
+@model JobViewModel
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://thetheme.io/thejobs/resume-add.html -->
+<html lang="en">
+<head>
+    <title>Sign In</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/css/createcv_style.css">
+    <link rel="stylesheet" href="/css/layout-style.css"> <!-- check -->
+    <link rel="stylesheet" href="/css/site.css"> <!-- check -->
+</head>
+
+<body>
+    <section>
+
+        @*<form action="http://thetheme.io/thejobs/resume-add.html#">*@
+        <div class="container">
+            <div class="row d-md-flex-row overflow-hidden">
+                <div class="col-md-8 pt-10 pt-md-1 pb-5 bg-light" style="height: 84vh; overflow-y: scroll;">
+                    <div class="container page-name mt-3">
+                        <h1 class="text-center" style="font-size: 30px;"><strong>Update job</strong></h1>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 mt-5 w-100">
+                        <form asp-controller="Company" asp-action="UpdateJob" method="post">
+                            <input type="hidden" name="jobVM.JobId" value="@Model.JobId" />
+                            <h6><strong>Name</strong></h6>
+                            <div class="form-group w-100">
+                                <input maxlength="50" type="text" class="form-control input-lg" name="jobVM.Name" value="@Model.Name">
+                            </div>
+
+                            <h6><strong>Position</strong></h6>
+                            <div class="form-group w-100">
+                                <input maxlength="2000" type="text" class="form-control input-lg" name="jobVM.Position" value="@Model.Position">
+                            </div>
+
+                            <h6><strong>Information</strong></h6>
+                            <div class="form-group w-100">
+                                <textarea maxlength="2000" class="form-control" rows="3" name="jobVM.Information">@Model.Information</textarea>
+                            </div>
+                            <h6><strong>Deadline</strong></h6>
+                            <div class="form-group w-100">
+                                <input class="form-control" rows="3" name="jobVM.Deadline" type="datetime" value="@Model.Deadline.ToString("dd/MM/yyyy")">
+                            </div>
+                            <h6><strong>Address</strong></h6>
+                            <div class="form-group w-100">
+                                <input class="form-control" rows="3" name="jobVM.Address" type="text" value="@Model.Address">
+                            </div>
+                            <h6><strong>Qualification</strong></h6>
+                            <div class="form-group w-100">
+                                <textarea maxlength="2000" class="form-control" rows="3" name="jobVM.Qualification">@Model.Qualification</textarea>
+                            </div>
+                            <h6><strong>Requirement</strong></h6>
+                            <div class="form-group w-100">
+                                <textarea maxlength="2000" class="form-control" rows="3" name="jobVM.Requirement">@Model.Requirement</textarea>
+                            </div>
+                            <h6><strong>Language</strong></h6>
+                            <div class="form-group w-100">
+                                <input class="form-control" rows="3" name="jobVM.Language" type="text" value="@Model.Language">
+                            </div>
+                            <h6><strong>Worktime</strong></h6>
+                            <div class="form-group w-100">
+                                <input class="form-control" rows="3" name="jobVM.Worktime" type="text" value="@Model.Worktime">
+                            </div>
+                            <h6><strong>NumEmployee</strong></h6>
+                            <div class="form-group w-100">
+                                <input class="form-control" rows="3" name="jobVM.NumEmployee" type="number" value="@Model.NumEmployee">
+                            </div>
+                            <h6><strong>SalaryPerMonth</strong></h6>
+                            <div class="form-group w-100">
+                                <input class="form-control" rows="3" name="jobVM.SalaryPerMonth" type="text" value="@Model.SalaryPerMonth">
+                            </div>
+                            <button id="createCVBtnStyle" type="submit" class="btn btn-primary mt-3 w-100 submit px-3">Update job</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-4  p-0 col-12 bg-light d-flex overflow-hidden" style="height: 84vh;">
+                    <div class="card p-0   w-100 h-100 text-light   border-0 ">
+                        <img class="card-img h-100 w-100"
+                             src="https://images.unsplash.com/photo-1550757750-4ce187a65014?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                             alt="Card image">
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*</form>*@
+    </section>
+</body>
+</html>

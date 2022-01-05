@@ -1,0 +1,193 @@
+﻿@using CV_project.Data.Entities
+@{
+    ViewData["Title"] = "ViewCV";
+}
+@model PagingList<WebCv>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"
+      id="bootstrap-css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"
+      id="bootstrap-css" />
+<link rel="stylesheet" href="/css/viewcv_style.css">
+<link rel="stylesheet" href="/css/layout-style.css"> <!-- check -->
+<link rel="stylesheet" href="/css/site.css"> <!-- check -->
+<script type="text/javascript">
+    function myFunction() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "See more ▼";
+            moreText.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "See less ▲";
+            moreText.style.display = "inline";
+        }
+    }
+    imgs = new Array();
+    imgs[0] = "/media/model 1.png";
+    imgs[1] = "/media/model 2.png";
+    imgs[2] = "/media/model 3.png";
+    imgs[3] = "/media/model 4.png";
+    function getRandomImage() {
+        var rnd = Math.floor(Math.random() * imgs.length);
+        document.getElementById('randImage').src = imgs[rnd];
+    }
+</script>
+<!DOCTYPE html>
+<html>
+<body onload="getRandomImage()">
+    <section class="view-company-content">
+        <div class="container-fluid m-0 ">
+            <div class="row d-md-flex-row  overflow-hidden">
+                <div class="col-md-4 p-0 col-12 bg-light d-flex overflow-hidden " style="height: 91.5vh; overflow-y: hidden;">
+                    <div class="card p-0   w-100 h-100 text-light   border-0 ">
+                        <img id="randImage" class="card-img h-100 w-100"
+                             alt="Card image">
+                        <div class="card-img-overlay p-1 p-md-3">
+                            <div class="position-relative  w-100  h-100 d-flex">
+                                <div class="container-fluid align-self-end  mt-5 mb-2">
+                                    <div class="row">
+                                        <div class="col-md-6 col-7">
+                                            <div class=" pt-0 d-inline-block">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8  pt-5 pt-md-1  bg-transparent">
+                    @{
+                        foreach (var cv in Model)
+                        {
+                            <h1 id="CVID">ID:</h1>
+                            <div class="container-fluid d-flex align-items-center h-50">
+                                <div class="row justify-content-md-center">
+                                    <span class="vl"></span>
+                                    <div class="col-md-12">
+                                        <p id="CVDetail" style="height: 30vh; overflow-y: auto;">
+                                            <span id="Header">Họ và tên: </span>
+                                            <span id="Name"> @cv.FullName</span>
+                                            <span> <br /></span>
+                                            <span id="Header">Major: </span>
+                                            <span id="Major"> @cv.Major</span>
+                                            <span> <br /></span>
+                                            <span id="Header">Trường: </span>
+                                            <span id="University"> @cv.University</span>
+                                            <span> <br /></span>
+                                            <span id="Header">Định Hướng Nghề Nghiệp: </span>
+                                            <span id="CareerObjectives">@cv.CareerObjectives</span>
+                                            <span> <br /> <br /></span>
+                                            <span id="Header">Brief Introduction: </span>
+                                            <span id="BriefIntroduction">
+                                                <span> @cv.BriefIntroduction <br /></span>
+                                                <span> I'm next to the last line of text <br /></span>
+                                                69 stacks<span id="dots"><br /></span>
+                                            </span>
+                                            <span id="more">
+                                                <!--more là award+certificates+activities theo như db -->
+                                                420 Languages <br />
+                                                <span> Just some text after some text and in between some more text <br /></span>
+                                                <span> I'm next to the last line of text <br /></span>
+                                                <span> I'm the last line of text <br /></span>
+                                            </span>
+                                            <button onclick="myFunction()" id="myBtn" style="border-color: white; border:0; color: #325EEA; background-color: white; padding:0px; outline: none;">See more ▼</button>
+                                            <span> <br /><br /></span>
+                                            <span id="Header">Kinh nghiệm làm việc (tháng): </span>
+                                            <span id="WorkExp">@cv.WorkExperience</span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    <div>
+                        @{
+                            var previousDisable = !Model.PreviousPage ? "disabled" : "";
+                            var nextDisable = !Model.NextPage ? "disabled" : "";
+                        }
+                    </div>
+                    <button id="seeJobs" data-toggle="modal" data-target="#JobPost">
+                        See More
+                    </button>
+                    <div style="margin-left: 22%; margin-top: 2.5%;">
+                        <a asp-action="ViewCV" asp-controller="Company" asp-route-pageNumber="@(Model.PageIndex - 1)" class="btn btn-default @previousDisable" style="border-radius: 50%; border: 0px; background-color: white; outline: none;">
+                            <img src="~/media/up.svg" style="height: 50px; width: 50px;" />
+                        </a>
+                    </div>
+                    <div style="margin-left: 11%; margin-top: -8.7%;">
+                        <a asp-action="ViewCV" asp-controller="Company" asp-route-pageNumber="@(Model.PageIndex + 1)" class="btn btn-default @nextDisable" style="border-radius: 50%; border: 0px; background-color: white; outline: none">
+                            <img src="~/media/down.svg" style="height: 50px; width: 50px;" />
+                        </a>
+                    </div>
+                     }
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+<!-- Modal -->
+<div id="JobPost" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="exampleModalScrollableTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document" style="overflow-y: initial">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<h1 class="modal-title">Available Jobs</h1>*@
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body" style="height: 60vh; overflow-y: auto;">
+                @{
+                    foreach (var cv in Model)
+                    {
+                        <span id="Header">Họ và tên: </span>
+                        <span id="Name"> @cv.FullName</span>
+                        <span> <br /></span>
+                        <span id="Header">Major: </span>
+                        <span id="Major"> @cv.Major</span>
+                        <span> <br /></span>
+                        <span id="Header">Trường: </span>
+                        <span id="University"> @cv.University</span>
+                        <span> <br /></span>
+                        <span id="Header">Định Hướng Nghề Nghiệp: </span>
+                        <span id="CareerObjectives">@cv.CareerObjectives</span>
+                        <span> <br /> <br /></span>
+                        <span id="Header">Brief Introduction: </span>
+                        <span id="BriefIntroduction">
+                            <span> @cv.BriefIntroduction <br /></span>
+                            <span> I'm next to the last line of text <br /></span>
+                            69 stacks<span id="dots"><br /></span>
+                        </span>
+                        <span id="more">
+                            <!--more là award+certificates+activities theo như db -->                           
+                            <span id="Header">Awards: <br /></span>
+                            <span id="award">@cv.Awards <br/></span>
+                            <span id="Header">Certificates: <br /></span>
+                            <span id="certificate">@cv.Certificates<br/></span>
+                            <span id="Header">Activities: <br /></span>
+                            <span id="activities">@cv.Activities<br/></span>
+                        </span>
+                        @*<button onclick="myFunction()" id="myBtn" style="border-color: white; border:0; color: #325EEA; background-color: white; padding:0px; outline: none;">See more ▼</button>*@
+                        <span> <br /><br /></span>
+                        <span id="Header">Kinh nghiệm làm việc (tháng): </span>
+                        <span id="WorkExp">@cv.WorkExperience</span>
+                    }
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

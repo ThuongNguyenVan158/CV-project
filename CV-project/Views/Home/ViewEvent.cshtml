@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewData["Title"] = "ViewEvent";
+}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"
+      id="bootstrap-css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"
+      id="bootstrap-css" />
+<link rel="stylesheet" href="/css/viewcompany_style.css">
+<link rel="stylesheet" href="/css/layout-style.css"> <!-- check -->
+<link rel="stylesheet" href="/css/site.css"> <!-- check -->
+<link rel="stylesheet" href="/css/viewevent_style.css"> <!-- check -->
+<script>
+    function update(jobIndex) {
+        document.getElementById("eventTitle").innerHTML = "<b>Title of event " + jobIndex + "</b>";
+        document.getElementById("job-paragraph").innerHTML = "Description of event " + jobIndex;
+        document.getElementById("eventAuthor").innerHTML = "Author of event " + jobIndex;
+        document.getElementById("eventPostedDate").innerHTML = "Posted date of event " + jobIndex;
+        document.getElementById("eventView").innerHTML = "Views of event " + jobIndex;
+    }
+</script>
+
+<!DOCTYPE html>
+<html>
+<body>
+    <div class="row">
+        <div class="col-md-6" style="overflow-y: scroll; height: 84vh">
+            <div class="input-group p-2 col-md-12 mt-1">
+                <input style="border-start-start-radius: 15px;border-end-start-radius: 15px"
+                       class="form-control py-2 border-right-0 border" type="search" id="example-search-input">
+                <span class="input-group-append">
+                    <button style="border-start-end-radius: 15px;border-end-end-radius: 15px"
+                            class="btn btn-outline-secondary border-left-0 border" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+
+            <div class="col-xs-12 pr-4 pl-4">
+                <div onclick="update(1);" style="cursor: pointer;" class="row p-2 mt-3" id="job-item">
+                    <div class="col-md-3">
+                        <img src="~/media/job look.svg" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <h5 style="font-size: 20px"><b>Top 7 Software Testing Forums You Don't Want to Miss out</b></h5>
+                            <h6>People say "forum is dead"... and it's understandable...</h6>
+                        </div>
+
+
+                        <div class="row">
+                            <div style="width: 16px" class="mr-2">
+                                <img style="width: 100%; height: 100%; object-fit: contain;" src="~/media/author.png">
+                            </div>
+                            Author
+                            <div class="mr-1 ml-1">&bull;</div>
+                            12 Hours ago
+                            <div class="mr-1 ml-1">&bull;</div>
+                            420 Views
+                        </div>
+                    </div>
+
+                    <div class="col-md-1">
+                        <button type="button" class="col pr-0 mb-3 align-self-end" style="background-color: transparent; border: none">
+                            <img height="30" width="30" class="rounded float-right" src="~/media/bookmark.png" />
+                        </button>
+                    </div>
+                </div>
+
+                <div onclick="update(2);" style="cursor: pointer;" class="row p-2 mt-3" id="job-item">
+                    <div class="col-md-3">
+                        <img src="~/media/job look.svg" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <h5 style="font-size: 20px"><b>Top 7 Software Testing Forums You Don't Want to Miss out</b></h5>
+                            <h6>People say "forum is dead"... and it's understandable...</h6>
+                        </div>
+
+                        <div class="row">
+                            <div style="width: 16px" class="mr-2">
+                                <img style="width: 100%; height: 100%; object-fit: contain;" src="~/media/author.png">
+                            </div>
+                            Author
+                            <div class="mr-1 ml-1">&bull;</div>
+                            12 Hours ago
+                            <div class="mr-1 ml-1">&bull;</div>
+                            420 Views
+                        </div>
+                    </div>
+
+                    <div class="col-md-1">
+                        <button type="button" class="col pr-0 mb-3 align-self-end" style="background-color: transparent; border: none">
+                            <img height="30" width="30" class="rounded float-right" src="~/media/bookmark.png" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6" style="overflow-y: scroll; height: 84vh">
+            <h2 id="eventTitle" class="mt-3" style="text-align: left; margin-left: 7px"><b>Top 7 Software Testing Forums You Don't Want to Miss out</b></h2>
+            <div class="row col">
+                <div style="width: 16px; margin-left: 7px" class="mr-2">
+                    <img style="width: 100%; height: 100%; object-fit: contain;" src="~/media/author.png">
+                </div>
+                <div style="display: flex; align-items: center;" id="eventAuthor">Author</div>
+                <div style="display: flex; align-items: center;" class="mr-1 ml-1">&bull;</div>
+                <div style="display: flex; align-items: center;" id="eventPostedDate">12 Hours ago</div>
+                <div class="mr-1 ml-1">&bull;</div>
+                <div style="display: flex; align-items: center;" id="eventView">420 Views</div>
+            </div>
+            <hr />
+
+            <p id="job-paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut porta libero. Nunc aliquam auctor arcu eget mattis. Duis dui lectus, eleifend sit amet hendrerit ac, porttitor eu augue. Nullam et diam neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent dignissim auctor sem. Mauris vel leo sollicitudin, laoreet sapien ac, fermentum nisl. Pellentesque sagittis nisl et dolor commodo, non blandit felis venenatis. Ut ut velit imperdiet, ultrices lorem id, venenatis purus. Vivamus consequat interdum interdum. Duis ut quam vel mi vulputate vestibulum ut finibus justo. Maecenas sem ex, rutrum vitae odio dapibus, accumsan lacinia quam. Suspendisse sit amet efficitur est.
+                <br /><br />
+                Aenean non metus commodo, hendrerit tellus sed, sollicitudin nunc. Vivamus suscipit, lectus mollis blandit rhoncus, odio metus lobortis purus, a hendrerit tortor magna in neque. Donec eget viverra magna. Nunc et elit nisi. Duis nec porttitor neque. Pellentesque vitae interdum tortor. Mauris pulvinar diam eget nisl finibus aliquet.
+                <br /><br />
+                Morbi molestie, felis quis condimentum efficitur, mauris sapien dictum diam, sit amet placerat erat arcu quis risus. Mauris fermentum sapien eu nisi tincidunt auctor. Praesent a mauris eu risus bibendum pellentesque quis iaculis orci. Donec rhoncus lacus vitae blandit rutrum. Maecenas mattis diam non risus placerat molestie. Donec vitae semper sem. Donec non tempus dui, vitae pharetra ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur eget tellus lacinia, luctus tortor feugiat, consectetur urna. Donec ac rhoncus nunc, sit amet convallis ligula. Curabitur mauris tortor, aliquet non aliquam in, scelerisque ut enim. In non nisi finibus, ornare arcu at, iaculis nibh. Nulla egestas massa ante, ut accumsan ante egestas sit amet.
+                <br /><br />
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hac habitasse platea dictumst. Sed accumsan justo lorem, vitae gravida nunc imperdiet id. Vivamus quis ultricies augue. Vestibulum non finibus ante. Nullam convallis lorem tempus felis eleifend, eget placerat nulla ornare. Mauris placerat enim vel pulvinar maximus. Integer varius interdum vulputate. In fringilla lorem non fermentum commodo. Morbi magna purus, sodales at porta vel, consequat quis libero. Fusce nec metus ut est laoreet tristique non vitae metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut vitae quam ac mi cursus bibendum nec quis justo.
+                <br /><br />
+                Quisque lacinia at orci a viverra. Phasellus varius, odio eu sagittis porta, felis libero pellentesque sapien, eget feugiat nunc leo id urna. Aenean eu iaculis arcu, eget tristique urna. Vestibulum tincidunt odio dolor, id ultrices sem hendrerit et. Nullam vel sagittis sem. Pellentesque tellus felis, eleifend id sagittis a, suscipit sit amet elit. Nullam erat ipsum, rhoncus eget mattis in, malesuada vitae augue. Pellentesque eget dui vitae odio ultrices varius vel vitae metus. Vivamus sapien est, lacinia quis posuere nec, porttitor eu turpis. Nullam ullamcorper dignissim porta. Sed pharetra tempor suscipit.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

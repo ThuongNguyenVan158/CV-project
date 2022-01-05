@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewData["Title"] = "ViewJob";
+}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"
+      id="bootstrap-css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"
+      id="bootstrap-css" />
+<link rel="stylesheet" href="/css/viewjob_style.css">
+<link rel="stylesheet" href="/css/layout-style.css">
+
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="bigbox">
+        Jobs:
+        <div id="smallbox" data-toggle="modal" data-target="#jobDesc">
+            <p>
+                IBM  <br />
+                Full Stack Web Developer
+            </p>
+
+        </div>
+
+    </div>
+</body>
+</html>
+
+<!-- Modal -->
+<div id="jobDesc" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="exampleModalScrollableTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document" style="overflow-y: initial">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">CV Details</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body" style="height: 60vh; overflow-y: auto;">
+                Strong understanding of SQL,  Python, C++, Java, C#, PHP.
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>

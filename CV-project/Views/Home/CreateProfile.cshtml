@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewData["Title"] = "CreateProfile";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CreateProfile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=yes">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/css/createcv_style.css">
+    <link rel="stylesheet" href="/css/layout-style.css"> <!-- check -->
+    <link rel="stylesheet" href="/css/site.css"> <!-- check -->
+</head>
+
+<body>
+    <section>
+        <div class="row d-md-flex-row overflow-hidden">
+            <div class="col-md-8 pt-1 pt-md-1 pb-0 bg-light" style="height: 84vh; overflow-y: scroll;">
+                <div class="container page-name mt-1">
+                    <h1 class="text-center mt-4" style="font-size: 35px;"><b>Welcome! Let's create your Profile!</b></h1>
+                </div>
+
+                <div class="col-xs-12 col-sm-11 mt-5 w-100">
+                    <form asp-controller="Home" asp-action="CreateProfile" method="post">
+                        <h6><strong>Name</strong></h6>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg" name="cvdata.Name" maxlength="50">
+                        </div>
+
+                        <h6><strong>Date of birth</strong></h6>
+                        <div class="form-group">
+                            <input type="date" class="form-control input-lg" name="cvdata.DoB" maxlength="10">
+                        </div>
+
+                        @*<h6><strong>Major</strong></h6>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg" name="cvdata.Major" maxlength="100">
+                        </div>*@
+
+                        <h6><strong>University</strong></h6>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg" name="cvdata.University" maxlength="200">
+                        </div>
+
+                        @*<h6><strong>Skills</strong></h6>
+                        <div class="form-group">
+                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Skills"></textarea>
+                        </div>*@
+
+                        <h6><strong>Brief Introduction</strong></h6>
+                        <div class="form-group">
+                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.BiefIntroduction"></textarea>
+                        </div>
+
+                        @*<h6><strong>Career Objectives</strong></h6>
+                        <div class="form-group">
+                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Careerobjecives"></textarea>
+                        </div>
+
+                        <h6><strong>Awards</strong></h6>
+                        <div class="form-group">
+                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Awards"></textarea>
+                        </div>
+
+                        <h6><strong>Certificates</strong></h6>
+                        <div class="form-group">
+                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Certificates"></textarea>
+                        </div>
+
+                        <h6><strong>Work Experiences</strong></h6>
+                        <div class="form-group">
+                            <textarea maxlength="10" class="form-control" rows="3" name="cvdata.WorkExperiences"></textarea>
+                        </div>
+
+                        <h6><strong>Activities</strong></h6>
+                        <div class="form-group">
+                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.Activities"></textarea>
+                        </div>*@
+                        <h6><strong>ContactInformation</strong></h6>
+                        <div class="form-group">
+                            <textarea maxlength="1000" class="form-control" rows="3" name="cvdata.ContactInformation"></textarea>
+                        </div>
+                        <h6><strong>Email</strong></h6>
+                        <div class="form-group">
+                            <input maxlength="100" class="form-control" rows="3" name="cvdata.Email" type="email">
+                        </div>
+
+                        <hr class="hr-lg">
+
+
+                        @*<div class="btn-group w-100" role="group" aria-label="Basic example">
+            <form action="/action_page.php">
+                <input class="btn btn-light mr-2" type="file" id="myFile" name="filename">
+                <input class="btn btn-secondary" type="submit">
+            </form>
+        </div>*@
+                        <button id="createCVBtnStyle" type="submit" class="btn btn-primary mt-3 w-100 submit">Create My Profile</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-12 bg-light overflow-hidden" style="height: 84vh">
+                <div class="card p-0 w-100 h-100 text-light  ">
+                    <img class="card-img h-100 w-100"
+                         src="https://images.unsplash.com/photo-1550757750-4ce187a65014?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                         alt="Card image">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
