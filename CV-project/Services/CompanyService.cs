@@ -165,5 +165,20 @@ namespace CV_project.Services
             _context.SaveChanges();
             return true;
         }
+        public async Task<List<WebCv>> GetListCvPerCompany(Guid accountId)
+        {
+            var idCompany = await (from c in _context.Accounts
+                                   join d in _context.Companies on c.AccountId equals d.AccountId
+                                   where c.AccountId == accountId
+                                   select d.CompanyId
+                                   ).FirstOrDefaultAsync();
+            var listCV = new List<WebCv>();
+            listCV = await (from c in _context.WebCvs
+                            join d in _context.Applicants on c.Cvid equals d.Cvid
+                            join e in _context.Applies on d.ApplicantId equals e.ApplicantId
+                            where e.CompanyId == idCompany
+                            select c).ToListAsync();
+            return listCV;
+        }
     }
 }

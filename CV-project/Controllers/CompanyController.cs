@@ -146,9 +146,15 @@ namespace CV_project.Controllers
             var listJob = await _companyService.GetAllJobPerCompany(infoSession.accountId);
             return View(listJob);
         }
-        public IActionResult AppliedCV()
+        public async Task<IActionResult> AppliedCV()
         {
-            return View();
+            if (HttpContext.Session.GetString("Usersession") == null)
+                return RedirectToAction("SignIn");
+
+            InfoViewModel infoSession = new InfoViewModel();
+            infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
+            var model = await _companyService.GetListCvPerCompany(infoSession.accountId);
+            return View(model);
         }
         public IActionResult Index()
         {
