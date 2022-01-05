@@ -27,6 +27,7 @@ namespace CV_project.Data
         public virtual DbSet<HaveJob> HaveJobs { get; set; }
         public virtual DbSet<Job> Jobs { get; set; }
         public virtual DbSet<WebCv> WebCvs { get; set; }
+        public virtual DbSet<HeadHunt> HeadHunts { get; set; }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
@@ -130,6 +131,12 @@ namespace CV_project.Data
             {
                 entity.HasKey(e => e.Cvid)
                     .HasName("WebCV_PK");
+            });
+            modelBuilder.Entity<HeadHunt>(entity =>
+            {
+                entity.HasOne(d => d.Account)
+                   .WithMany(p => p.HeadHunts)
+                   .HasForeignKey(d => d.AccountId);
             });
 
             OnModelCreatingPartial(modelBuilder);
