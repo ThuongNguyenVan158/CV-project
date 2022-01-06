@@ -87,26 +87,21 @@
                             <div class="row justify-content-md-center">
                                 <span class="vl"></span>
                                 <div class="col-md-12">
-                                    <p id="companyDetail" style="height: 32vh; overflow-y: auto;">
-                                        <span id="Header">Số Lượng nhân viên: </span>
-                                        <span id="NoEmp"> 1000</span>
+                                    <p id="companyDetail" style="height: 32vh; overflow-y: auto;">                                        
                                         <span> <br /><br /></span>
                                         <span id="Header">Description: </span>
                                         <span id="description">
-                                            công ty cổ phần ti ki ("tiki") là đơn vị thiết lập, tổ chức sàn thương mại điện tử www.tiki.vn để các nhà bán hàng thể tiến hành một phần<span id="dots"><br /></span>
-                                            <span id="more">
-                                                hoặc toàn bộ quy trình mua bán hàng hóa, dịch vụ trên sàn thương mại điện tử.
-                                                <span> just some text after some text and in between some more text <br /></span>
-                                                <span> i'm next to the last line of text <br /></span>
-                                                <span> i'm the last line of text</span>
-                                                <span> just some text after some text and in between some more text <br /></span>
-                                                <span> i'm next to the last line of text <br /></span>
-                                                <span> i'm the last line of text <br /></span>
-                                            </span>
-                                            <button onclick="myFunction()" id="myBtn" style="border-color: white; border:0; color: #325eea; background-color: white; padding:0px; outline: none;">See more ▼</button>
-                                            <span> <br /><br /></span>
+                                            @company.Description
+                                            <span id="dots"><br /></span>
+                                        </span>
+                                        <button onclick="myFunction()" id="myBtn" style="border-color: white; border:0; color: #325eea; background-color: white; padding:0px; outline: none;">See more ▼</button>
+                                        <span> <br /><br /></span>
+                                        <span id="more">
+                                            <span id="Header">Số Lượng nhân viên: </span>
+                                            <span id="NoEmp"> @company.NoEmployee</span>
+                                            <span> <br/></span>
                                             <span id="Header">Địa chỉ: </span>
-                                            <span id="address">Quận 1, HCM</span>
+                                            <span id="address">@company.Address</span>
                                         </span>
                                 </div>
                             </div>
