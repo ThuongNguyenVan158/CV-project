@@ -290,7 +290,7 @@ namespace CV_project.Services
         public bool SendMessage(HeadHuntViewModel headhuntVM)
         {
             var newHeadHunt = new HeadHunt();
-            newHeadHunt.AccountId = headhuntVM.AccountId;
+            //newHeadHunt.AccountId = System.Guid.NewGuid();
             newHeadHunt.Name = headhuntVM.Name;
             newHeadHunt.ContactInfo = headhuntVM.Contact;
             newHeadHunt.Message = headhuntVM.Message;
