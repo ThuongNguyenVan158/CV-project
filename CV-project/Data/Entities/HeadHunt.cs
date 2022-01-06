@@ -16,11 +16,11 @@ namespace CV_project.Data.Entities
         public string Name { get; set; }
         public string ContactInfo { get; set; }
         public string Message { get; set; }
-        [Column("AccountID")]
-        public Guid AccountId { get; set; }
+        //[Column("AccountID")]
+        //public Guid AccountId { get; set; }
 
-        [ForeignKey(nameof(AccountId))]
-        [InverseProperty("HeadHunts")]
-        public virtual Account Account { get; set; }
+        //[ForeignKey(nameof(AccountId))]
+        //[InverseProperty("HeadHunts")]
+        //public virtual Account Account { get; set; }
     }
 }

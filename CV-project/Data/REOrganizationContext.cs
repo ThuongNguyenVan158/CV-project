@@ -134,9 +134,7 @@ namespace CV_project.Data
             });
             modelBuilder.Entity<HeadHunt>(entity =>
             {
-                entity.HasOne(d => d.Account)
-                   .WithMany(p => p.HeadHunts)
-                   .HasForeignKey(d => d.AccountId);
+                entity.HasKey(e => e.HeadHuntId);
             });
 
             OnModelCreatingPartial(modelBuilder);

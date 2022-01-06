@@ -1,8 +1,125 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = null;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>RE Organization</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,100' rel='stylesheet' type='text/css'>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom stlylesheet -->
+    <link rel="stylesheet" href="/css/main_style.css" type="text/css" />
+
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <h1>RE Organization</h1>
+            <p>Retry until revolution</p>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <div class="feature">
+                <a class="navItem" href="@Url.Action("Headhunt", "Home")">HEADHUNT</a>
+                <a class="navItem" href="@Url.Action("viewevent", "Home")">EVENT</a>
+                <a class="navItem" href="@Url.Action("SignIn", "Home")">SIGN IN</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            <img src="/media/cloud.svg" height="200" width="260">
+            <h2>Về chúng tôi</h2>
+            <p>
+                Được thành lập từ tháng 10/2020, RE Organization luôn trăn trở với câu hỏi: "Làm sao để có thể kết nối những tài năng trẻ tại Việt Nam đến với môi trường làm việc tốt?".
+            </p>
+            <p>
+                Với quyết tâm tìm kiếm câu trả lời cho vấn đề ấy, đội ngũ chúng tôi bao gồm những sinh viên thuộc các chuyên ngành kinh tế và kỹ thuật đã thành lập RE Organization -
+                cầu nối giữa các công ty công nghệ, tổ chức khởi nghiệp với nguồn tài nguyên nhân lực chất lượng trong mảng công nghệ, đặc biệt chú trọng việc phát triển về kết nối
+                và cải thiện quy trình, nâng cao chất lượng ứng viên.
+            </p>
+        </div>
+
+        <div class="container">
+            <img src="/media/cloud.svg" height="200" width="260">
+            <h2>Tầm nhìn</h2>
+            <p>
+                Tầm nhìn của chúng tôi là xây dựng hệ sinh thái công nghệ tân tiến tại Việt Nam với các sản phẩm chuyên biệt trong lĩnh vực tuyển dụng, thông tin, giáo dục.
+            </p>
+            <h2>Sứ mệnh</h2>
+            <p>
+                Thông qua việc đào tạo và và phát triển khả năng của sinh viên công nghệ thông tin, chúng tôi mong muốn cải thiện chất lượng nguồn nhân lực trong ngành và vấn đề
+                tuyển dụng của doanh nghiệp, qua đó góp phần vào sự phát triển của ngành CNTT ở Việt Nam.
+            </p>
+        </div>
+    </main>
+
+    <div id="jumbotron">
+        @*<div class="container">
+            <h2>Stay Connected</h2>
+            <p>Receive weekly notifications from us. Thank you !!</p>
+            <form asp-controller="Home" asp-action="Submission" method="post">
+                <label for="email" style="color: #fff"> Enter your email: </label>
+                <input id="email" name="email" type="email" required>
+                <button class="btn" type="submit">Join</button>
+            </form>
+        </div>*@
+    </div>
+
+    <footer id="footer">
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xs-4">
+                        <div class="footer">
+                            <h3 class="footer-title">About Us</h3>
+                            <ul class="footer-links">
+                                <li><a href="https://www.facebook.com/retryuntilrevolution/" target="_blank">RE Organization</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-4">
+                        <div class="footer">
+                            <h3 class="footer-title">Our Product</h3>
+                            <ul class="footer-links">
+                                <li>RE- CRUIT</li>
+                                <li>Hackathon 48h - Product Innovation Challenge 2021</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-4">
+                        <div class="footer">
+                            <h3 class="footer-title">Contact Us</h3>
+                            <ul class="footer-links">
+                                <li><i class="fa fa-map-marker"></i>Ho Chi Minh City</li>
+                                <li><i class="far fa-envelope"></i>reorganization2021@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

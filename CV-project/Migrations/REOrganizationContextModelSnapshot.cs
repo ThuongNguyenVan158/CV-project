@@ -295,10 +295,6 @@ namespace CV_project.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("HeadHuntId");
 
-                    b.Property<Guid>("AccountId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("AccountID");
-
                     b.Property<string>("ContactInfo")
                         .HasColumnType("nvarchar(max)");
 
@@ -309,8 +305,6 @@ namespace CV_project.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("HeadHuntId");
-
-                    b.HasIndex("AccountId");
 
                     b.ToTable("HeadHunt");
                 });

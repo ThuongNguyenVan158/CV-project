@@ -157,19 +157,19 @@ namespace CV_project.Controllers
         [HttpGet("/HeadHunt")]
         public IActionResult Headhunt()
         {
-            if (HttpContext.Session.GetString("Usersession") == null)
-                return RedirectToAction("SignIn");
+            //if (HttpContext.Session.GetString("Usersession") == null)
+            //    return RedirectToAction("SignIn");
             return View();
         }
         [HttpPost("/HeadHunt")]
         public IActionResult Headhunt(HeadHuntViewModel headhuntVM)
         {
-            if (HttpContext.Session.GetString("Usersession") == null)
-                return RedirectToAction("SignIn");
+            //if (HttpContext.Session.GetString("Usersession") == null)
+            //    return RedirectToAction("SignIn");
 
-            InfoViewModel infoSession = new InfoViewModel();
-            infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
-            headhuntVM.AccountId = infoSession.accountId;
+            //InfoViewModel infoSession = new InfoViewModel();
+            //infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
+            //headhuntVM.AccountId = infoSession.accountId;
             _clientService.SendMessage(headhuntVM);
             return View();
         }

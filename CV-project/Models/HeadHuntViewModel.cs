@@ -7,7 +7,6 @@ namespace CV_project.Models
 {
     public class HeadHuntViewModel
     {
-        public Guid AccountId { get; set; }
         public string Name { get; set; }
         public string Contact { get; set; }
         public string Message { get; set; }
