@@ -474,11 +474,24 @@ namespace CV_project.Migrations
                     b.Navigation("Job");
                 });
 
+            modelBuilder.Entity("CV_project.Data.Entities.HeadHunt", b =>
+                {
+                    b.HasOne("CV_project.Data.Entities.Account", "Account")
+                        .WithMany("HeadHunts")
+                        .HasForeignKey("AccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Account");
+                });
+
             modelBuilder.Entity("CV_project.Data.Entities.Account", b =>
                 {
                     b.Navigation("Applicants");
 
                     b.Navigation("Companies");
+
+                    b.Navigation("HeadHunts");
                 });
 
             modelBuilder.Entity("CV_project.Data.Entities.Applicant", b =>
