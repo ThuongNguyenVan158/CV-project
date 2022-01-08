@@ -170,7 +170,7 @@
                                         <div class="col-md-2 mx-auto d-block mb-2 align-items-lg-start">
                                             <img src="~/media/job look.svg">
                                         </div>
-                                        <div class="col-md-7" style="width:60vw">
+                                        <div class="col-md-6">
                                             <div class="row">
                                                 <h5 style="font-size: 20px"><b>@job.Name</b></h5>
                                             </div>
@@ -185,28 +185,30 @@
                                                 <div class="mr-1 ml-1">&bull;</div>
                                                 <h6>@job.NumEmployee Applicants</h6>
                                             </div>
-                                            @if (job.Language != null)
-                                            {
-                                                <div class="row">
-                                                    <button id="apply-now" type="button" class="btn col-12 text-wrap">@job.Language</button>
-                                                    @*<button id="apply-now" type="button" class="btn col mr-3">@job.Address</button>*@
-                                                </div>
-                                            }
 
-                                            @if (job.Position != null)
-                                            {
-                                                <div class="row">
-                                                    <button id="apply-now" type="button" class="btn col-12 text-wrap">@job.Position</button>
-                                                </div>
-                                            }
+
+
                                         </div>
 
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <button type="button" disabled class="col pr-0 mb-3 align-self-end" style="background-color: transparent; border: none">
                                                 <img height="30" width="30" class="rounded float-right" src="~/media/bookmark.png" />
                                             </button>
                                             <h5 style="font-size: 15px; text-align: right">Salary Per Month</h5>
                                             <h5 style="font-size: 13px; text-align: right"><b>@job.SalaryPerMonth</b></h5>
+                                        </div>
+
+                                        <div class="row col m-1">
+                                            @if (job.Language != null)
+                                            {
+                                                <button id="apply-now" type="button" class="btn col text-wrap mr-1">@job.Language</button>
+
+                                            }
+                                            @if (job.Position != null)
+                                            {
+                                                <button id="apply-now" type="button" class="btn col text-wrap ml-1">@job.Position</button>
+                                            }
+                                            @*<button id="apply-now" type="button" class="btn col mr-3">@job.Address</button>*@
                                         </div>
                                     </div>
                                 }}
