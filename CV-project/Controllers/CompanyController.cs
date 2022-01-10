@@ -112,6 +112,7 @@ namespace CV_project.Controllers
             InfoViewModel infoSession = new InfoViewModel();
             infoSession = JsonConvert.DeserializeObject<InfoViewModel>(HttpContext.Session.GetString("Usersession"));
             await _companyService.CreateJobAsync(infoSession.accountId, jobVM);
+
             return View();
         }
         [HttpGet("/UpdateJob")]
