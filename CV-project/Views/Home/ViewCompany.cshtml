@@ -45,8 +45,8 @@
     }
 
 
-    function update(name,address,qualifilcate,skills,desc) {
-        document.getElementById("jobTitle").innerHTML = "<b>"+ name +"</b>";
+    function update(name, address, qualifilcate, skills, desc) {
+        document.getElementById("jobTitle").innerHTML = "<b>" + name + "</b>";
         document.getElementById("jobLocation").innerHTML = address;
         document.getElementById("jobQualification").innerHTML = qualifilcate;
         document.getElementById("jobSkills").innerHTML = skills;
@@ -88,25 +88,20 @@
                                 <span class="vl"></span>
                                 <div class="col-md-12">
                                     <p id="companyDetail" style="height: 32vh; overflow-y: auto;">
-                                        <span id="Header">Số Lượng nhân viên: </span>
-                                        <span id="NoEmp"> 1000</span>
                                         <span> <br /><br /></span>
                                         <span id="Header">Description: </span>
                                         <span id="description">
-                                            công ty cổ phần ti ki ("tiki") là đơn vị thiết lập, tổ chức sàn thương mại điện tử www.tiki.vn để các nhà bán hàng thể tiến hành một phần<span id="dots"><br /></span>
-                                            <span id="more">
-                                                hoặc toàn bộ quy trình mua bán hàng hóa, dịch vụ trên sàn thương mại điện tử.
-                                                <span> just some text after some text and in between some more text <br /></span>
-                                                <span> i'm next to the last line of text <br /></span>
-                                                <span> i'm the last line of text</span>
-                                                <span> just some text after some text and in between some more text <br /></span>
-                                                <span> i'm next to the last line of text <br /></span>
-                                                <span> i'm the last line of text <br /></span>
-                                            </span>
-                                            <button onclick="myFunction()" id="myBtn" style="border-color: white; border:0; color: #325eea; background-color: white; padding:0px; outline: none;">See more ▼</button>
-                                            <span> <br /><br /></span>
+                                            @company.Description
+                                            <span id="dots"><br /></span>
+                                        </span>
+                                        <button onclick="myFunction()" id="myBtn" style="border-color: white; border:0; color: #325eea; background-color: white; padding:0px; outline: none;">See more ▼</button>
+                                        <span> <br /><br /></span>
+                                        <span id="more">
+                                            <span id="Header">Số Lượng nhân viên: </span>
+                                            <span id="NoEmp"> @company.NoEmployee</span>
+                                            <span> <br /></span>
                                             <span id="Header">Địa chỉ: </span>
-                                            <span id="address">Quận 1, HCM</span>
+                                            <span id="address">@company.Address</span>
                                         </span>
                                 </div>
                             </div>
@@ -168,50 +163,55 @@
 
 
                         <div class="col-xs-12 pr-4 pl-4">
-                            @{ 
-                                foreach (var job in Model.listJobPerCompany) {
-                            <div onclick="update('@(job.Name)','@(job.Address)','@(job.Qualification)','@(job.Requirement)','@(job.Information)');" style="cursor: pointer;" class="row p-2 mt-2" id="job-item">
-                                <div class="col-md-2 mx-auto d-block mb-2">
-                                    <img src="~/media/job look.svg" style="width: 100%; height: 100%; object-fit: contain;">
-                                </div>
-                                <div class="col-md-7" style="width:60vw">
-                                    <div class="row">
-                                        <h5 style="font-size: 20px"><b>@job.Name</b></h5>
-                                    </div>
-                                    <div class="row">
-                                        <h6>@job.Address</h6>
-                                        @*<div class="mr-1 ml-1">&bull;</div>
-                                        <h6>District 4</h6>*@
-                                        <div class="col-md-5 ml-3">
-                                            <img height="20" width="20" class="mr-1" src="~/media/watch.png">
-                                            420 views
+                            @{
+                                foreach (var job in Model.listJobPerCompany)
+                                {
+                                    <div onclick="update('@(job.Name)','@(job.Address)','@(job.Qualification)','@(job.Requirement)','@(job.Information)');" style="cursor: pointer;" class="row p-2 mt-2" id="job-item">
+                                        <div class="col-md-2 mx-auto d-block mb-2 align-items-lg-start">
+                                            <img src="~/media/job look.svg">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <h5 style="font-size: 20px"><b>@job.Name</b></h5>
+                                            </div>
+                                            <div class="row">
+                                                <h6>@job.Address</h6>
+                                            </div>
+
+                                            <div class="row">
+                                                <h6>Today</h6>
+                                                <div class="mr-1 ml-1">&bull;</div>
+                                                <h6>@job.Worktime</h6>
+                                                <div class="mr-1 ml-1">&bull;</div>
+                                                <h6>@job.NumEmployee Applicants</h6>
+                                            </div>
+
+
+
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <button type="button" disabled class="col pr-0 mb-3 align-self-end" style="background-color: transparent; border: none">
+                                                <img height="30" width="30" class="rounded float-right" src="~/media/bookmark.png" />
+                                            </button>
+                                            <h5 style="font-size: 15px; text-align: right">Salary Per Month</h5>
+                                            <h5 style="font-size: 13px; text-align: right"><b>@job.SalaryPerMonth</b></h5>
+                                        </div>
+
+                                        <div class="row col m-1">
+                                            @if (job.Language != null)
+                                            {
+                                                <button id="apply-now" type="button" class="btn col text-wrap mr-1">@job.Language</button>
+
+                                            }
+                                            @if (job.Position != null)
+                                            {
+                                                <button id="apply-now" type="button" class="btn col text-wrap ml-1">@job.Position</button>
+                                            }
+                                            @*<button id="apply-now" type="button" class="btn col mr-3">@job.Address</button>*@
                                         </div>
                                     </div>
-
-                                    <div class="row">
-                                        <h6>Today</h6>
-                                        <div class="mr-1 ml-1">&bull;</div>
-                                        <h6>@job.Worktime</h6>
-                                        <div class="mr-1 ml-1">&bull;</div>
-                                        <h6>@job.NumEmployee Applicants</h6>
-                                    </div>
-
-                                    <div class="row">
-                                        <button id="apply-now" type="button" class="btn col mr-3">@job.Language</button>
-                                        <button id="apply-now" type="button" class="btn col mr-3">@job.Position</button>
-                                        @*<button id="apply-now" type="button" class="btn col mr-3">@job.Address</button>*@
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <button type="button" disabled class="col pr-0 mb-3 align-self-end" style="background-color: transparent; border: none">
-                                        <img height="30" width="30" class="rounded float-right" src="~/media/bookmark.png" />
-                                    </button>
-                                    <h5 style="font-size: 15px; text-align: right">Salary Per Month</h5>
-                                    <h5 style="font-size: 13px; text-align: right"><b>@job.SalaryPerMonth</b></h5>
-                                </div>
-                            </div>
-                            }}
+                                }}
                         </div>
                     </div>
 
@@ -220,26 +220,26 @@
                             <div class="col-md-4 mx-auto d-block mb-2">
                                 <img src="~/media/job look.svg" style="width: 100%; height: 100%; object-fit: contain;">
                             </div>
-                            <h5 id="jobTitle" style="text-align: center"><b>JAVA Developer Specialist Generalist</b></h5>
+                            <h5 id="jobTitle" style="text-align: center"><b>Job Title</b></h5>
                             <div id="jobLocation" class="text-center">
                                 <p>
-                                    <h6>Ho Chi Minh . District 4</h6>
+                                    <h6>Address</h6>
                                 </p>
                             </div>
                             <hr />
                             <h5 class="job-quality"><b>Qualification:</b></h5>
                             <p id="jobQualification" class="job-paragraph">
-                                .
+                                Required Qualification 
                             </p>
                             <hr />
                             <h5 class="job-quality"><b>Skills & Requirements:</b></h5>
                             <p id="jobSkills" class="job-paragraph">
-                               .
+                                Required skills
                             </p>
                             <hr />
                             <h5 class="job-quality"><b>About the job:</b></h5>
                             <p id="jobAbout" class="job-paragraph">
-                               .
+                                Job Description
                             </p>
                         </div>
 

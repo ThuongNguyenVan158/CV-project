@@ -68,15 +68,12 @@
                     @{
                         foreach (var cv in Model)
                         {
-                            <h1 id="CVID">ID:</h1>
+                            <h1 id="CVID">@cv.FullName</h1>
                             <div class="container-fluid d-flex align-items-center h-50">
                                 <div class="row justify-content-md-center">
                                     <span class="vl"></span>
                                     <div class="col-md-12">
                                         <p id="CVDetail" style="height: 30vh; overflow-y: auto;">
-                                            <span id="Header">Họ và tên: </span>
-                                            <span id="Name"> @cv.FullName</span>
-                                            <span> <br /></span>
                                             <span id="Header">Major: </span>
                                             <span id="Major"> @cv.Major</span>
                                             <span> <br /></span>
@@ -89,15 +86,19 @@
                                             <span id="Header">Brief Introduction: </span>
                                             <span id="BriefIntroduction">
                                                 <span> @cv.BriefIntroduction <br /></span>
-                                                <span> I'm next to the last line of text <br /></span>
-                                                69 stacks<span id="dots"><br /></span>
+                                                <span id="dots"><br /></span>
                                             </span>
                                             <span id="more">
                                                 <!--more là award+certificates+activities theo như db -->
-                                                420 Languages <br />
-                                                <span> Just some text after some text and in between some more text <br /></span>
-                                                <span> I'm next to the last line of text <br /></span>
-                                                <span> I'm the last line of text <br /></span>
+                                                <span id="Header">Awards: </span>
+                                                <span id="award">@cv.Awards</span>
+                                                <span> <br /></span>
+                                                <span id="Header">Certificates: </span>
+                                                <span id="certificate">@cv.Certificates</span>
+                                                <span> <br /></span>
+                                                <span id="Header">Activities: </span>
+                                                <span id="activitties">@cv.Activities</span>
+                                                <span> <br /></span>
                                             </span>
                                             <button onclick="myFunction()" id="myBtn" style="border-color: white; border:0; color: #325EEA; background-color: white; padding:0px; outline: none;">See more ▼</button>
                                             <span> <br /><br /></span>
